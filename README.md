@@ -1,16 +1,21 @@
-## Hi there 👋
+### Hi, I'm Adel 👋
 
-<!--
-**Adel1637/Adel1637** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Python developer building **HR analytics tools** that turn the Excel files companies already have
+into clear, secure dashboards, running on their own servers, with no cloud required.
 
-Here are some ideas to get you started:
+*Développeur Python, je crée des outils d'analyse RH qui transforment les fichiers Excel des
+entreprises en tableaux de bord clairs et sécurisés, installés chez elles.*
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**What I work with**
+
+Python · FastAPI · Pandas · Plotly · JavaScript · HTML/CSS · Docker · data visualisation
+
+**Current project**
+
+**HR Dashboard Kit**: a self-hosted HR analytics dashboard for developers and agencies.
+Import an Excel HR export, map its columns, and get headcount, turnover, demographics and
+training dashboards in minutes. Free Lite edition coming soon on GitHub.
+
+**Contact**
+
+Open to freelance work on dashboards and internal data tools, in French and English.
