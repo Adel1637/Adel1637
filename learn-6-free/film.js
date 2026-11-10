@@ -187,6 +187,8 @@ function overlays(ctx, u, i, V) {
 // TikTok shows the cover cropped to 3:4 in the profile grid: every word sits in the central band
 // (y 240..1680). The Shorts cover uses the full frame.
 const COVER = new URLSearchParams(location.search).get('cover');
+const COVER_AR = { cairo: 'CoverCairo, Jakarta', tajawal: 'CoverTajawal, Jakarta', kufi: 'CoverKufi, Jakarta', almarai: 'CoverAlmarai, Jakarta', plex: null };
+const COVER_FONT = new URLSearchParams(location.search).get('arfont') || 'cairo';
 function cover(ctx, IMG, kind) {
   const U = 100;                                   // every spring settled
   A.paper(ctx);
@@ -198,7 +200,7 @@ function cover(ctx, IMG, kind) {
   A.riseWords(ctx, U, 0, 'resources to', { x: L.left, y: y + sz * 1.02, size: sz });
   A.riseWords(ctx, U, 0, 'learn UI/UX.', { x: L.left, y: y + sz * 2.04, size: sz });
   y += sz * 2.04 + 118;
-  A.line(ctx, U, 0, '٦ مصادر مجانية لتعلّم UI/UX', { x: L.right, y, size: 70, weight: 700, color: C.blue, align: 'right', rtl: true });
+  A.line(ctx, U, 0, '٦ مصادر مجانية لتعلّم UI/UX', { x: L.right, y, size: 76, weight: 800, color: C.blue, align: 'right', rtl: true, family: COVER_AR[COVER_FONT] });
   const s = kind === 'tiktok' ? 190 : 210, gap = kind === 'tiktok' ? 40 : 46;
   const gy = y + 90, x0 = L.left + (L.width - (3 * s + 2 * gap)) / 2;
   RES.forEach((r, i) => {
@@ -209,7 +211,7 @@ function cover(ctx, IMG, kind) {
 
 // ------------------------------------------------------------------ the film
 M.film({
-  fonts: [font(74, 800, F.latin), font(34, 500, F.latin), font(54, 700, F.arabic), font(32, 500, F.arabic), font(28, 700, F.mono)],
+  fonts: [...(COVER && COVER_AR[COVER_FONT] ? [font(76, 800, COVER_AR[COVER_FONT].split(',')[0])] : []), font(74, 800, F.latin), font(34, 500, F.latin), font(54, 700, F.arabic), font(32, 500, F.arabic), font(28, 700, F.mono)],
   images: {
     lawsLogo: 'assets/logos/laws-of-ux.png', nngLogo: 'assets/logos/nngroup.png',
     webaimLogo: 'assets/logos/webaim.png', figmaLogo: 'assets/logos/figma.webp',
@@ -217,6 +219,12 @@ M.film({
     apple: 'assets/shots/04-apple-hig.png', webaim: 'assets/shots/05-webaim-contrast.jpg', figma: 'assets/shots/06-figma.jpg',
   },
   hits: HITS,
+  // Arabic faces are unicode-range subsets: load them with Arabic text, or they arrive mid-render.
+  async init() {
+    const ar = 'مصادر مجانية لتعلّم ٦';
+    const fams = [F.arabic, ...(COVER && COVER_AR[COVER_FONT] ? [COVER_AR[COVER_FONT].split(',')[0]] : [])];
+    await Promise.all(fams.flatMap((fam) => [500, 600, 700, 800].map((w) => document.fonts.load(font(40, w, fam), ar).catch(() => {}))));
+  },
   draw(ctx, u, t, IMG) {
     if (COVER) { cover(ctx, IMG, COVER); return; }
     if (u >= END) { A.endCard(ctx, u, END + 0.1); return; }
