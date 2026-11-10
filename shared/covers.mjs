@@ -1,13 +1,16 @@
 // Render the two covers of a film that supports ?cover=tiktok|shorts (see learn-6-free/film.js).
-//   node shared/covers.mjs <film> <outdir>
-// -> <outdir>/Couverture-TikTok.png, <outdir>/Couverture-YouTube-Shorts.png (1080x1920)
+//   node shared/covers.mjs <film> <outdir> [format] [kind=File.png,...]
+// default (9x16): <outdir>/Couverture-TikTok.png, <outdir>/Couverture-YouTube-Shorts.png (1080x1920)
+// 16x9 example:   node shared/covers.mjs learn-long out/learn-long/covers 16x9 youtube=Miniature-YouTube.png
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
-const [film, outDir] = process.argv.slice(2);
+const [film, outDir, fmt = '9x16', kindsArg] = process.argv.slice(2);
+const SIZE = { '9x16': [1080, 1920], '16x9': [1920, 1080], '1x1': [1080, 1080] }[fmt];
+const KINDS = kindsArg ? kindsArg.split(',').map((k) => k.split('=')) : [['tiktok', 'Couverture-TikTok.png'], ['shorts', 'Couverture-YouTube-Shorts.png']];
 if (!film || !outDir) { console.error('usage: covers.mjs <film> <outdir>'); process.exit(1); }
 const ROOT = process.cwd();
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2', '.wav': 'audio/wav' };
@@ -19,9 +22,9 @@ const server = http.createServer((req, res) => {
 const port = server.address().port;
 fs.mkdirSync(outDir, { recursive: true });
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-for (const [kind, name] of [['tiktok', 'Couverture-TikTok.png'], ['shorts', 'Couverture-YouTube-Shorts.png']]) {
-  await page.goto(`http://127.0.0.1:${port}/${film}/index.html?format=9x16&render=1&cover=${kind}`);
+const page = await browser.newPage({ viewport: { width: SIZE[0], height: SIZE[1] } });
+for (const [kind, name] of KINDS) {
+  await page.goto(`http://127.0.0.1:${port}/${film}/index.html?format=${fmt}&render=1&cover=${kind}`);
   await page.waitForFunction(() => window.filmReady === true);
   await page.evaluate(() => window.seek(0));
   const data = await page.evaluate(() => document.getElementById('film').toDataURL('image/png'));

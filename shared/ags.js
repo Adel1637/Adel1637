@@ -35,17 +35,17 @@ export function makeAGS(M) {
   function noShadow(ctx) { ctx.shadowColor = 'transparent'; ctx.shadowBlur = 0; ctx.shadowOffsetY = 0; }
 
   // ------------------------------------------------------------ header: series pill + wordmark
-  function header(ctx, u, series, { u0 = -0.3, y = 225 } = {}) {
+  function header(ctx, u, series, { u0 = -0.3, y = 225, left = L.left, right = L.right } = {}) {
     const p = springU(u, u0, SPRING.snappy);
     if (p <= 0) return;
     ctx.save(); ctx.globalAlpha = clamp(p * 1.5);
     const f = font(31, 700, F.latin);
     ctx.font = f; ctx.letterSpacing = '-0.5px';
     const tw = ctx.measureText(series).width, h = 66, w = tw + 56;
-    rrect(ctx, L.left, y + (1 - p) * 16, w, h, h / 2); ctx.fillStyle = C.ink; ctx.fill();
-    ctx.fillStyle = C.white; ctx.textAlign = 'left'; ctx.fillText(series, L.left + 28, y + 44 + (1 - p) * 16);
+    rrect(ctx, left, y + (1 - p) * 16, w, h, h / 2); ctx.fillStyle = C.ink; ctx.fill();
+    ctx.fillStyle = C.white; ctx.textAlign = 'left'; ctx.fillText(series, left + 28, y + 44 + (1 - p) * 16);
     ctx.font = font(31, 700, F.latin); ctx.fillStyle = C.ink; ctx.textAlign = 'right';
-    ctx.fillText('AG Studio', L.right, y + 45 + (1 - p) * 16);
+    ctx.fillText('AG Studio', right, y + 45 + (1 - p) * 16);
     ctx.letterSpacing = '0px';
     ctx.restore();
   }
@@ -133,12 +133,12 @@ export function makeAGS(M) {
   }
 
   // ------------------------------------------------------------ segmented progress bar
-  function progress(ctx, n, done, { y = 676, alpha = 1 } = {}) {
+  function progress(ctx, n, done, { y = 676, alpha = 1, x0 = L.left, width = L.width, gap = 12 } = {}) {
     if (alpha <= 0) return;
-    const gap = 12, w = (L.width - gap * (n - 1)) / n, h = 10;
+    const w = (width - gap * (n - 1)) / n, h = 10;
     ctx.save(); ctx.globalAlpha = alpha;
     for (let i = 0; i < n; i++) {
-      const x = L.left + i * (w + gap);
+      const x = x0 + i * (w + gap);
       rrect(ctx, x, y, w, h, h / 2); ctx.fillStyle = C.bar; ctx.fill();
       const f = clamp(done - i);
       if (f > 0) { rrect(ctx, x, y, w * f, h, h / 2); ctx.fillStyle = C.blue; ctx.fill(); }
@@ -265,5 +265,25 @@ export function makeAGS(M) {
     if (wordmark) line(ctx, u, u0 + 3.4, 'AG Studio', { x, y: 1383, size: 38, weight: 700, color: C.white, align: 'left' });
   }
 
-  return { C, F, L, paper, shadow, noShadow, header, wrap, riseWords, line, highlighter, badge, progress, selection, pill, cursor, ripple, circleCover, tile, endCard };
+  // Landscape version of the end page (16:9).
+  function endCardWide(ctx, u, u0, { wordmark = true } = {}) {
+    ctx.fillStyle = C.blue; ctx.fillRect(0, 0, W, H);
+    const x = 140;
+    riseWords(ctx, u, u0, 'Keep it simple.', { x, y: 430, size: 176, color: C.white, stagger: 0.25, track: -0.045, maxW: 1700 });
+    line(ctx, u, u0 + 1.2, 'اجعلها بسيطة.', { x, y: 570, size: 96, weight: 700, color: C.white, align: 'left', rtl: true });
+    const p = springU(u, u0 + 2.2, SPRING.snappy);
+    if (p > 0) {
+      ctx.save(); ctx.globalAlpha = clamp(p * 1.5);
+      ctx.font = font(44, 700, F.latin); ctx.letterSpacing = '-0.6px';
+      const label = 'Follow for more UI/UX tutorials', tw = ctx.measureText(label).width, h = 108, w = tw + 92;
+      const yy = 660 + (1 - p) * 30;
+      rrect(ctx, x, yy, w, h, h / 2); ctx.fillStyle = C.white; ctx.fill();
+      ctx.fillStyle = C.blue; ctx.textAlign = 'left'; ctx.fillText(label, x + 46, yy + 71);
+      ctx.letterSpacing = '0px'; ctx.restore();
+    }
+    line(ctx, u, u0 + 2.9, 'تابعني لمزيد من دروس UI/UX', { x, y: 840, size: 40, weight: 500, color: C.white, align: 'left', rtl: true });
+    if (wordmark) line(ctx, u, u0 + 3.4, 'AG Studio', { x, y: 960, size: 40, weight: 700, color: C.white, align: 'left' });
+  }
+
+  return { endCardWide, C, F, L, paper, shadow, noShadow, header, wrap, riseWords, line, highlighter, badge, progress, selection, pill, cursor, ripple, circleCover, tile, endCard };
 }
