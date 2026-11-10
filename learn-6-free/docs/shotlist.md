@@ -1,6 +1,6 @@
 # 6 free resources to learn UI/UX — découpage
 
-45,9 s · grille 128 BPM (1 temps = 0,469 s) · 98 temps · 1080×1920 · série « Learn UI/UX »
+43,2 s · grille 128 BPM (1 temps = 0,469 s) · 92 temps · 1080×1920 · série « Learn UI/UX »
 Son : aucune musique, effets sonores seulement (clics, frappe, petits pop) · pas de voix
 
 ## Mise en page (1080×1920)
@@ -21,8 +21,7 @@ Son : aucune musique, effets sonores seulement (clics, frappe, petits pop) · pa
 | 6 | 52–63 | 24,4–29,5 | **5 · WebAIM Contrast Checker** | Logo WebAIM · `05-webaim-contrast.jpg` · EN : « Check if your text is easy to read » · AR : « تأكّد أن نصوصك سهلة القراءة » | Défilement jusqu'à « 8.59:1 », zoom, pastille verte « Pass » | Glissement | clic, pop, tick, ding (pastille) |
 | 7 | 63–74 | 29,5–34,7 | **6 · Figma** (la surprise de fin) | Logo Figma · `06-figma.jpg` · EN : « Even the design tool is free to start » · AR : « حتى أداة التصميم نفسها مجانية للبدء » | Le curseur clique « Get started for free », pastille « Free plan » | Cercle bleu qui se referme sur le récapitulatif | clic, pop, clic, ding |
 | 8 | 74–82 | 34,7–38,4 | **Récap** | Les 6 tuiles en grille 2×3 · EN : « Save this list » · AR : « احفظ هذه القائمة » · petite ligne « Not sponsored » | Tuiles qui apparaissent une par une, coche verte sur chacune | Cercle bleu plein écran | pop ×6, tick |
-| 9 | 82–90 | 38,4–42,2 | **Fin 1** | Écran bleu #2F5BFF : « Keep it simple. » / « اجعلها بسيطة. » | Titre qui monte | Coupe sur le temps | pop, tick |
-| 10 | 90–98 | 42,2–45,9 | **Fin 2** | « Follow for more UI/UX tutorials » / « تابعني لمزيد من دروس UI/UX » + logo AG Studio | Logo qui rebondit, texte qui monte | — | ding, pop |
+| 9 | 82–92 | 38,4–43,2 | **Fin (une seule page, sans logo)** | Écran bleu #2F5BFF : « Keep it simple. » / « اجعلها بسيطة. » puis, en dessous, « Follow for more UI/UX tutorials » / « تابعني لمزيد من دروس UI/UX » | Les deux messages montent l'un après l'autre, petit trait blanc entre les deux | — | pop, tick, pop, tick |
 
 Plus long moment sans nouvel élément : 2,5 temps (≈ 1,2 s) dans chaque carte ressource.
 

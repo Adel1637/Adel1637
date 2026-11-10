@@ -225,22 +225,17 @@ export function makeAGS(M) {
     ctx.restore();
   }
 
-  // ------------------------------------------------------------ end screens (blue)
-  function endKeep(ctx, u, u0, { exitAt = null } = {}) {
+  // ------------------------------------------------------------ end screen (blue, one page, no logo)
+  function endCard(ctx, u, u0) {
     const cx = W / 2;
-    riseWords(ctx, u, u0, 'Keep it simple.', { x: cx, y: H * 0.47, f: font(118, 800, F.latin), size: 118, align: 'center', color: C.white, stagger: 0.22, exitAt });
-    arabic(ctx, u, u0 + 1, 'اجعلها بسيطة.', { x: cx, y: H * 0.47 + 130, size: 70, color: 'rgba(255,255,255,0.86)', exitAt });
-  }
-  function endFollow(ctx, u, u0, logo) {
-    const cx = W / 2;
-    const k = springU(u, u0, SPRING.bouncy || SPRING.gentle);
-    if (logo && k > 0) {
-      const s = 190 * k;
-      ctx.save(); shadow(ctx, 40, 16, 0.25); ctx.drawImage(logo, cx - s / 2, H * 0.31 - s / 2, s, s); ctx.restore();
-    }
-    riseWords(ctx, u, u0 + 0.5, 'Follow for more UI/UX tutorials', { x: cx, y: H * 0.47, f: font(84, 800, F.latin), size: 84, maxW: 860, align: 'center', color: C.white, stagger: 0.14 });
-    arabic(ctx, u, u0 + 1.5, 'تابعني لمزيد من دروس UI/UX', { x: cx, y: H * 0.47 + 240, size: 58, color: 'rgba(255,255,255,0.86)' });
+    riseWords(ctx, u, u0, 'Keep it simple.', { x: cx, y: H * 0.40, f: font(118, 800, F.latin), size: 118, align: 'center', color: C.white, stagger: 0.22 });
+    arabic(ctx, u, u0 + 1, 'اجعلها بسيطة.', { x: cx, y: H * 0.40 + 125, size: 70, color: 'rgba(255,255,255,0.88)' });
+    // thin divider between the two messages
+    const d = E.outCubic(prog(u, u0 + 1.6, u0 + 2.4));
+    if (d > 0) { ctx.save(); ctx.fillStyle = 'rgba(255,255,255,0.45)'; ctx.fillRect(cx - 60 * d, H * 0.40 + 205, 120 * d, 4); ctx.restore(); }
+    riseWords(ctx, u, u0 + 2, 'Follow for more UI/UX tutorials', { x: cx, y: H * 0.40 + 330, f: font(64, 800, F.latin), size: 64, maxW: 860, align: 'center', color: C.white, stagger: 0.12 });
+    arabic(ctx, u, u0 + 3, 'تابعني لمزيد من دروس UI/UX', { x: cx, y: H * 0.40 + 500, size: 50, color: 'rgba(255,255,255,0.88)' });
   }
 
-  return { C, F, paper, brand, shadow, noShadow, wrap, riseWords, arabic, highlighter, pill, cursor, ripple, focusRing, circleCover, circleOpen, tile, endKeep, endFollow };
+  return { C, F, paper, brand, shadow, noShadow, wrap, riseWords, arabic, highlighter, pill, cursor, ripple, focusRing, circleCover, circleOpen, tile, endCard };
 }

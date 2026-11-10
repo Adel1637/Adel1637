@@ -11,7 +11,7 @@ const { C, F } = A;
 const COL = { x: 90, w: 840, cx: 510 };              // content column, clear of the right-hand buttons
 const CARD = { x: 90, y: 384, w: 840, h: 820, r: 40 };
 const B0 = 8, SPAN = 11;                            // resource i starts at B0 + i*SPAN
-const RECAP = 74, END1 = 82, END2 = 90;
+const RECAP = 74, END = 82;
 
 // ------------------------------------------------------------------ the six resources
 // cam: [beat offset, [focus x, focus y (source px), zoom]]; regions are source-pixel rects.
@@ -72,11 +72,11 @@ hit(RECAP - 0.6, 'circle to recap', 'click');
 hit(RECAP + 0.6, 'recap title', 'pop', { pitch: 'A5' });
 for (let i = 0; i < 6; i++) hit(RECAP + 1.5 + i * 0.5, `recap tile ${i + 1}`, 'pop', { pitch: ['A5', 'B5', 'C#6', 'E6', 'F#6', 'A6'][i] });
 for (let i = 0; i < 6; i++) hit(RECAP + 2 + i * 0.5, `recap check ${i + 1}`, 'blip', { pitch: 'E7' });
-hit(END1 - 0.8, 'circle to end', 'click');
-hit(END1 + 0.1, 'keep it simple', 'pop', { pitch: 'A5' });
-hit(END1 + 1.1, 'arabic end', 'tick');
-hit(END2 + 0.1, 'logo', 'bell', { pitch: 'A6' });
-hit(END2 + 0.6, 'follow', 'pop', { pitch: 'E6' });
+hit(END - 0.8, 'circle to end', 'click');
+hit(END + 0.1, 'keep it simple', 'pop', { pitch: 'A5' });
+hit(END + 1.1, 'arabic end', 'tick');
+hit(END + 2.1, 'follow', 'pop', { pitch: 'E6' });
+hit(END + 3.1, 'arabic follow', 'tick');
 
 // ------------------------------------------------------------------ helpers
 const ease = E.inOutCubic;
@@ -221,7 +221,7 @@ M.film({
   },
   hits: HITS,
   draw(ctx, u, t, IMG) {
-    if (u < END1) {
+    if (u < END) {
       A.paper(ctx);
       if (u < 8.7) hook(ctx, u, IMG);
       if (u >= 7.8 && u < RECAP + 0.8) {
@@ -242,12 +242,10 @@ M.film({
       if (u >= RECAP - 0.8 && u < RECAP) A.circleCover(ctx, fb[0], fb[1], prog(u, RECAP - 0.8, RECAP - 0.05));
       if (u >= RECAP && u < RECAP + 0.8) A.circleOpen(ctx, prog(u, RECAP, RECAP + 0.8));
       // blue circle: recap -> end (stays blue)
-      if (u >= END1 - 0.9) A.circleCover(ctx, COL.cx, 1000, prog(u, END1 - 0.9, END1 - 0.02));
+      if (u >= END - 0.9) A.circleCover(ctx, COL.cx, 1000, prog(u, END - 0.9, END - 0.02));
     } else {
       A.paper(ctx, C.blue);
-      A.brand(ctx, IMG.agLogo, { color: C.white });
-      if (u < END2) A.endKeep(ctx, u, END1 + 0.1, { exitAt: END2 - 0.45 });
-      else A.endFollow(ctx, u, END2 + 0.1, IMG.agLogo);
+      A.endCard(ctx, u, END + 0.1);
     }
   },
 });
