@@ -1,0 +1,52 @@
+Spacing & layout basics — AG Studio
+Série : Learn UI/UX · Fondamentaux UI · Durée : 50 s · Sans musique
+Accroche : « Your design feels cramped. » / « تصميمك مزدحم. »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+Spacing & Layout Basics for UI | أساسيات المسافات والتخطيط
+
+DESCRIPTION (EN)
+Your design feels cramped. 5 basics to fix it:
+1. A spacing scale: Use only 8, 16, 24, 32…
+2. Group related things: Label close to its field, groups apart.
+3. A column grid: 12 columns keep blocks in line.
+4. Align your edges: One left edge for title, text and button.
+5. A max width: Very wide lines are hard to read.
+The interface in this video is fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+تصميمك مزدحم. 5 أساسيات لإصلاح ذلك:
+1. مقياس مسافات: استخدم فقط 8 و16 و24 و32…
+2. جمّع العناصر المترابطة: العنوان قريب من حقله، والمجموعات متباعدة.
+3. شبكة أعمدة: 12 عمودًا تُبقي العناصر منتظمة.
+4. وحّد الحواف: حافة يسرى واحدة للعنوان والنص والزر.
+5. عرض أقصى: الأسطر العريضة جدًا صعبة القراءة.
+الواجهة في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #layout #spacing #learnuiux #تصميم_واجهات #تخطيط #تجربة_المستخدم
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+Your design feels cramped. 5 basics to fix it 📌
+More UI/UX fixes on my profile.
+
+LÉGENDE (AR)
+تصميمك مزدحم. 5 أساسيات لإصلاح ذلك 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uiux #uidesign #layout #spacing #designtok #learnuiux #تصميم_واجهات #تعلم_التصميم
+
+COMMENTAIRE À ÉPINGLER
+How much space does your design give? 👇
+كم مساحة يمنحها تصميمك؟ 👇

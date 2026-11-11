@@ -1,0 +1,52 @@
+Dark mode & accessibility basics — AG Studio
+Série : Learn UI/UX · Fondamentaux UI · Durée : 50 s · Sans musique
+Accroche : « Can everyone read this? » / « هل يستطيع الجميع قراءة هذا؟ »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+Dark Mode & Accessibility Basics | أساسيات الوضع الداكن وإمكانية الوصول
+
+DESCRIPTION (EN)
+Can everyone read this? 5 basics to fix it:
+1. Enough contrast: Dim text on black fails WCAG AA.
+2. Never color alone: Add an icon or a word to every status.
+3. Visible focus: Show which field is active.
+4. Dark gray, not black: Surfaces show depth on dark gray.
+5. Softer colors: Neon colors glare on dark backgrounds.
+The interface in this video is fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+هل يستطيع الجميع قراءة هذا؟ 5 أساسيات لإصلاح ذلك:
+1. تباين كافٍ: النص الباهت على الأسود لا يجتاز WCAG AA.
+2. لا تعتمد على اللون وحده: أضف أيقونة أو كلمة لكل حالة.
+3. تركيز ظاهر: أظهر الحقل النشط بوضوح.
+4. رمادي داكن لا أسود: الأسطح تُظهر العمق على خلفية رمادية داكنة.
+5. ألوان أهدأ: الألوان الفاقعة تُبهر العين على الخلفيات الداكنة.
+الواجهة في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #darkmode #accessibility #learnuiux #تصميم_واجهات #إمكانية_الوصول #تجربة_المستخدم
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+Can everyone read this? 5 basics to fix it 📌
+More UI/UX fixes on my profile.
+
+LÉGENDE (AR)
+هل يستطيع الجميع قراءة هذا؟ 5 أساسيات لإصلاح ذلك 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uiux #uidesign #darkmode #accessibility #designtok #learnuiux #تصميم_واجهات #تعلم_التصميم
+
+COMMENTAIRE À ÉPINGLER
+Do you design a dark mode? 👇
+هل تصمّم وضعًا داكنًا؟ 👇
