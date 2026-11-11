@@ -1,5 +1,9 @@
 # Accroche (hook) — liste de contrôle AG Studio
 
+**Règle (depuis le 11 novembre 2026) : l'accroche s'applique à chaque vidéo, Shorts, TikTok et vidéos longues.**
+`shared/finish.sh` refuse de lancer le rendu final tant que `shared/check-hook.sh` ne passe pas.
+Pour une vidéo longue, l'accroche = les 3 premières secondes + le titre + la miniature.
+
 Les 1 à 3 premières secondes décident si le spectateur reste ou fait défiler. Sans voix, l'accroche
 repose sur trois couches : **l'image**, **le texte**, **le son**. Elle doit marcher sans le titre ni la légende.
 
