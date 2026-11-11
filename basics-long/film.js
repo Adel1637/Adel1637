@@ -208,6 +208,38 @@ function thumbnail(ctx) {
   drawMock(ctx, 'app', { ...full }, [195, 422, 1], 1530, 300, 290, 640, 620 / 872);
 }
 
+// ------------------------------------------------------------------ Facebook post image (?cover=fb, 9x16 canvas, crop to 1080x1350)
+// Arabic audience: "before" (قبل) sits on the right, "after" (بعد) on the left, in reading order.
+function fbImage(ctx) {
+  const U = 1000;
+  A.paper(ctx);
+  A.header(ctx, U, SERIES, { y: 56 });
+  const ar = 'المواقع والتطبيقات لا تتبع نفس القواعد';
+  A.line(ctx, U, 0, ar, { x: 1016, y: 222, size: fitSize(ctx, ar, 62, 800, 'CoverCairo, Jakarta', 952, true), weight: 800, color: C.ink, align: 'right', rtl: true, family: 'CoverCairo, Jakarta' });
+  A.line(ctx, U, 0, 'Websites and apps follow different rules.', { x: 64, y: 282, size: 32, weight: 600, color: C.grey, align: 'left' });
+  const none = () => ({ p: [0, 0, 0, 0, 0], bad: [], good: [] }), full = () => ({ p: [1, 1, 1, 1, 1], bad: [], good: [] });
+  const colW = 456, xR = 1016 - colW, xL = 64;                     // right = before, left = after
+  const badge = (x, y, ok) => {
+    ctx.save(); ctx.fillStyle = ok ? C.green : C.red; ctx.beginPath(); ctx.arc(x, y, 24, 0, M.TAU); ctx.fill();
+    ctx.strokeStyle = C.white; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.beginPath();
+    if (ok) { ctx.moveTo(x - 10, y); ctx.lineTo(x - 3, y + 8); ctx.lineTo(x + 11, y - 8); } else { ctx.moveTo(x - 8, y - 8); ctx.lineTo(x + 8, y + 8); ctx.moveTo(x + 8, y - 8); ctx.lineTo(x - 8, y + 8); }
+    ctx.stroke(); ctx.restore();
+  };
+  [[xR, 'قبل', C.red, none, false], [xL, 'بعد', C.green, full, true]].forEach(([x, lab, col, st, ok]) => {
+    A.line(ctx, U, 0, lab, { x: x + colW / 2, y: 352, size: 40, weight: 800, color: col, align: 'center', rtl: true, family: 'CoverCairo, Jakarta' });
+    // website (top part of the page)
+    ctx.save(); A.shadow(ctx, 24, 8, 0.12); rrect(ctx, x, 380, colW, 420, 16); ctx.fillStyle = C.white; ctx.fill(); A.noShadow(ctx);
+    rrect(ctx, x, 380, colW, 420, 16); ctx.clip();
+    const sc = colW / 960; ctx.translate(x, 380); ctx.scale(sc, sc); const s1 = st(); s1.px = 1 / sc; MK.web.draw(ctx, s1); ctx.restore();
+    ctx.lineWidth = 5; ctx.strokeStyle = col; rrect(ctx, x, 380, colW, 420, 16); ctx.stroke(); badge(x + colW - 6, 386, ok);
+    // app
+    ctx.save(); const ps = 430 / 872; ctx.translate(x + colW / 2 - (418 * ps) / 2 + 14 * ps, 840 + 14 * ps); ctx.scale(ps, ps);
+    const s2 = st(); s2.px = 1 / ps; MK.app.draw(ctx, s2); ctx.restore();
+    badge(x + colW / 2 + (418 * ps) / 2 - 4, 846, ok);
+  });
+  A.line(ctx, U, 0, 'الفيديو الكامل على يوتيوب · AG Studio', { x: 540, y: 1318, size: 30, weight: 700, color: C.blue, align: 'center', rtl: true, family: 'CoverCairo, Jakarta' });
+}
+
 // ------------------------------------------------------------------ film
 M.film({
   fonts: [font(76, 800, F.latin), font(34, 500, F.latin), font(54, 700, F.arabic), font(32, 500, F.arabic)],
@@ -219,6 +251,7 @@ M.film({
     await Promise.all(fams.flatMap((fam) => [500, 600, 700, 800].map((w) => document.fonts.load(font(40, w, fam), ar).catch(() => {}))));
   },
   draw(ctx, u) {
+    if (COVER === 'fb') { fbImage(ctx); return; }
     if (COVER) { thumbnail(ctx); return; }
     if (u >= T.end) { A.endCardWide(ctx, u, T.end + 0.1); return; }
     A.paper(ctx);
