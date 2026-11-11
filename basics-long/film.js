@@ -198,14 +198,14 @@ function thumbnail(ctx) {
   const U = 1000;
   A.paper(ctx);
   A.header(ctx, U, SERIES, { y: 70, left: 110, right: 1810 });
-  A.riseWords(ctx, U, 0, 'UI/UX basics:', { x: 110, y: 330, size: 140, maxW: 1100 });
-  A.riseWords(ctx, U, 0, 'websites & apps', { x: 110, y: 480, size: 140, maxW: 1100, hl: [0, 1, 2], hlAt: 0 });
-  A.line(ctx, U, 0, 'أساسيات UI/UX للمواقع والتطبيقات', { x: 110, y: 640, size: 72, weight: 800, color: C.blue, align: 'left', rtl: true, family: 'CoverCairo, Jakarta' });
-  A.pill(ctx, '10 BASICS', 110, 720, { bg: C.ink, size: 52 });
+  A.riseWords(ctx, U, 0, 'UI/UX basics:', { x: 110, y: 320, size: 124, maxW: 1060 });
+  A.riseWords(ctx, U, 0, 'websites & apps', { x: 110, y: 456, size: 124, maxW: 1060, hl: [0, 1, 2], hlAt: 0 });
+  A.line(ctx, U, 0, 'أساسيات UI/UX للمواقع والتطبيقات', { x: 1050, y: 610, size: fitSize(ctx, 'أساسيات UI/UX للمواقع والتطبيقات', 72, 800, 'CoverCairo, Jakarta', 940, true), weight: 800, color: C.blue, align: 'right', rtl: true, family: 'CoverCairo, Jakarta' });
+  A.pill(ctx, '10 BASICS', 110, 700, { bg: C.ink, size: 52 });
   const full = { p: [1, 1, 1, 1, 1], bad: [], good: [] };
-  ctx.save(); A.shadow(ctx, 40, 16, 0.14); rrect(ctx, 1150, 210, 420, 580, 18); ctx.fillStyle = C.white; ctx.fill(); A.noShadow(ctx);
-  rrect(ctx, 1150, 210, 420, 580, 18); ctx.clip(); drawMock(ctx, 'web', { ...full }, [480, 640, 1], 1150, 210, 420, 580, 420 / 960); ctx.restore();
-  drawMock(ctx, 'app', { ...full }, [195, 422, 1], 1520, 300, 300, 640, 640 / 872);
+  ctx.save(); A.shadow(ctx, 40, 16, 0.14); rrect(ctx, 1150, 200, 400, 560, 18); ctx.fillStyle = C.white; ctx.fill(); A.noShadow(ctx);
+  rrect(ctx, 1150, 200, 400, 560, 18); ctx.clip(); drawMock(ctx, 'web', { ...full }, [480, 640, 1], 1150, 200, 400, 560, 400 / 960); ctx.restore();
+  drawMock(ctx, 'app', { ...full }, [195, 422, 1], 1530, 300, 290, 640, 620 / 872);
 }
 
 // ------------------------------------------------------------------ film
