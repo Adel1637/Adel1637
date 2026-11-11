@@ -15,7 +15,8 @@ fi
 node "$SKILL/scripts/render.mjs" --film "$FILM" --format "$FMT" --video-only --fps 30
 node "$SKILL/scripts/sfx.mjs" "$FILM"
 node "$SKILL/scripts/mix.mjs" "$FILM"
-if grep -q "cover=" "$FILM/film.js" || grep -q "get('cover')" "$FILM/film.js"; then
+# cover mode lives in film.js or in a shared builder it imports (e.g. shared/basics.js)
+if grep -qE "get\('cover'\)|cover:" "$FILM/film.js" || grep -l "get('cover')" $(grep -oE "\.\./shared/[a-z-]+\.js" "$FILM/film.js" | sed "s#^\.\./#./#") 2>/dev/null | grep -q .; then
   if [ "$FMT" = "9x16" ]; then node shared/covers.mjs "$FILM" "out/$FILM/covers"; fi
 fi
 echo "OK -> out/$FILM/final.mp4"

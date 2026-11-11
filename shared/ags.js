@@ -82,10 +82,11 @@ export function makeAGS(M) {
     if (hl.length && hlAt != null) {
       const p = E.inOutCubic(prog(u, hlAt, hlAt + 0.8)) * (1 - ex);
       const sel = out.filter((o) => hl.includes(o.i));
-      if (sel.length) {
-        const a = Math.min(...sel.map((o) => o.gx)), b = Math.max(...sel.map((o) => o.gx + o.width));
-        highlighter(ctx, a - size * 0.08, sel[0].by - size * 0.74, b - a + size * 0.16, size * 0.92, p);
-      }
+      [...new Set(sel.map((o) => o.by))].forEach((by) => {      // one block per line
+        const row = sel.filter((o) => o.by === by);
+        const a = Math.min(...row.map((o) => o.gx)), b = Math.max(...row.map((o) => o.gx + o.width));
+        highlighter(ctx, a - size * 0.08, by - size * 0.74, b - a + size * 0.16, size * 0.92, p);
+      });
     }
     out.forEach((o) => {
       const k = springU(u, u0 + o.i * stagger, SPRING.snappy);

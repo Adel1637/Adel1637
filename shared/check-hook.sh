@@ -15,8 +15,8 @@ OUT=out/$FILM/hook
 rm -rf "$OUT" && mkdir -p "$OUT"
 node "$SKILL/scripts/render.mjs" --film "$FILM" --format "$FMT" --at 0,0.5,1.5,3 --noblur >/dev/null
 node "$SKILL/scripts/render.mjs" --film "$FILM" --format "$FMT" --hits >/dev/null
-mv out/$FILM/stills/t0.000_*.png "$OUT/t0.png"; mv out/$FILM/stills/t0.500_*.png "$OUT/t05.png"
-mv out/$FILM/stills/t1.500_*.png "$OUT/t15.png"; mv out/$FILM/stills/t3.000_*.png "$OUT/t3.png"
+mv out/$FILM/stills/t0.000*.png "$OUT/t0.png"; mv out/$FILM/stills/t0.500*.png "$OUT/t05.png"
+mv out/$FILM/stills/t1.500*.png "$OUT/t15.png"; mv out/$FILM/stills/t3.000*.png "$OUT/t3.png"
 python3 -I - "$OUT" "out/$FILM/hits.json" <<'PY'
 import sys, json
 import numpy as np
