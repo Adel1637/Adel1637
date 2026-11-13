@@ -1,0 +1,136 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><style>
+@font-face{font-family:Fraunces;src:url(file:///home/user/Adel1637/node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2);font-weight:100 900}
+@font-face{font-family:Serif4;src:url(file:///home/user/Adel1637/node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2);font-weight:200 900}
+@font-face{font-family:Serif4;src:url(file:///home/user/Adel1637/node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-italic.woff2);font-weight:200 900;font-style:italic}
+@font-face{font-family:Naskh;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-400-normal.woff2);font-weight:400;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}@font-face{font-family:Naskh;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-600-normal.woff2);font-weight:600;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}@font-face{font-family:Naskh;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-700-normal.woff2);font-weight:700;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Kufi;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-kufi-arabic/files/noto-kufi-arabic-arabic-700-normal.woff2);font-weight:700;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}@font-face{font-family:Kufi;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-kufi-arabic/files/noto-kufi-arabic-arabic-800-normal.woff2);font-weight:800;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}
+@page{size:148mm 210mm;margin:18mm 16mm 20mm;@bottom-center{content:counter(page);font:9pt Serif4,serif;color:#8A857E}}
+@page :first{margin:0;@bottom-center{content:none}}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1F1D1A;--mute:#6B6660;--rule:#E4DFD8;--tint:#F6F1EA;--acc:#B4532A}
+body{font-family:Serif4,serif;font-size:10.6pt;line-height:1.58;color:var(--ink)}
+h1,h2,h3,.kicker,.num{font-family:Fraunces,serif}
+p{margin-bottom:3mm}
+.cover{width:148mm;height:210mm;background:#1C1B19;color:#F4EFE7;padding:22mm 16mm;display:flex;flex-direction:column;break-after:page}
+.cover .tag{font-family:Serif4,serif;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:#C9A98F}
+.cover h1{font-size:40pt;font-weight:600;line-height:1.08;margin-top:38mm;letter-spacing:-.8pt}
+.cover .bar{width:22mm;height:1.2mm;background:var(--acc);margin:9mm 0}
+.cover .sub{font-size:15pt;color:#D9D2C7}
+.cover .by{margin-top:auto;font-family:Serif4,serif;font-size:10pt;color:#C9C2B7;direction:ltr;text-align:left}
+.cover .sample{font-size:9.5pt;color:#C9A98F;margin-top:3mm}
+.page{break-after:page}
+h1.sec{font-size:24pt;font-weight:600;margin-bottom:8mm;letter-spacing:-.4pt}
+.toc li{list-style:none;display:flex;gap:4mm;align-items:baseline;padding:2.6mm 0;border-bottom:.25mm solid var(--rule)}
+.toc .n{font-family:Fraunces,serif;color:var(--acc);font-weight:600;min-width:7mm}
+.toc .soon{margin-inline-start:auto;font-size:.8em;color:var(--mute)}
+.toc .sub{display:block;font-size:.86em;color:var(--mute)}
+.steps{margin:4mm 0 5mm;padding-inline-start:6mm}.steps li{margin-bottom:1.6mm}
+.note{font-size:.9em;color:var(--mute);border-top:.25mm solid var(--rule);padding-top:4mm;margin-top:8mm}
+.opener{display:flex;flex-direction:column;justify-content:center;min-height:165mm;break-after:page}
+.opener .num{font-size:92pt;line-height:1;color:var(--acc);font-weight:500;font-family:Fraunces,serif}
+.opener .ch{font-size:9.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:6mm}
+.opener h1{font-size:32pt;font-weight:600;margin:2mm 0 8mm;letter-spacing:-.6pt}
+.opener p{font-size:1.12em;max-width:108mm}
+.lesson{break-before:page}
+.kicker{font-size:8.6pt;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:1mm}
+h2{font-size:21pt;font-weight:600;line-height:1.25;margin-bottom:4mm;letter-spacing:-.3pt}
+.idea{font-size:1.14em;font-style:italic;border-inline-start:1mm solid var(--acc);padding-inline-start:4mm;margin:0 0 6mm;color:#3A3631}
+h3{font-size:10.4pt;font-weight:600;margin:5mm 0 2mm;break-after:avoid;letter-spacing:.02em;}
+ol,ul.x{padding-inline-start:5.5mm;margin-bottom:2mm;break-before:avoid}li{break-inside:avoid}ol li,ul.x li{margin-bottom:1.3mm}
+ul.x{list-style:none;padding-inline-start:0}ul.x li{padding-inline-start:5.5mm;position:relative}
+ul.x li::before{content:'×';position:absolute;inset-inline-start:0;color:var(--acc);font-family:Fraunces,serif;font-weight:600}
+figure{break-inside:avoid;margin:5mm 0 6mm}
+figure img{width:100%;display:block;border:.3mm solid var(--rule);border-radius:1.2mm}
+figure.stack div{margin:0 auto 2mm;position:relative;width:68%}
+figure.side{display:grid;grid-template-columns:1fr 1fr;gap:3mm;width:100%;margin-inline:auto}figure.side div{position:relative}figure.side figcaption{grid-column:1/-1}
+.cap{position:absolute;top:1.6mm;inset-inline-start:1.6mm;font-family:Fraunces,serif;font-size:7.4pt;font-weight:700;color:#fff;padding:.5mm 2.2mm;border-radius:1mm;line-height:1.5}
+.cap.b{background:#A8321F}.cap.a{background:#1F6F52}
+figcaption{font-size:.82em;color:var(--mute);margin-top:1mm}
+aside{break-inside:avoid;background:var(--tint);border-radius:2mm;padding:4.5mm 5mm;margin-top:5mm}
+aside b{font-family:Fraunces,serif;color:var(--acc);font-weight:600;display:block;margin-bottom:1mm}
+aside p{margin:0}
+.sum li{margin-bottom:2mm}
+.next{margin-top:10mm;border-top:.25mm solid var(--rule);padding-top:5mm;color:var(--mute);font-size:.92em}
+.ltr{direction:ltr;unicode-bidi:isolate}
+</style></head><body>
+<div class="cover"><span class="tag">AG Studio</span><h1>UI Design Foundations</h1><div class="bar"></div><div class="sub">A practical course for beginners</div><div class="sample">Sample edition · Chapter 1</div><div class="by">Adel Goucem · AG Studio</div></div>
+<div class="page"><h1 class="sec">Contents</h1><ul class="toc">
+<li><span class="n">1</span><span>Color & type<span class="sub">One accent color · Neutrals for the rest · Two fonts at most · A type scale · Enough contrast</span></span></li><li><span class="n">2</span><span>Spacing & layout</span><span class="soon">in the full edition</span></li><li><span class="n">3</span><span>Dark mode & accessibility</span><span class="soon">in the full edition</span></li><li><span class="n">4</span><span>Depth & shape</span><span class="soon">in the full edition</span></li><li><span class="n">5</span><span>Icons & images</span><span class="soon">in the full edition</span></li><li><span class="n">6</span><span>Motion</span><span class="soon">in the full edition</span></li>
+</ul></div>
+<div class="page"><h1 class="sec">How this course works</h1><p>This course teaches interface design through rules you can apply the same day. Each lesson covers one rule, and every rule is shown on the same fictional page, before and after, so you can see exactly what changes.</p><p>You do not need to know how to draw, and you do not need to code. You need a design tool (the free plan of Figma is enough), a screen you want to improve, and about fifteen minutes per lesson.</p><ol class="steps"><li>Read the rule and the reason behind it.</li><li>Study the before and after figure.</li><li>Do the short “Try it now” on your own screen.</li><li>At the end of the chapter, do the exercise.</li></ol><p class="note">All interfaces shown in this course are fictional and were made for teaching.</p></div>
+<div class="opener"><div class="num">1</div><div class="ch">Chapter 1</div><h1>Color & type</h1><p>Before a visitor reads a single word, they have already judged your interface by its colors and its letters. This chapter gives you five rules that make that first impression calm and clear.</p></div>
+
+<section class="lesson">
+  <p class="kicker">Lesson 1.1</p>
+  <h2>One accent color</h2>
+  <p class="idea">Choose one color for actions, and use it nowhere else.</p>
+  <h3>Why it matters</h3><p>Color is a signal. When a button, a link, an icon and a heading each use a different bright color, nothing stands out and the eye does not know where to click.</p><p>A single accent color teaches the user one simple thing: this color means “you can act here”. The interface becomes easier to scan, and the main action becomes obvious.</p>
+  <figure class="stack">
+    <div><img src="file:///home/user/Adel1637/course/fig/1b.png"><span class="cap b">Before</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/1a.png"><span class="cap a">After</span></div>
+    <figcaption>Figure 1.1 — One accent color</figcaption>
+  </figure>
+  <h3>How to apply it</h3><ol><li>Pick one accent color that fits the brand.</li><li>Use it for primary buttons, links and the active state of controls.</li><li>Keep red and green for errors and success only.</li><li>Remove color from anything that is not an action.</li></ol>
+  <h3>Mistakes to avoid</h3><ul class="x"><li>A different color for every button.</li><li>The accent color used as decoration, on large backgrounds or headings.</li><li>An accent so light that white text on it becomes hard to read.</li></ul>
+  <aside><b>Try it now</b><p>Count the bright colors on one of your screens. If you find more than one, decide which one means “action” and turn the others into neutrals.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">Lesson 1.2</p>
+  <h2>Neutrals for the rest</h2>
+  <p class="idea">Backgrounds, text and borders live in white and grays.</p>
+  <h3>Why it matters</h3><p>Neutral surfaces let the content and the accent color breathe. Pastel sections compete with the content and make a page look like a patchwork.</p><p>A common guideline is 60–30–10: about 60% of the screen in a neutral background, 30% in secondary neutrals such as cards and text, and 10% in the accent color.</p>
+  <figure class="stack">
+    <div><img src="file:///home/user/Adel1637/course/fig/2b.png"><span class="cap b">Before</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/2a.png"><span class="cap a">After</span></div>
+    <figcaption>Figure 1.2 — Neutrals for the rest</figcaption>
+  </figure>
+  <h3>How to apply it</h3><ol><li>Build a gray scale of five to nine steps, from almost white to almost black.</li><li>Use the lightest step for the page background, and white or the next step for cards.</li><li>Use the darkest steps for titles and body text.</li><li>Use a light step for borders and dividers.</li></ol>
+  <h3>Mistakes to avoid</h3><ul class="x"><li>A different background color for every section.</li><li>Too many grays that look almost the same.</li><li>Tinted backgrounds behind long text.</li></ul>
+  <aside><b>Try it now</b><p>Take one colorful section of your page and rebuild it with only white, two grays and your accent color.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">Lesson 1.3</p>
+  <h2>Two fonts at most</h2>
+  <p class="idea">One font family is often enough. Never use more than two.</p>
+  <h3>Why it matters</h3><p>Every typeface has a voice. Three voices on one screen is noise, and the interface looks unfinished.</p><p>Hierarchy should come from size and weight, not from a new font. A single family with several weights gives you everything you need.</p>
+  <figure class="stack">
+    <div><img src="file:///home/user/Adel1637/course/fig/3b.png"><span class="cap b">Before</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/3a.png"><span class="cap a">After</span></div>
+    <figcaption>Figure 1.3 — Two fonts at most</figcaption>
+  </figure>
+  <h3>How to apply it</h3><ol><li>Choose one sans-serif family that has at least three weights.</li><li>Use the weights (regular, semibold, bold) to create hierarchy.</li><li>Add a second family only for a clear reason, such as code in a monospace font.</li><li>For Arabic and Latin text together, choose two families with a similar weight and visual size.</li></ol>
+  <h3>Mistakes to avoid</h3><ul class="x"><li>A decorative font for body text.</li><li>A different font for buttons.</li><li>Bold created by the software instead of a real bold weight.</li></ul>
+  <aside><b>Try it now</b><p>List the fonts used on your screen. Replace all of them with one family and rebuild the hierarchy with weight only.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">Lesson 1.4</p>
+  <h2>A type scale</h2>
+  <p class="idea">Use a few text sizes, with clear steps between them.</p>
+  <h3>Why it matters</h3><p>Random sizes such as 15, 17, 19 and 24 look almost the same, so the user cannot tell what is important.</p><p>A scale gives rhythm. When each size is clearly bigger than the previous one, titles, subtitles and body text are recognized at a glance.</p>
+  <figure class="side">
+    <div><img src="file:///home/user/Adel1637/course/fig/4b.png"><span class="cap b">Before</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/4a.png"><span class="cap a">After</span></div>
+    <figcaption>Figure 1.4 — A type scale</figcaption>
+  </figure>
+  <h3>How to apply it</h3><ol><li>Start from a body size of 16 px.</li><li>Choose a simple scale, for example 16, 24, 32 and 48.</li><li>Limit yourself to four to six sizes and give each one a role: display, title, subtitle, body, caption.</li><li>Set the line height to about 1.5 for body text and about 1.2 for large titles.</li></ol>
+  <h3>Mistakes to avoid</h3><ul class="x"><li>A title only two pixels bigger than the body text.</li><li>A new size invented for every screen.</li><li>Body text smaller than a card title placed next to it.</li></ul>
+  <aside><b>Try it now</b><p>Write down every text size on your screen. Reduce the list to five sizes and apply them.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">Lesson 1.5</p>
+  <h2>Enough contrast</h2>
+  <p class="idea">Text must be readable by everyone, on every screen.</p>
+  <h3>Why it matters</h3><p>Light gray text looks elegant on a large monitor, but it disappears on a phone in daylight, and many people with low vision cannot read it at all.</p><p>The WCAG AA standard gives a clear target: a contrast ratio of at least 4.5:1 for normal text, and 3:1 for large text and for interface elements.</p>
+  <figure class="side">
+    <div><img src="file:///home/user/Adel1637/course/fig/5b.png"><span class="cap b">Before</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/5a.png"><span class="cap a">After</span></div>
+    <figcaption>Figure 1.5 — Enough contrast</figcaption>
+  </figure>
+  <h3>How to apply it</h3><ol><li>Check every pair of text and background with a contrast checker.</li><li>Use a dark gray on white for body text. In the figure, the pale gray reaches only 1.7:1, and the dark gray reaches 10.3:1.</li><li>Check white text on your accent color too.</li><li>Make sure placeholder and helper text can still be read.</li></ol>
+  <h3>Mistakes to avoid</h3><ul class="x"><li>Gray text on a gray background.</li><li>Text placed on a photo with no dark layer behind it.</li><li>Information given by color alone.</li></ul>
+  <aside><b>Try it now</b><p>Test the three lightest texts on your screen in a contrast checker. Darken every one that is under 4.5:1.</p></aside>
+</section>
+<section class="lesson"><p class="kicker">Chapter 1</p><h2>Chapter summary</h2><ol class="sum"><li>One accent color, for actions only.</li><li>White and grays for everything else.</li><li>One font family, two at most.</li><li>Four to six text sizes with clear steps.</li><li>A contrast ratio of at least 4.5:1 for text.</li></ol>
+<aside><b>Exercise: Redesign one screen</b><ol><li>Choose one screen from a project of yours, or redraw a simple landing page.</li><li>Apply the five rules in order, one at a time.</li><li>Keep a copy of the screen after each rule, so you end with six versions.</li><li>Place the first and the last version side by side and note what changed.</li></ol></aside>
+<p class="next">Chapter 2 — Spacing & layout · <span class="ltr">youtube.com/@AGStudioDev</span></p></section>
+</body></html>
