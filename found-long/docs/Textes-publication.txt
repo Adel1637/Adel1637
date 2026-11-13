@@ -1,0 +1,131 @@
+UI design foundations for beginners — AG Studio
+Série : Learn UI/UX · Fondamentaux UI · Durée : 4:48 · Texte à l'écran + effets sonores, sans musique
+Accroche : « Why does your UI look amateur? » / « لماذا تبدو واجهتك غير احترافية؟ »
+
+==================================================
+YOUTUBE (vidéo longue)
+==================================================
+
+TITRE
+UI Design Foundations for Beginners: 30 Basics, Before & After | أساسيات تصميم الواجهات للمبتدئين
+
+DESCRIPTION (EN)
+Why does your UI look amateur? 6 foundations, 30 basics, each shown on a fictional interface, before and after.
+
+CHAPTERS
+0:00 Part 1 · Color & type
+0:48 Part 2 · Spacing & layout
+1:33 Part 3 · Dark mode & accessibility
+2:18 Part 4 · Depth & shape
+3:03 Part 5 · Icons & images
+3:48 Part 6 · Motion
+4:33 Recap
+
+COLOR & TYPE
+- One accent color: Use it only for actions: buttons, links.
+- Neutrals for the rest: Backgrounds and text: white and grays.
+- Two fonts max: One family is often enough.
+- A type scale: Few sizes, clear steps: 48, 24, 16.
+- Enough contrast: Gray on white must stay readable.
+
+SPACING & LAYOUT
+- A spacing scale: Use only 8, 16, 24, 32…
+- Group related things: Label close to its field, groups apart.
+- A column grid: 12 columns keep blocks in line.
+- Align your edges: One left edge for title, text and button.
+- A max width: Very wide lines are hard to read.
+
+DARK MODE & ACCESSIBILITY
+- Enough contrast: Dim text on black fails WCAG AA.
+- Never color alone: Add an icon or a word to every status.
+- Visible focus: Show which field is active.
+- Dark gray, not black: Surfaces show depth on dark gray.
+- Softer colors: Neon colors glare on dark backgrounds.
+
+DEPTH & SHAPE
+- Space, not lines: Group with spacing and a soft background.
+- Soft shadows: Blurred, light and slightly below.
+- Two or three levels: Higher elements cast bigger shadows.
+- One corner radius: Pick one radius and reuse it.
+- Nested radius: Inner radius = outer radius − padding.
+
+ICONS & IMAGES
+- One icon family: All outline or all filled, never mixed.
+- Same stroke weight: One stroke width for every icon.
+- Label unclear icons: An icon alone can be misread.
+- Overlay behind text: Text on photos needs a dark gradient.
+- Consistent image ratios: One ratio, cropped to fit.
+
+MOTION
+- Keep it short: Most UI motion: about 150 to 300 ms.
+- Ease out: Fast start, gentle stop. Never linear.
+- Motion with a purpose: Move only what changed.
+- Show the press: A tap needs a visible pressed state.
+- Loading and success: Skeletons while loading, a check when done.
+
+The interfaces in this video are fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+لماذا تبدو واجهتك غير احترافية؟ 6 أسس و30 قاعدة، كل واحدة على واجهة خيالية، قبل وبعد.
+
+الألوان والخطوط
+- لون تمييز واحد: استخدمه للإجراءات فقط: الأزرار والروابط.
+- ألوان محايدة للباقي: الخلفيات والنصوص: الأبيض ودرجات الرمادي.
+- خطّان كحدّ أقصى: عائلة خطوط واحدة تكفي غالبًا.
+- مقياس أحجام للخطوط: أحجام قليلة بدرجات واضحة: 48، 24، 16.
+- تباين كافٍ: الرمادي على الأبيض يجب أن يبقى مقروءًا.
+
+المسافات والتخطيط
+- مقياس مسافات: استخدم فقط 8 و16 و24 و32…
+- جمّع العناصر المترابطة: العنوان قريب من حقله، والمجموعات متباعدة.
+- شبكة أعمدة: 12 عمودًا تُبقي العناصر منتظمة.
+- وحّد الحواف: حافة يسرى واحدة للعنوان والنص والزر.
+- عرض أقصى: الأسطر العريضة جدًا صعبة القراءة.
+
+الوضع الداكن وإمكانية الوصول
+- تباين كافٍ: النص الباهت على الأسود لا يجتاز WCAG AA.
+- لا تعتمد على اللون وحده: أضف أيقونة أو كلمة لكل حالة.
+- تركيز ظاهر: أظهر الحقل النشط بوضوح.
+- رمادي داكن لا أسود: الأسطح تُظهر العمق على خلفية رمادية داكنة.
+- ألوان أهدأ: الألوان الفاقعة تُبهر العين على الخلفيات الداكنة.
+
+العمق والأشكال
+- مسافات بدل الخطوط: جمّع بالمسافات وخلفية خفيفة.
+- ظلال ناعمة: ضبابية وخفيفة ومنخفضة قليلًا.
+- مستويان أو ثلاثة: العناصر الأعلى تُلقي ظلالًا أكبر.
+- تدوير زوايا موحّد: اختر قيمة تدوير واحدة وأعد استخدامها.
+- تدوير متداخل: التدوير الداخلي = الخارجي − الحشو.
+
+الأيقونات والصور
+- عائلة أيقونات واحدة: كلها محدّدة أو كلها ممتلئة، دون خلط.
+- سُمك خط موحّد: سُمك خط واحد لكل الأيقونات.
+- أضف نصًا للأيقونات الغامضة: الأيقونة وحدها قد تُفهم خطأ.
+- طبقة داكنة خلف النص: النص فوق الصور يحتاج تدرّجًا داكنًا.
+- نِسب صور موحّدة: نسبة واحدة مع قصّ مناسب.
+
+الحركة
+- اجعلها قصيرة: معظم حركات الواجهة: من 150 إلى 300 ملّي ثانية تقريبًا.
+- تباطؤ في النهاية: بداية سريعة وتوقّف هادئ، لا حركة خطية.
+- حركة لها هدف: حرّك فقط ما تغيّر.
+- أظهر الضغط: كل لمسة تحتاج حالة ضغط ظاهرة.
+- التحميل والنجاح: هياكل أثناء التحميل، وعلامة صح عند الانتهاء.
+
+الواجهات في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #learnuiux #designfundamentals #تصميم_واجهات #تجربة_المستخدم
+
+TAGS (champ « Tags » de YouTube)
+ui design basics, ui design for beginners, design fundamentals, color in ui, typography for ui, spacing and layout, dark mode design, accessibility design, ui icons, ui animation, أساسيات تصميم الواجهات, تعلم تصميم الواجهات
+
+COMMENTAIRE À ÉPINGLER
+Which foundation is the hardest for you? 👇
+ما الأساس الأصعب بالنسبة لك؟ 👇
+
+==================================================
+NOTES
+==================================================
+- Relier les 6 Shorts « … basics » à cette vidéo avec la fonction « vidéo associée ».
+- Miniature : Miniature-YouTube.png (1280×720).

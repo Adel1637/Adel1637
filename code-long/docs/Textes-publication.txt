@@ -1,0 +1,79 @@
+Code for designers: what to learn, and why — AG Studio
+Série : Learn UI/UX · Durée : 1:56 · Texte à l'écran + effets sonores, sans musique
+Accroche : « Should designers learn to code? » / « هل يجب على المصمم تعلّم البرمجة؟ »
+
+==================================================
+YOUTUBE (vidéo longue)
+==================================================
+
+TITRE
+Should Designers Learn to Code? 10 Languages for UI/UX | هل يجب على المصمم تعلّم البرمجة؟
+
+DESCRIPTION (EN)
+Designers don't have to code, but some languages make you better at UX, and some build the UI itself.
+
+CHAPTERS
+0:00 Part 1 · For UX · HTML
+0:15 CSS
+0:25 JavaScript basics
+0:34 SwiftUI or Compose
+0:44 Python
+0:53 Part 2 · For UI · Web: HTML + CSS
+1:05 Interactive web: React
+1:15 iPhone: Swift
+1:24 Android: Kotlin
+1:33 Both: Flutter
+1:43 Your path
+
+FOR UX
+- HTML: structure and accessibility.
+- CSS: spacing, layout, responsive.
+- JavaScript basics: loading, error and success states.
+- SwiftUI or Compose: native app components.
+- Python: surveys and A/B tests.
+
+FOR UI
+- Web: HTML + CSS.
+- Interactive web: JavaScript or TypeScript + React.
+- iPhone: Swift with SwiftUI.
+- Android: Kotlin with Jetpack Compose.
+- Both mobiles: Dart with Flutter.
+
+Start with CSS. Then pick a platform.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+المصمم ليس مضطرًا للبرمجة، لكن بعض اللغات تجعلك أفضل في تجربة المستخدم، وبعضها يبني الواجهة نفسها.
+
+لتجربة المستخدم
+- HTML: الهيكل وإمكانية الوصول.
+- CSS: المسافات والتخطيط والتجاوب.
+- أساسيات JavaScript: حالات التحميل والخطأ والنجاح.
+- SwiftUI أو Compose: مكوّنات التطبيقات الأصلية.
+- Python: الاستبيانات واختبارات A/B.
+
+لبناء الواجهات
+- الويب: HTML وCSS.
+- الويب التفاعلي: JavaScript أو TypeScript مع React.
+- iPhone: لغة Swift مع SwiftUI.
+- Android: لغة Kotlin مع Jetpack Compose.
+- الاثنان معًا: لغة Dart مع Flutter.
+
+ابدأ بـ CSS، ثم اختر منصّتك.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uxdesign #frontend #css #learnuiux #تصميم_واجهات #البرمجة_للمصممين
+
+TAGS (champ « Tags » de YouTube)
+should designers learn to code, coding for designers, css for designers, html css for beginners, swiftui, jetpack compose, flutter, react for designers, ui ux programming languages, البرمجة للمصممين, تعلم CSS, تصميم واجهات
+
+COMMENTAIRE À ÉPINGLER
+Designer or developer: which path are you on? 👇
+مصمم أم مطوّر: أيّ مسار تسلك؟ 👇
+
+==================================================
+NOTES
+==================================================
+- Relier les 2 Shorts (« The one language every designer should know », « Web, iPhone or Android ») à cette vidéo.
+- Miniature : Miniature-YouTube.png (1280×720).

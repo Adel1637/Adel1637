@@ -1,0 +1,88 @@
+Learn UI/UX: the best resources for beginners — AG Studio
+Série : Learn UI/UX · Durée : 3:29 · Texte à l'écran + effets sonores, sans musique
+
+==================================================
+YOUTUBE (vidéo longue)
+==================================================
+
+TITRE
+Learn UI/UX: The Best Free & Paid Resources for Beginners | أفضل مصادر تعلّم UI/UX
+
+DESCRIPTION (EN)
+The best resources to learn UI/UX as a beginner: 7 free, 5 paid.
+Start free. Pay only when you know what's missing.
+
+CHAPTERS
+0:00 Intro
+0:11 Part 1: Free · Laws of UX
+0:29 Nielsen Norman Group
+0:43 Material Design 3
+0:57 Apple Human Interface Guidelines
+1:11 WebAIM Contrast Checker
+1:25 Figma
+1:39 W3C Internationalization (bonus RTL)
+1:53 Part 2: Paid · Refactoring UI
+2:11 Practical UI
+2:25 Don't Make Me Think
+2:39 Google UX Design Certificate
+2:53 Mobbin
+3:07 Your learning path
+
+FREE
+1. Laws of UX — lawsofux.com
+2. Nielsen Norman Group — nngroup.com/articles
+3. Material Design 3 — m3.material.io
+4. Apple Human Interface Guidelines — developer.apple.com/design/human-interface-guidelines
+5. WebAIM Contrast Checker — webaim.org/resources/contrastchecker
+6. Figma — figma.com
+7. W3C Internationalization (RTL) — w3.org/International
+
+PAID
+8. Refactoring UI — Adam Wathan & Steve Schoger — refactoringui.com
+9. Practical UI — Adham Dannaway — practical-ui.com
+10. Don't Make Me Think (Revisited) — Steve Krug
+11. Google UX Design Professional Certificate — coursera.org
+12. Mobbin — mobbin.com
+
+Not sponsored.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+أفضل المصادر لتعلّم UI/UX للمبتدئين: ٧ مجانية و٥ مدفوعة.
+ابدأ بالمجاني، وادفع فقط حين تعرف ما ينقصك.
+
+المجانية
+١. Laws of UX — علم النفس وراء كل واجهة ناجحة
+٢. Nielsen Norman Group — قواعد UX مبنية على أبحاث حقيقية
+٣. Material Design 3 — نظام Google للتصميم على أندرويد والويب
+٤. Apple Human Interface Guidelines — قواعد Apple الرسمية لتصميم تطبيقات iPhone
+٥. WebAIM Contrast Checker — تأكّد أن نصوصك سهلة القراءة
+٦. Figma — أداة التصميم، والخطة المجانية تكفي للبدء
+٧. W3C Internationalization — كيف تبني واجهات من اليمين إلى اليسار بشكل صحيح
+
+المدفوعة
+٨. Refactoring UI — نصائح عملية لتحسين مظهر واجهاتك
+٩. Practical UI — قواعد واضحة للواجهات تطبّقها فورًا
+١٠. Don't Make Me Think — الكتاب الكلاسيكي عن سهولة الاستخدام
+١١. شهادة Google في تصميم UX — دورة كاملة ومنظّمة مع شهادة
+١٢. Mobbin — مكتبة لشاشات تطبيقات حقيقية تتعلّم منها
+
+الروابط في الوصف أعلاه. ليس إعلانًا ممولًا.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #uxdesign #learnuiux #figma #productdesign #تصميم_واجهات #تجربة_المستخدم
+
+TAGS (champ « Tags » de YouTube)
+learn ui ux, ui ux for beginners, ui design resources, ux design resources, free ui ux resources, figma for beginners, refactoring ui, practical ui, laws of ux, nielsen norman group, material design 3, apple human interface guidelines, rtl design, تعلم تصميم الواجهات, تجربة المستخدم
+
+COMMENTAIRE À ÉPINGLER
+Which one are you starting with? 👇
+بأي مصدر ستبدأ؟ 👇
+
+==================================================
+NOTES
+==================================================
+- Chapitres : YouTube les détecte automatiquement depuis la liste horodatée (premier à 0:00).
+- Lier le Short « 6 free resources to learn UI/UX » à cette vidéo (vidéo associée).
+- Miniature : Miniature-YouTube.png (1280×720).

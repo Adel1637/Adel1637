@@ -1,0 +1,52 @@
+Color & type basics — AG Studio
+Série : Learn UI/UX · Durée : 50 s · Sans musique
+Accroche : « Your colors and fonts are fighting. » / « ألوانك وخطوطك تتصارع. »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+Color & Type Basics for UI | أساسيات الألوان والخطوط
+
+DESCRIPTION (EN)
+Your colors and fonts are fighting. 5 basics to fix it:
+1. One accent color, only for actions (buttons, links).
+2. Neutrals for the rest: white and grays.
+3. Two fonts max — one family is often enough.
+4. A type scale: few sizes, clear steps (48, 24, 16).
+5. Enough contrast: gray on white must stay readable (WCAG AA).
+The interface in this video is fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+ألوانك وخطوطك تتصارع. ٥ أساسيات لإصلاح ذلك:
+١. لون تمييز واحد للإجراءات فقط (الأزرار والروابط).
+٢. ألوان محايدة للباقي: الأبيض ودرجات الرمادي.
+٣. خطّان كحدّ أقصى، وعائلة خطوط واحدة تكفي غالبًا.
+٤. مقياس أحجام للخطوط: أحجام قليلة بدرجات واضحة (48، 24، 16).
+٥. تباين كافٍ: الرمادي على الأبيض يجب أن يبقى مقروءًا (WCAG AA).
+الواجهة في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #colortheory #typography #learnuiux #تصميم_واجهات #الألوان #الخطوط
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+Your colors and fonts are fighting. 5 basics to fix it 📌
+More UI/UX fixes on my profile.
+
+LÉGENDE (AR)
+ألوانك وخطوطك تتصارع. ٥ أساسيات لإصلاح ذلك 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uiux #uidesign #typography #designtok #learnuiux #تصميم_واجهات #تعلم_التصميم
+
+COMMENTAIRE À ÉPINGLER
+How many colors does your design use? 👇
+كم لونًا يستخدم تصميمك؟ 👇

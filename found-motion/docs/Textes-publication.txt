@@ -1,0 +1,52 @@
+Motion basics — AG Studio
+Série : Learn UI/UX · Fondamentaux UI · Durée : 50 s · Sans musique
+Accroche : « This animation is too slow. » / « هذه الحركة بطيئة جدًا. »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+Motion Basics for UI | أساسيات الحركة في الواجهات
+
+DESCRIPTION (EN)
+This animation is too slow. 5 basics to fix it:
+1. Keep it short: Most UI motion: about 150 to 300 ms.
+2. Ease out: Fast start, gentle stop. Never linear.
+3. Motion with a purpose: Move only what changed.
+4. Show the press: A tap needs a visible pressed state.
+5. Loading and success: Skeletons while loading, a check when done.
+The interface in this video is fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+هذه الحركة بطيئة جدًا. 5 أساسيات لإصلاح ذلك:
+1. اجعلها قصيرة: معظم حركات الواجهة: من 150 إلى 300 ملّي ثانية تقريبًا.
+2. تباطؤ في النهاية: بداية سريعة وتوقّف هادئ، لا حركة خطية.
+3. حركة لها هدف: حرّك فقط ما تغيّر.
+4. أظهر الضغط: كل لمسة تحتاج حالة ضغط ظاهرة.
+5. التحميل والنجاح: هياكل أثناء التحميل، وعلامة صح عند الانتهاء.
+الواجهة في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #motiondesign #microinteractions #learnuiux #تصميم_واجهات #حركة #تجربة_المستخدم
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+This animation is too slow. 5 basics to fix it 📌
+More UI/UX fixes on my profile.
+
+LÉGENDE (AR)
+هذه الحركة بطيئة جدًا. 5 أساسيات لإصلاح ذلك 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uiux #uidesign #motiondesign #microinteractions #designtok #learnuiux #تصميم_واجهات #تعلم_التصميم
+
+COMMENTAIRE À ÉPINGLER
+What duration do you use for animations? 👇
+ما المدة التي تستخدمها للحركات؟ 👇

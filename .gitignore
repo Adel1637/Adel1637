@@ -1,0 +1,4 @@
+node_modules/
+out/
+livraisons/
+*/audio/*.wav
