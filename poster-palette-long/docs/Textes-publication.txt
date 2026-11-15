@@ -1,0 +1,46 @@
+VIDÉO LONGUE YOUTUBE — How to choose your color palette, step by step
+Format 16:9 · 1:49 · sans musique (effets sonores seulement) · -14 LUFS
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+How to choose your color palette, step by step | كيف تختار لوحة ألوانك خطوة بخطوة
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+Stop picking colors at random. This is a complete method to build a color palette for a website or an app, step by step: your first color, 9 shades, tinted grays, status colors, the 60–30–10 rule, contrast tests and dark mode. Plus 4 mistakes to avoid.
+
+توقّف عن اختيار الألوان عشوائيًا. في هذا الفيديو طريقة كاملة لبناء لوحة ألوان لموقع أو تطبيق، خطوة بخطوة: لونك الأول، و9 درجات منه، ورمادي مائل إلى لونك، وألوان الحالات، وقاعدة 60–30–10، واختبار التباين والوضع الداكن. ومعها 4 أخطاء يجب تجنّبها.
+
+Chapters / الفصول
+0:00 Pick your first color · اختر لونك الأول
+0:16 Build 9 shades · ابنِ 9 درجات
+0:30 Add tinted grays · أضف رماديًا مائلًا إلى لونك
+0:43 Add status colors · أضف ألوان الحالات
+0:56 Use the 60–30–10 rule · طبّق قاعدة 60–30–10
+1:09 Test it: contrast and dark mode · اختبرها: التباين والوضع الداكن
+1:22 4 mistakes to avoid · أربعة أخطاء يجب تجنّبها
+1:35 Recap · ملخّص
+
+All interfaces in this video are fictional examples.
+جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+
+#uidesign #uxdesign #colorpalette #webdesign #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+color palette, how to choose a color palette, ui color palette, color palette for website, color palette for app, ui design, ux design, learn ui ux, ui design for beginners, design system colors, color shades, tinted grays, 60 30 10 rule, color contrast, wcag contrast, dark mode design, status colors, web design tips, لوحة الألوان, تصميم واجهات, تعلم ui ux, تصميم المواقع, تصميم التطبيقات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which step do you skip most often? Tell me below 👇
+أيّ خطوة تتجاهلها غالبًا؟ أخبرني في التعليقات 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
