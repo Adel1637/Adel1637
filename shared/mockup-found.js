@@ -116,46 +116,67 @@ export function makeFoundMockups(M, A) {
   };
 
   // ================================================================ 3. DARK MODE & ACCESSIBILITY (960 x 1300)
-  const ROWS = [['Northfield Studio', '$1,240', true], ['Blue Harbor', '$860', false], ['Cedar & Co', '$2,100', true], ['Lumen Labs', '$430', false], ['Atlas Goods', '$1,780', true]];
+  // A sober billing table (graphite + one calm blue), not cards and neon. 0 = mistake -> 1 = fix.
+  const ROWS = [['Northfield Studio', 'INV-0142', 'Nov 28', '$1,240', true], ['Blue Harbor', 'INV-0141', 'Nov 21', '$860', false], ['Cedar & Co', 'INV-0140', 'Nov 18', '$2,100', true], ['Lumen Labs', 'INV-0139', 'Nov 12', '$430', false], ['Atlas Goods', 'INV-0138', 'Nov 09', '$1,780', true]];
   const darkA11y = {
     w: 960, h: 1300, bg: '#000000',
     R: { list: [30, 206, 900, 520], status: [690, 206, 240, 520], search: [44, 112, 620, 74], surface: [30, 206, 900, 520], chart: [44, 830, 872, 380] },
     draw(ctx, st) {
-      const [k1, k2, k3, k4, k5] = K(st), px = st.px || 1;
-      const bg = mix('#000000', '#121318', k4), surf = mix('#000000', '#1C1E24', k4), line = mix('#1F2937', '#2A2E37', k4);
-      const t1 = mix('#4B5563', '#F3F4F6', k1), t2 = mix('#374151', '#A1A1AA', k1);
-      const acc = mix('#8B2CFF', '#A78BFA', k5), green = mix('#00FF6A', '#4ADE80', k5), red = mix('#FF0033', '#F87171', k5);
+      const [k1, k2, k3, k4, k5] = K(st);
+      const bg = mix('#000000', '#111316', k4), surf = mix('#000000', '#181B1F', k4), raised = mix('#0A0A0A', '#1F2328', k4);
+      const line = mix('#1A1A1A', '#2B3036', k4), head = mix('#000000', '#1C1F24', k4);
+      const t1 = mix('#4B5563', '#E8EAED', k1), t2 = mix('#2F3540', '#9AA1AB', k1);
+      const acc = mix('#0A5CFF', '#5B8DEF', k5), green = mix('#00FF6A', '#3FB950', k5), red = mix('#FF0033', '#F85149', k5);
       ctx.fillStyle = bg; ctx.fillRect(0, 0, 960, 1300);
-      ctx.fillStyle = acc; ctx.beginPath(); ctx.arc(52, 44, 14, 0, TAU); ctx.fill();
-      T(ctx, 'Invoices', 76, 52, 22, 800, t1); ctx.fillStyle = line; ctx.fillRect(0, 86, 960, 1);
-      // search field, focused: no ring -> visible ring
-      box(ctx, 60, 122, 580, 54, 12, surf, line, 1.5);
-      T(ctx, 'Search clients', 100, 156, 17, 500, t2);
-      ctx.fillStyle = t1; ctx.fillRect(236, 136, 2, 26);
-      if (k3 > 0) { ctx.save(); ctx.globalAlpha = k3; ctx.lineWidth = 3.5; ctx.strokeStyle = acc; rrect(ctx, 54, 116, 592, 66, 15); ctx.stroke(); ctx.restore(); }
-      box(ctx, 680, 122, 220, 54, 12, acc); T(ctx, 'New invoice', 790, 156, 17, 700, mix('#000000', '#14111F', k5), 'center');
-      // rows: status by color only -> color + icon + word
-      ROWS.forEach(([n, a, ok], i) => {
-        const y = 216 + i * 100;
-        box(ctx, 44, y, 872, 86, 14, surf, k4 < 0.5 ? line : null, 1.5);
-        T(ctx, n, 72, y + 38, 19, 700, t1); T(ctx, 'Due Nov 28', 72, y + 64, 15, 500, t2);
-        T(ctx, a, 640, y + 50, 19, 700, t1, 'right');
-        const col = ok ? green : red;
-        ctx.fillStyle = col; ctx.beginPath(); ctx.arc(lerp(860, 722, k2), y + 43, 9, 0, TAU); ctx.fill();
+      // top bar: square mark, product name, tabs, avatar
+      box(ctx, 44, 30, 28, 28, 7, acc); T(ctx, 'Ledger', 84, 52, 21, 800, t1);
+      ['Invoices', 'Clients', 'Reports'].forEach((l, i) => T(ctx, l, 230 + i * 116, 51, 16, 600, i === 0 ? t1 : t2));
+      ctx.fillStyle = t1; ctx.fillRect(230, 83, 66, 3);
+      ctx.fillStyle = raised; ctx.beginPath(); ctx.arc(896, 44, 18, 0, TAU); ctx.fill(); T(ctx, 'SB', 896, 49, 13, 700, t2, 'center');
+      ctx.fillStyle = line; ctx.fillRect(0, 86, 960, 1);
+      // toolbar: search (focus: none -> visible ring), filter, primary button
+      box(ctx, 60, 122, 460, 54, 8, surf, line, 1.5);
+      ctx.save(); ctx.strokeStyle = t2; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(88, 147, 7, 0, TAU); ctx.moveTo(93, 152); ctx.lineTo(99, 158); ctx.stroke(); ctx.restore();
+      T(ctx, 'Search invoices', 112, 155, 17, 500, t2); ctx.fillStyle = t1; ctx.fillRect(244, 136, 2, 26);
+      box(ctx, 476, 136, 28, 26, 6, null, line, 1.5); T(ctx, '/', 490, 155, 14, 600, t2, 'center');
+      if (k3 > 0) { ctx.save(); ctx.globalAlpha = k3; ctx.lineWidth = 3; ctx.strokeStyle = acc; rrect(ctx, 54, 116, 472, 66, 11); ctx.stroke(); box(ctx, 60, 122, 460, 54, 8, null, acc, 1.5); ctx.restore(); }
+      box(ctx, 536, 122, 112, 54, 8, surf, line, 1.5); T(ctx, 'Filter', 592, 155, 16, 600, t1, 'center');
+      box(ctx, 696, 122, 204, 54, 8, acc); T(ctx, 'New invoice', 798, 155, 16, 700, mix('#FFFFFF', '#0B1220', k5), 'center');
+      // table: header row + hairlines; status by color only -> icon + word in the same color
+      box(ctx, 44, 214, 872, 500, 10, surf, line, 1.5);
+      ctx.save(); rrect(ctx, 44, 214, 872, 500, 10); ctx.clip(); ctx.fillStyle = head; ctx.fillRect(44, 214, 872, 42); ctx.restore();
+      [['CLIENT', 72, 'left'], ['DUE', 380, 'left'], ['AMOUNT', 640, 'right'], ['STATUS', 712, 'left']].forEach(([l, x, al]) => T(ctx, l, x, 241, 12, 700, t2, al));
+      ctx.fillStyle = line; ctx.fillRect(44, 256, 872, 1);
+      ROWS.forEach(([n, id, due, a, ok], i) => {
+        const y = 256 + i * 91.6;
+        if (i) { ctx.fillStyle = line; ctx.fillRect(44, y, 872, 1); }
+        T(ctx, n, 72, y + 40, 18, 700, t1); T(ctx, id, 72, y + 66, 14, 500, t2);
+        T(ctx, due, 380, y + 52, 16, 500, t2); T(ctx, a, 640, y + 52, 18, 700, t1, 'right');
+        const col = ok ? green : red, cy = y + 46;
+        ctx.save(); ctx.globalAlpha = 1 - k2; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(860, cy, 9, 0, TAU); ctx.fill(); ctx.restore();
         if (k2 > 0) {
           ctx.save(); ctx.globalAlpha = k2;
-          box(ctx, 704, y + 24, 190, 38, 19, mix(surf, col, 0.16));
-          ctx.strokeStyle = bg; ctx.lineWidth = 2.6; ctx.lineCap = 'round'; ctx.beginPath();
-          if (ok) { ctx.moveTo(717, y + 43); ctx.lineTo(721, y + 47); ctx.lineTo(728, y + 39); } else { ctx.moveTo(722, y + 37); ctx.lineTo(722, y + 45); ctx.moveTo(722, y + 50); ctx.lineTo(722, y + 50.5); }
+          box(ctx, 706, cy - 18, ok ? 104 : 136, 36, 6, mix(surf, col, 0.14), mix(surf, col, 0.45), 1.5);
+          ctx.strokeStyle = col; ctx.lineWidth = 2.4; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+          ctx.beginPath(); ctx.arc(729, cy, 9, 0, TAU); ctx.stroke(); ctx.beginPath();
+          if (ok) { ctx.moveTo(724.5, cy + 0.5); ctx.lineTo(727.8, cy + 3.8); ctx.lineTo(733.8, cy - 3); }
+          else { ctx.moveTo(729, cy - 4.5); ctx.lineTo(729, cy + 1); ctx.moveTo(729, cy + 4.6); ctx.lineTo(729, cy + 4.8); }
           ctx.stroke();
-          T(ctx, ok ? 'Paid' : 'Overdue', 744, y + 50, 16, 700, col);
+          T(ctx, ok ? 'Paid' : 'Overdue', 746, cy + 6, 16, 700, col);
           ctx.restore();
         }
       });
-      // chart card: neon bars -> softer bars
-      box(ctx, 44, 840, 872, 360, 18, surf, k4 < 0.5 ? line : null, 1.5);
-      T(ctx, 'Monthly revenue', 76, 890, 20, 800, t1);
-      [0.45, 0.62, 0.38, 0.8, 0.55, 0.92, 0.7].forEach((v, i) => box(ctx, 90 + i * 112, 1160 - 220 * v, 58, 220 * v, 10, i === 5 ? acc : mix(acc, surf, 0.45)));
+      // chart: neon bars -> softer bars, faint grid, month labels
+      box(ctx, 44, 840, 872, 360, 10, surf, line, 1.5);
+      T(ctx, 'Revenue', 76, 888, 20, 800, t1); T(ctx, 'Last 7 months', 76, 914, 14, 500, t2);
+      ctx.save(); ctx.strokeStyle = line; ctx.lineWidth = 1; ctx.setLineDash([4, 6]);
+      [960, 1030, 1100].forEach((y) => { ctx.beginPath(); ctx.moveTo(76, y); ctx.lineTo(884, y); ctx.stroke(); }); ctx.restore();
+      ctx.fillStyle = line; ctx.fillRect(76, 1150, 808, 1);
+      ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'].forEach((m, i) => {
+        const v = [0.45, 0.62, 0.38, 0.8, 0.55, 0.92, 0.7][i], x = 112 + i * 112;
+        box(ctx, x, 1150 - 190 * v, 48, 190 * v, 4, i === 5 ? acc : mix(acc, surf, 0.55));
+        T(ctx, m, x + 24, 1178, 13, 600, t2, 'center');
+      });
       marks(ctx, st);
     },
   };
