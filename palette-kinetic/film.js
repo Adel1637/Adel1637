@@ -97,8 +97,8 @@ function cover(ctx, kind) {
   txt(ctx, 'LEARN UI/UX', X0, top, 28, { w: 600, family: F.mono, color: C.sub }); txt(ctx, 'AG STUDIO', W - X0, top, 28, { w: 600, family: F.mono, color: C.sub, align: 'right' });
   const size = fit(ctx, 'HOW TO CHOOSE', 170, CW);
   ['HOW TO CHOOSE', 'YOUR COLOR', 'PALETTE.'].forEach((s, i) => txt(ctx, s, X0, top + 210 + i * size * 1.02, size, { color: '#FFFFFF' }));
-  txt(ctx, 'كيف تختار لوحة ألوانك', W - X0, top + 760, 76, { family: F.ar, align: 'right', rtl: true });
-  const w = CW / 9; P.SHADES.forEach((c, i) => { const h = 200 + i * 22; K.rr(ctx, X0 + i * w + 4, top + 1060 - h, w - 8, h, 10, c); });
+  txt(ctx, 'كيف تختار لوحة ألوانك', W - X0, top + 620, 76, { family: F.ar, align: 'right', rtl: true });
+  const w = CW / 9; P.SHADES.forEach((c, i) => { const h = 180 + i * 20; K.rr(ctx, X0 + i * w + 4, top + 1100 - h, w - 8, h, 10, c); });
 }
 
 // ------------------------------------------------------------------ film
