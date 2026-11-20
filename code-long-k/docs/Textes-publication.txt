@@ -1,0 +1,49 @@
+VIDÉO LONGUE YOUTUBE — Should designers learn to code? 10 languages for UI/UX
+Format 16:9 · 2:05 · sans musique (effets sonores seulement) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+Should designers learn to code? 10 languages for UI/UX | هل يجب على المصمم تعلّم البرمجة؟
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+Designers don't have to code, but some languages make you better at UX, and some build the UI itself. 5 for UX, 5 for UI, each with a live demo and a practical tip.
+
+لا يجب على المصمم أن يبرمج، لكن بعض اللغات تجعلك أفضل في تجربة المستخدم، وبعضها يبني الواجهة نفسها. خمس لغات لتجربة المستخدم وخمس للواجهات، مع مثال حيّ ونصيحة عملية لكل لغة.
+
+Chapters / الفصول
+0:00 Part 1 · For UX: HTML · الجزء 1: HTML
+0:16 CSS
+0:27 JavaScript basics · أساسيات JavaScript
+0:37 SwiftUI or Compose
+0:47 Python
+0:58 Part 2 · For UI: Web, HTML + CSS · الجزء 2: الويب
+1:11 React
+1:21 iPhone: Swift
+1:31 Android: Kotlin
+1:42 Both: Flutter
+1:52 Recap · ملخّص
+
+All interfaces in this video are fictional examples.
+جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+
+#uidesign #uxdesign #learntocode #webdesign #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+should designers learn to code, coding for designers, html for designers, css for designers, javascript basics, react, swiftui, jetpack compose, kotlin, flutter, python for ux, ui ux, learn ui ux, تعلم البرمجة للمصممين, تصميم الواجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which language are you learning right now? 👇
+أيّ لغة تتعلّم الآن؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
