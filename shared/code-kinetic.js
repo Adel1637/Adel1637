@@ -46,10 +46,27 @@ export function makeCodeKinetic(M, K) {
     rr(ctx, x + 90, y + 12, w - 120, 32, 16, '#FFFFFF'); txt(ctx, url, x + 112, y + 35, 18, { w: 600, family: F.mono, color: '#666' });
     [0, 1, 2].forEach((i) => { ctx.fillStyle = '#C9C9C9'; ctx.beginPath(); ctx.arc(x + 24 + i * 20, y + 27, 6, 0, TAU); ctx.fill(); });
   }
+  // a phone with real proportions (about 1 : 2.1), status bar, title, the card and a list below
   function phone(ctx, cx, cy, w, h, kind) {
-    rr(ctx, cx - w / 2 - 12, cy - h / 2 - 12, w + 24, h + 24, 54, '#0A0A0A', '#3A3A3A', 2);
-    rr(ctx, cx - w / 2, cy - h / 2, w, h, 44, kind === 'ios' ? '#F2F2F7' : '#F7F9FC');
-    if (kind === 'ios') rr(ctx, cx - 50, cy - h / 2 + 12, 100, 28, 14, '#0A0A0A'); else { ctx.fillStyle = '#0A0A0A'; ctx.beginPath(); ctx.arc(cx, cy - h / 2 + 24, 9, 0, TAU); ctx.fill(); }
+    const b = w * 0.045;
+    rr(ctx, cx - w / 2 - b, cy - h / 2 - b, w + 2 * b, h + 2 * b, w * 0.17, '#0A0A0A', '#3A3A3A', 2);
+    rr(ctx, cx - w / 2, cy - h / 2, w, h, w * 0.14, kind === 'ios' ? '#F2F2F7' : '#F7F9FC');
+    if (kind === 'ios') rr(ctx, cx - w * 0.15, cy - h / 2 + w * 0.04, w * 0.3, w * 0.085, w * 0.0425, '#0A0A0A'); else { ctx.fillStyle = '#0A0A0A'; ctx.beginPath(); ctx.arc(cx, cy - h / 2 + w * 0.08, w * 0.03, 0, TAU); ctx.fill(); }
+  }
+  function phoneScreen(ctx, cx, cy, w, h, kind, on, joined) {
+    phone(ctx, cx, cy, w, h, kind);
+    const top = cy - h / 2, x = cx - w / 2, s = w / 400, top0 = top + w * 0.36;
+    ctx.save(); ctx.beginPath(); ctx.roundRect(x, top, w, h, w * 0.14); ctx.clip();
+    txt(ctx, '9:41', x + w * (kind === 'ios' ? 0.12 : 0.09), top + w * (kind === 'ios' ? 0.105 : 0.1), w * 0.055, { color: '#111' });
+    rr(ctx, x + w * 0.8, top + w * 0.075, w * 0.09, w * 0.04, w * 0.01, '#111');
+    if (kind === 'ios') txt(ctx, 'Events', x + w * 0.07, top + w * 0.3, w * 0.11, { color: '#111' });
+    else { ctx.fillStyle = '#EEF1F8'; ctx.fillRect(x, top + w * 0.15, w, w * 0.18); txt(ctx, 'Events', x + w * 0.07, top + w * 0.27, w * 0.08, { color: '#111' }); }
+    appUI(ctx, cx, top0, 400, kind, on, joined, s);
+    for (let i = 0; i < 3; i++) { const ry = top0 + (370 + i * 92) * s; if (ry > top + h - 40 * s) break; rr(ctx, x + 20 * s, ry, w - 40 * s, 76 * s, (kind === 'ios' ? 14 : 18) * s, '#FFFFFF'); rr(ctx, x + 40 * s, ry + 22 * s, 180 * s, 14 * s, 7 * s, '#D4D4D8'); rr(ctx, x + 40 * s, ry + 46 * s, 120 * s, 10 * s, 5 * s, '#E4E4E7'); }
+    if (kind === 'ios') rr(ctx, cx - w * 0.17, top + h - w * 0.045, w * 0.34, w * 0.015, w * 0.008, '#111');
+    else { rr(ctx, cx - w * 0.12, top + h - w * 0.05, w * 0.24, w * 0.012, w * 0.006, '#555'); }
+    ctx.restore();
+    return { toggle: [cx + 118 * s, top0 + 198 * s], button: [cx, top0 + 302 * s] };
   }
   function toggle(ctx, x, y, on, kind) {
     if (kind === 'ios') { rr(ctx, x, y, 76, 46, 23, mix('#E5E5EA', '#34C759', on)); ctx.fillStyle = '#FFFFFF'; ctx.beginPath(); ctx.arc(x + lerp(23, 53, on), y + 23, 19, 0, TAU); ctx.fill(); }
@@ -143,17 +160,16 @@ export function makeCodeKinetic(M, K) {
     },
     hits: [[2.6, 'editor', 'thud', { pitch: 'E2' }], typeHit(2.8, 5.2, 24), [9.2, 'state', 'click'], [9.3, 'joined', 'bell', { pitch: 'E6' }]],
   };
+  const PH_CODE_H = 250;
   const native = (file, lines, kind) => ({
     draw(ctx, v) {
       const p = ez(v, 2.8, 7.6, (q) => q);
-      if (v >= 2.6) codePanel(ctx, 80, CODE_Y, 920, CODE_H, file, lines, p, 24);
+      if (v >= 2.6) codePanel(ctx, 80, CODE_Y, 920, PH_CODE_H, file, lines, p, 22);
       const bp = spr(v, 2.6, { stiffness: 200, damping: 16 }); if (bp <= 0) return;
-      ctx.save(); ctx.globalAlpha = Math.min(1, bp);
-      phone(ctx, 540, PV_Y + 250, 400, 470, kind);
-      ctx.save(); ctx.beginPath(); ctx.roundRect(340, PV_Y + 15, 400, 470, 44); ctx.clip();
-      appUI(ctx, 540, PV_Y + 30, 400, kind, ez(v, 8.6, 9.2, E.inOutCubic), v >= 10.2, 1);
-      ctx.restore(); ctx.restore();
-      if (v >= 8 && v < 10.6) { const m = ez(v, 8, 8.6, E.inOutCubic), m2 = ez(v, 9.4, 10.1, E.inOutCubic); cursor(ctx, lerp(lerp(860, 650, m), 560, m2), lerp(lerp(PV_Y + 470, PV_Y + 235, m), PV_Y + 340, m2)); }
+      ctx.save(); ctx.globalAlpha = Math.min(1, bp); ctx.translate(540, 865); ctx.scale(lerp(0.9, 1, Math.min(1, bp)), lerp(0.9, 1, Math.min(1, bp))); ctx.translate(-540, -865);
+      const at = phoneScreen(ctx, 540, 865, 270, 560, kind, ez(v, 8.6, 9.2, E.inOutCubic), v >= 10.2);
+      ctx.restore();
+      if (v >= 8 && v < 10.6) { const m = ez(v, 8, 8.6, E.inOutCubic), m2 = ez(v, 9.4, 10.1, E.inOutCubic); cursor(ctx, lerp(lerp(860, at.toggle[0], m), at.button[0], m2), lerp(lerp(1120, at.toggle[1], m), at.button[1], m2)); }
     },
     hits: [[2.6, 'editor', 'thud', { pitch: 'E2' }], typeHit(2.8, 4.8, 22), [8.6, 'toggle', 'click'], [10.2, 'join', 'pop', { pitch: 'C6' }], [10.3, 'joined', 'bell', { pitch: 'E6' }]],
   });
@@ -163,14 +179,15 @@ export function makeCodeKinetic(M, K) {
   const twoPhones = (file, lines, alt) => ({
     draw(ctx, v) {
       const swap = alt && v >= 8.6, p = swap ? ez(v, 8.8, 10.6, (q) => q) : ez(v, 2.8, 7.6, (q) => q);
-      if (v >= 2.6) codePanel(ctx, 80, CODE_Y, 920, CODE_H, swap ? alt.file : file, swap ? alt.lines : lines, p, 24);
+      if (v >= 2.6) codePanel(ctx, 80, CODE_Y, 920, PH_CODE_H, swap ? alt.file : file, swap ? alt.lines : lines, p, 22);
       const bp = spr(v, 2.6, { stiffness: 200, damping: 16 }); if (bp <= 0) return;
       ctx.save(); ctx.globalAlpha = Math.min(1, bp);
-      [['ios', 300, 'iPhone'], ['android', 780, 'Android']].forEach(([k, cx, lab], i) => {
+      [['ios', 330, 'iPhone'], ['android', 750, 'Android']].forEach(([k, cx, lab], i) => {
         const on = alt ? (i === 0 ? ez(v, 7.8, 8.3) : ez(v, 10.8, 11.3)) : ez(v, 8.6, 9.2, E.inOutCubic);
-        phone(ctx, cx, PV_Y + 215, 330, 400, k);
-        ctx.save(); ctx.beginPath(); ctx.roundRect(cx - 165, PV_Y + 15, 330, 400, 44); ctx.clip(); appUI(ctx, cx, PV_Y + 20, 400, k, on, false, 0.82); ctx.restore();
-        txt(ctx, lab, cx, PV_Y + 462, 24, { w: 600, family: F.mono, color: C.sub, align: 'center' });
+        const pop = spr(v, 2.6 + i * 0.3, { stiffness: 220, damping: 15 });
+        ctx.save(); ctx.translate(cx, 840); ctx.scale(Math.min(1.05, pop), Math.min(1.05, pop)); ctx.translate(-cx, -840);
+        phoneScreen(ctx, cx, 840, 245, 515, k, on, false); ctx.restore();
+        txt(ctx, lab, cx, 1143, 24, { w: 600, family: F.mono, color: C.sub, align: 'center' });
       });
       ctx.restore();
     },
