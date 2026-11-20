@@ -1,0 +1,52 @@
+Depth & shape basics — AG Studio
+Série : Learn UI/UX · Fondamentaux UI · Durée : 50 s · Sans musique
+Accroche : « Too many borders and shadows. » / « حدود وظلال كثيرة جدًا. »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+Depth & Shape Basics for UI | أساسيات العمق والأشكال
+
+DESCRIPTION (EN)
+Too many borders and shadows. 5 basics to fix it:
+1. Space, not lines: Group with spacing and a soft background.
+2. Soft shadows: Blurred, light and slightly below.
+3. Two or three levels: Higher elements cast bigger shadows.
+4. One corner radius: Pick one radius and reuse it.
+5. Nested radius: Inner radius = outer radius − padding.
+The interface in this video is fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+حدود وظلال كثيرة جدًا. 5 أساسيات لإصلاح ذلك:
+1. مسافات بدل الخطوط: جمّع بالمسافات وخلفية خفيفة.
+2. ظلال ناعمة: ضبابية وخفيفة ومنخفضة قليلًا.
+3. مستويان أو ثلاثة: العناصر الأعلى تُلقي ظلالًا أكبر.
+4. تدوير زوايا موحّد: اختر قيمة تدوير واحدة وأعد استخدامها.
+5. تدوير متداخل: التدوير الداخلي = الخارجي − الحشو.
+الواجهة في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #uidesign #shadows #uicomponents #learnuiux #تصميم_واجهات #تصميم_المكونات #تجربة_المستخدم
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+Too many borders and shadows. 5 basics to fix it 📌
+More UI/UX fixes on my profile.
+
+LÉGENDE (AR)
+حدود وظلال كثيرة جدًا. 5 أساسيات لإصلاح ذلك 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uiux #uidesign #shadows #uicomponents #designtok #learnuiux #تصميم_واجهات #تعلم_التصميم
+
+COMMENTAIRE À ÉPINGLER
+Borders or shadows: which do you overuse? 👇
+الحدود أم الظلال: أيّهما تُكثر منه؟ 👇
