@@ -1,7 +1,7 @@
 SHORT / TIKTOK — UI in 2026: what's in, what's out
 Format 9:16 · 55 s · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
 Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
-Contenu vérifié en ligne le 22 novembre 2026 (sources en bas de ce fichier, à ne pas publier).
+Contenu vérifié en ligne le 22 novembre 2026 ; captures de vercel.com et linear.app prises le 22/11/2026 (sources en bas de ce fichier, à ne pas publier).
 
 ==================================================================
 TITRE YOUTUBE SHORTS
@@ -19,8 +19,8 @@ Out: full-page neo-brutalism, glass without contrast.
 الرائج: زجاج Liquid Glass مع تباين كافٍ، وMaterial 3 Expressive، والواجهات التوليدية، وشبكات Bento، والبساطة الحادّة، والتصميم الهادئ وسهل الوصول.
 المتراجع: أسلوب Neo-brutalism في الصفحة كلها، والزجاج بلا تباين كافٍ.
 
-All interfaces in this video are fictional examples.
-جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+Real examples: Safari, Apple Music, Gmail, Google Photos, Gemini, Claude, ChatGPT, Linear, Vercel. The demo interfaces are fictional; the vercel.com and linear.app screenshots are shown for illustration.
+أمثلة حقيقية: Safari وApple Music وGmail وGoogle Photos وGemini وClaude وChatGPT وLinear وVercel. الواجهات التوضيحية خيالية، ولقطات موقعي vercel.com وlinear.app معروضة للتوضيح فقط.
 
 #uidesign #uxdesign #designtrends #liquidglass #learnuiux
 
