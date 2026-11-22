@@ -128,27 +128,29 @@ export function kineticFilm(M, K, cfg) {
   let IMGS = {};
   // a real product screenshot (public website) shown in a browser frame over the vignette
   function realShot(ctx, v, r) {
-    const at = LONG ? r.atLong || 14 : r.at || 9, p = spr(v, at, { stiffness: 200, damping: 16 }); if (p <= 0) return;
+    const at = LONG ? r.atLong || 12.5 : r.at || 8, p = spr(v, at, { stiffness: 200, damping: 16 }); if (p <= 0) return;
     const im = IMGS[r.img]; if (!im) return;
-    ctx.save(); ctx.globalAlpha = Math.min(1, p) * 0.85; ctx.fillStyle = '#121212'; if (LONG) ctx.fillRect(60, 280, 960, 880); else ctx.fillRect(-100, 225, 1280, 940); ctx.restore();
-    const w = 920, ih = w * im.height / im.width, h = 54 + ih, x = 80, y = 715 - h / 2;
-    ctx.save(); ctx.globalAlpha = Math.min(1, p); ctx.translate(540, 715); ctx.scale(lerpN(0.9, 1, Math.min(1, p)), lerpN(0.9, 1, Math.min(1, p))); ctx.translate(-540, -715);
+    ctx.save(); ctx.globalAlpha = Math.min(1, p) * 0.9; ctx.fillStyle = '#121212'; if (LONG) ctx.fillRect(60, 280, 960, 880); else ctx.fillRect(-100, 225, 1280, 940); ctx.restore();
+    const w = LONG ? 920 : 1000, ih = w * im.height / im.width, h = 54 + ih, x = 540 - w / 2, y = 760 - h / 2;
+    const zoom = 1 + 0.12 * ez(v, at, at + 7, (q) => q);
+    ctx.save(); ctx.globalAlpha = Math.min(1, p); ctx.translate(540, 760); ctx.scale(lerpN(0.9, 1, Math.min(1, p)), lerpN(0.9, 1, Math.min(1, p))); ctx.translate(-540, -760);
     rr(ctx, x, y, w, h, 16, '#EDEDED'); rr(ctx, x + 90, y + 12, 400, 30, 15, '#FFFFFF'); txt(ctx, r.url, x + 110, y + 34, 18, { w: 600, family: F.mono, color: '#555' });
     [0, 1, 2].forEach((i) => { ctx.fillStyle = '#C9C9C9'; ctx.beginPath(); ctx.arc(x + 24 + i * 20, y + 27, 6, 0, TAU); ctx.fill(); });
-    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y + 54, w, ih, [0, 0, 16, 16]); ctx.clip(); ctx.drawImage(im, x, y + 54, w, ih); ctx.restore();
+    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y + 54, w, ih, [0, 0, 16, 16]); ctx.clip();
+    ctx.translate(x + w / 2, y + 54 + ih / 2); ctx.scale(zoom, zoom); ctx.drawImage(im, -w / 2, -ih / 2, w, ih); ctx.restore();
     ctx.restore();
-    K.pill(ctx, `REAL EXAMPLE · ${r.label}`, 540, y - 50, spr(v, at + 0.4, { stiffness: 300, damping: 13 }), C.sel, 24);
+    K.pill(ctx, `REAL EXAMPLE · ${r.label}`, 540, y - 56, spr(v, at + 0.4, { stiffness: 300, damping: 13 }), C.sel, LONG ? 24 : 30);
   }
   const lerpN = (a, b, k) => a + (b - a) * k;
   function seenIn(ctx, v, it) {
     if (!it.seen) return;
     if (!LONG) {
-      const p = spr(v, 5.5, { stiffness: 260, damping: 15 }); if (p <= 0) return;
-      const s = `SEEN IN · ${it.seen}`; ctx.font = `600 22px ${F.mono}`; const w = Math.min(CW, ctx.measureText(s).width + 40);
-      ctx.save(); ctx.translate(X0 + w / 2, 252); ctx.scale(p, p); rr(ctx, -w / 2, -24, w, 48, 24, '#262626', '#3A3A3A', 2); txt(ctx, s, 0, 8, fit(ctx, s, 22, w - 40, 600, F.mono), { w: 600, family: F.mono, color: C.ink, align: 'center' }); ctx.restore();
+      const p = spr(v, 3, { stiffness: 260, damping: 15 }); if (p <= 0) return;
+      const s = `SEEN IN · ${it.seen}`, fs = fit(ctx, s, 30, CW - 48, 700, F.title); ctx.font = `700 ${fs}px ${F.title}`; const w = Math.min(CW, ctx.measureText(s).width + 48);
+      ctx.save(); ctx.translate(X0 + w / 2, 254); ctx.scale(p, p); rr(ctx, -w / 2, -32, w, 64, 32, '#0D2A44', C.sel, 2); txt(ctx, s, 0, fs * 0.36, fs, { color: '#FFFFFF', align: 'center' }); ctx.restore();
       return;
     }
-    maskUp(ctx, `SEEN IN: ${it.seen}`, X0, 662, fit(ctx, `SEEN IN: ${it.seen}`, 22, CW, 600, F.mono), ez(v, 2.4, 3.2), { w: 600, family: F.mono, color: C.sel });
+    maskUp(ctx, `SEEN IN: ${it.seen}`, X0, 664, fit(ctx, `SEEN IN: ${it.seen}`, 26, CW, 600, F.mono), ez(v, 2.4, 3.2), { w: 600, family: F.mono, color: C.sel });
   }
   function item(ctx, v, s) {
     ctx.fillStyle = s.bg; ctx.fillRect(0, 0, W, H);
