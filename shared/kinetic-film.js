@@ -125,11 +125,37 @@ export function kineticFilm(M, K, cfg) {
     maskUp(ctx, p.ar, W - X0, 720, fit(ctx, p.ar, 80, 900, 700, F.ar), ez(v, 1.0, 2.0), { family: F.ar, align: 'right', rtl: true });
     maskUp(ctx, p.count, X0, 720, 36, ez(v, 1.2, 2.2), { w: 600, family: F.mono, color: C.sub });
   }
+  let IMGS = {};
+  // a real product screenshot (public website) shown in a browser frame over the vignette
+  function realShot(ctx, v, r) {
+    const at = LONG ? r.atLong || 14 : r.at || 9, p = spr(v, at, { stiffness: 200, damping: 16 }); if (p <= 0) return;
+    const im = IMGS[r.img]; if (!im) return;
+    ctx.save(); ctx.globalAlpha = Math.min(1, p) * 0.85; ctx.fillStyle = '#121212'; if (LONG) ctx.fillRect(60, 280, 960, 880); else ctx.fillRect(-100, 225, 1280, 940); ctx.restore();
+    const w = 920, ih = w * im.height / im.width, h = 54 + ih, x = 80, y = 715 - h / 2;
+    ctx.save(); ctx.globalAlpha = Math.min(1, p); ctx.translate(540, 715); ctx.scale(lerpN(0.9, 1, Math.min(1, p)), lerpN(0.9, 1, Math.min(1, p))); ctx.translate(-540, -715);
+    rr(ctx, x, y, w, h, 16, '#EDEDED'); rr(ctx, x + 90, y + 12, 400, 30, 15, '#FFFFFF'); txt(ctx, r.url, x + 110, y + 34, 18, { w: 600, family: F.mono, color: '#555' });
+    [0, 1, 2].forEach((i) => { ctx.fillStyle = '#C9C9C9'; ctx.beginPath(); ctx.arc(x + 24 + i * 20, y + 27, 6, 0, TAU); ctx.fill(); });
+    ctx.save(); ctx.beginPath(); ctx.roundRect(x, y + 54, w, ih, [0, 0, 16, 16]); ctx.clip(); ctx.drawImage(im, x, y + 54, w, ih); ctx.restore();
+    ctx.restore();
+    K.pill(ctx, `REAL EXAMPLE · ${r.label}`, 540, y - 50, spr(v, at + 0.4, { stiffness: 300, damping: 13 }), C.sel, 24);
+  }
+  const lerpN = (a, b, k) => a + (b - a) * k;
+  function seenIn(ctx, v, it) {
+    if (!it.seen) return;
+    if (!LONG) {
+      const p = spr(v, 5.5, { stiffness: 260, damping: 15 }); if (p <= 0) return;
+      const s = `SEEN IN · ${it.seen}`; ctx.font = `600 22px ${F.mono}`; const w = Math.min(CW, ctx.measureText(s).width + 40);
+      ctx.save(); ctx.translate(X0 + w / 2, 252); ctx.scale(p, p); rr(ctx, -w / 2, -24, w, 48, 24, '#262626', '#3A3A3A', 2); txt(ctx, s, 0, 8, fit(ctx, s, 22, w - 40, 600, F.mono), { w: 600, family: F.mono, color: C.ink, align: 'center' }); ctx.restore();
+      return;
+    }
+    maskUp(ctx, `SEEN IN: ${it.seen}`, X0, 662, fit(ctx, `SEEN IN: ${it.seen}`, 22, CW, 600, F.mono), ez(v, 2.4, 3.2), { w: 600, family: F.mono, color: C.sel });
+  }
   function item(ctx, v, s) {
     ctx.fillStyle = s.bg; ctx.fillRect(0, 0, W, H);
     topline(ctx, cfg.label(s.i, cfg.items.length));
-    vig(ctx, () => s.it.vig.draw(ctx, v));
+    vig(ctx, () => { s.it.vig.draw(ctx, v); if (s.it.real) realShot(ctx, v, s.it.real); });
     textBlock(ctx, v, s.it);
+    seenIn(ctx, v, s.it);
   }
   function recap(ctx, v) {
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
@@ -188,7 +214,8 @@ export function kineticFilm(M, K, cfg) {
     images: cfg.images || {}, hits: HITS, shutter: 0.6,
     samples: (t) => { const u = t / K.B; return FAST.some((bb) => u > bb - 1.2 && u < bb + 3.2) ? 8 : 3; },
     async init() { await document.fonts.load(`700 60px ${F.ar}`, 'أيّ لغة برمجة').catch(() => {}); GRAIN = K.makeGrain(LONG ? 960 : 540, LONG ? 540 : 960); },
-    draw(ctx, u, t) {
+    draw(ctx, u, t, IMG) {
+      IMGS = IMG || {};
       ctx.save();
       if (COVER) { cover(ctx, COVER); ctx.restore(); return; }
       let s = SCENES[0]; SCENES.forEach((x) => { if (u >= x.b0) s = x; });

@@ -224,17 +224,18 @@ export function makeUI2026(M, K) {
 export function ui2026Topic(K, U, long) {
   const { rr, txt, F, C } = K;
   const items = [
-    { part: 0, title: ['LIQUID GLASS,', 'DONE RIGHT.'], ar: 'زجاج Liquid Glass مع تباين كافٍ.', en: "APPLE'S GLASS, WITH ENOUGH CONTRAST.", vig: U.glassIn, tip: 'SINCE IOS 27, USERS CAN SET HOW CLEAR THE GLASS IS.', tipAr: 'منذ iOS 27 يستطيع المستخدم ضبط شفافية الزجاج.', tipAt: 12 },
-    { part: 0, title: ['MATERIAL 3', 'EXPRESSIVE.'], ar: 'أسلوب Material 3 Expressive من Google.', en: 'BOLDER SHAPES AND SPRINGY MOTION ON ANDROID.', vig: U.expressive, tip: 'ON PIXEL PHONES SINCE ANDROID 16.', tipAr: 'متوفر على هواتف Pixel منذ Android 16.', tipAt: 12 },
-    { part: 0, title: ['GENERATIVE', 'UI.'], ar: 'واجهات تتكوّن حسب حاجة المستخدم.', en: 'SCREENS THAT ASSEMBLE AROUND THE TASK.', vig: U.generative, tip: 'SHOW WHAT THE AI IS DOING, AND A WAY TO STOP IT.', tipAr: 'أظهر ما يفعله الذكاء الاصطناعي، مع زر لإيقافه.', tipAt: 12 },
-    { part: 0, title: ['BENTO', 'GRIDS.'], ar: 'شبكات Bento: مربعات بأحجام مختلفة.', en: 'ONE MESSAGE PER TILE.', vig: U.bento, tip: 'LET WHITE SPACE CARRY THE HIERARCHY.', tipAr: 'اترك المساحات الفارغة ترتّب الأولويات.', tipAt: 10 },
-    { part: 0, title: ['SHARP', 'MINIMAL.'], ar: 'بساطة حادّة: خطوط رفيعة وخط عريض.', en: '1PX BORDERS, STRONG TYPE, FEW COLORS.', vig: U.sharp, tip: 'GREAT FOR SAAS AND PRO TOOLS.', tipAr: 'مثالية لبرامج SaaS والأدوات الاحترافية.', tipAt: 12 },
-    { part: 0, title: ['CALM &', 'ACCESSIBLE.'], ar: 'تصميم هادئ وسهل الوصول للجميع.', en: 'ACCESSIBILITY IS THE BASELINE.', vig: U.calm, tip: 'RESPECT REDUCE MOTION AND LARGER TEXT.', tipAr: 'احترم إعدادات تقليل الحركة وتكبير النص.', tipAt: 12 },
+    { part: 0, title: ['LIQUID GLASS,', 'DONE RIGHT.'], ar: 'زجاج Liquid Glass مع تباين كافٍ.', en: "APPLE'S GLASS, WITH ENOUGH CONTRAST.", vig: U.glassIn, seen: 'Safari · Apple Music (iOS 26+)', tip: 'SINCE IOS 27, USERS CAN SET HOW CLEAR THE GLASS IS.', tipAr: 'منذ iOS 27 يستطيع المستخدم ضبط شفافية الزجاج.', tipAt: 12 },
+    { part: 0, title: ['MATERIAL 3', 'EXPRESSIVE.'], ar: 'أسلوب Material 3 Expressive من Google.', en: 'BOLDER SHAPES AND SPRINGY MOTION ON ANDROID.', vig: U.expressive, seen: 'Gmail · Google Photos · Clock', tip: 'ON PIXEL PHONES SINCE ANDROID 16.', tipAr: 'متوفر على هواتف Pixel منذ Android 16.', tipAt: 12 },
+    { part: 0, title: ['GENERATIVE', 'UI.'], ar: 'واجهات تتكوّن حسب حاجة المستخدم.', en: 'SCREENS THAT ASSEMBLE AROUND THE TASK.', vig: U.generative, seen: 'Gemini · Google AI Mode · Claude · ChatGPT', tip: 'SHOW WHAT THE AI IS DOING, AND A WAY TO STOP IT.', tipAr: 'أظهر ما يفعله الذكاء الاصطناعي، مع زر لإيقافه.', tipAt: 12 },
+    { part: 0, title: ['BENTO', 'GRIDS.'], ar: 'شبكات Bento: مربعات بأحجام مختلفة.', en: 'ONE MESSAGE PER TILE.', vig: U.bento, seen: 'Linear · Vercel · Framer', real: { img: 'vercel', url: 'vercel.com', label: 'VERCEL', at: 9, atLong: 14 }, tip: 'LET WHITE SPACE CARRY THE HIERARCHY.', tipAr: 'اترك المساحات الفارغة ترتّب الأولويات.', tipAt: 10 },
+    { part: 0, title: ['SHARP', 'MINIMAL.'], ar: 'بساطة حادّة: خطوط رفيعة وخط عريض.', en: '1PX BORDERS, STRONG TYPE, FEW COLORS.', vig: U.sharp, seen: 'Linear · Vercel', real: { img: 'linear', url: 'linear.app', label: 'LINEAR', at: 9, atLong: 14 }, tip: 'GREAT FOR SAAS AND PRO TOOLS.', tipAr: 'مثالية لبرامج SaaS والأدوات الاحترافية.', tipAt: 12 },
+    { part: 0, title: ['CALM &', 'ACCESSIBLE.'], ar: 'تصميم هادئ وسهل الوصول للجميع.', en: 'ACCESSIBILITY IS THE BASELINE.', vig: U.calm, seen: 'iOS: Reduce Motion · Increase Contrast', tip: 'RESPECT REDUCE MOTION AND LARGER TEXT.', tipAr: 'احترم إعدادات تقليل الحركة وتكبير النص.', tipAt: 12 },
     { part: 1, title: ['OUT: FULL-PAGE', 'BRUTALISM.'], ar: 'المتراجع: أسلوب Neo-brutalism في الصفحة كلها.', en: 'KEEP IT AS AN ACCENT ON ONE BUTTON.', vig: U.brutal, tip: 'AVOID IT WHERE READING MATTERS MOST.', tipAr: 'تجنّبه حيث تهمّ القراءة أكثر.', tipAt: 12 },
-    { part: 1, title: ['OUT: GLASS', 'WITHOUT CONTRAST.'], ar: 'المتراجع: زجاج بلا تباين كافٍ.', en: 'IF TEXT IS HARD TO READ, ADD A TINT.', vig: U.glassOut, tip: 'TEST TEXT OVER YOUR BUSIEST BACKGROUND.', tipAr: 'اختبر النص فوق أكثر الخلفيات ازدحامًا.', tipAt: 12.5 },
+    { part: 1, title: ['OUT: GLASS', 'WITHOUT CONTRAST.'], ar: 'المتراجع: زجاج بلا تباين كافٍ.', en: 'IF TEXT IS HARD TO READ, ADD A TINT.', vig: U.glassOut, seen: 'early iOS 26 betas, fixed later', tip: 'TEST TEXT OVER YOUR BUSIEST BACKGROUND.', tipAr: 'اختبر النص فوق أكثر الخلفيات ازدحامًا.', tipAt: 12.5 },
   ];
   if (!long) items.forEach((it) => { it.len = 12; });
   return {
+    images: { vercel: 'assets/real-vercel.jpg', linear: 'assets/real-linear.jpg' },
     hook: { lines: ['UI IN 2026:', "WHAT'S IN,", "WHAT'S OUT."], ar: 'الواجهات في 2026: ما الرائج وما المتراجع؟', en: '6 STYLES IN, 2 OUT.', tags: ['Glass', 'Bento', 'M3', 'AI UI', '1px', 'Calm'] },
     parts: [{ en: "WHAT'S IN", ar: 'الرائج في 2026', count: '6 STYLES' }, { en: "WHAT'S OUT", ar: 'المتراجع', count: '2 STYLES' }],
     items,
