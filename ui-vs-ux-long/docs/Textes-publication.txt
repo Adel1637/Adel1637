@@ -1,0 +1,58 @@
+VIDÉO LONGUE YOUTUBE — UI and UX are not the same
+Format 16:9 · 1:38 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+Contenu vérifié en ligne le 22 novembre 2026 (sources en bas, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+UI vs UX: the real difference, explained with one app | الفرق الحقيقي بين UI وUX
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+UI and UX are not the same. UX is the whole experience: finding, understanding and succeeding. UI is what you see and touch: buttons, icons, type, color, spacing. One fictional cinema app, four versions, and the classic example from Don Norman and Jakob Nielsen: perfect UI, poor UX. UI is part of UX. Then: who does what, 3 myths to forget, and the jobs (UX, UI, or both as a product designer).
+
+الواجهة UI والتجربة UX ليسا الشيء نفسه. التجربة هي الرحلة كاملة: أن يجد المستخدم ما يريد ويفهمه وينجح في مهمته. والواجهة هي ما يراه ويلمسه: الأزرار والأيقونات والخطوط والألوان والمسافات. تطبيق سينما خيالي بأربع نسخ، والمثال الشهير لدون نورمان وياكوب نيلسن: واجهة ممتازة وتجربة ضعيفة. الواجهة جزء من التجربة. ثم: من يفعل ماذا، وثلاث أفكار خاطئة، والوظائف في المجال.
+
+Chapters / الفصول
+0:00 UX: the whole journey · تجربة المستخدم
+0:14 UI: what you see & touch · واجهة المستخدم
+0:24 Same app, 4 versions · نفس التطبيق بأربع نسخ
+0:34 Perfect UI, poor UX · واجهة ممتازة وتجربة ضعيفة
+0:45 UI is part of UX · الواجهة جزء من التجربة
+0:55 Who does what · من يفعل ماذا
+1:05 3 myths · ثلاث أفكار خاطئة
+1:15 The jobs · الوظائف
+1:26 Recap · ملخّص
+
+All interfaces in this video are fictional examples.
+جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+
+#uidesign #uxdesign #uivsux #learnuiux #productdesign
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+ui vs ux, difference between ui and ux, what is ux design, what is ui design, ui ux for beginners, ux designer, ui designer, product designer, don norman, nielsen norman group, learn ui ux, الفرق بين ui و ux, تصميم الواجهات, تجربة المستخدم
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Are you more UI or more UX? 👇
+هل أنت أقرب إلى UI أم إلى UX؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+NN/g, What is user experience (définitions UX/UI, Don Norman, exemple des films) : https://www.nngroup.com/articles/what-is-user-experience/
+Startups.com, origine du terme UX : https://www.startups.com/lexicon/user-experience
+HubSpot, UX vs UI : https://blog.hubspot.com/marketing/ux-vs-ui
+F1Studioz, UI vs UX 2026 : https://f1studioz.com/blog/ui-vs-ux-difference-guide/
+Fire and Wood, misconceptions : https://fireandwood.co/ui-vs-ux-design-differences/
+CodeChefs, rôles UI/UX : https://codechefs.dev/blog/what-is-ui-vs-ux-key-differences-roles-and-careers/
