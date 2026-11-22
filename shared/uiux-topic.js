@@ -199,7 +199,7 @@ export function uiuxTopic(K, U, long) {
     recap: { title: ['UX: HOW IT WORKS.', 'UI: HOW IT LOOKS.'], ar: 'التجربة: كيف يعمل. والواجهة: كيف يبدو.', en: 'GREAT PRODUCTS NEED BOTH.', vig: U.recapVig },
     cover: {
       lines: ['UI AND UX', 'ARE NOT', 'THE SAME.'], ar: 'ليسا الشيء نفسه: UI وUX.',
-      art: (ctx, x, y, w, h) => { const cw = (w - 24) / 2, ch = Math.min(h - 20, cw * 1.1); [['UI', C.green], ['UX', C.sel]].forEach(([l, col], i) => { const cx = x + i * (cw + 24); rr(ctx, cx, y + 10, cw, ch, 28, '#232323', col, 4); txt(ctx, l, cx + cw / 2, y + 10 + ch / 2 + 50, Math.min(150, cw * 0.55), { color: col, align: 'center' }); }); },
+      art: (ctx, x, y, w, h) => { const cw = (w - 24) / 2, ch = w > 800 ? Math.min(h - 20, cw * 1.1) : Math.min(h - 40, cw * 2.2); [['UI', C.green], ['UX', C.sel]].forEach(([l, col], i) => { const cx = x + i * (cw + 24); rr(ctx, cx, y + 10, cw, ch, 28, '#232323', col, 4); txt(ctx, l, cx + cw / 2, y + 10 + ch / 2 + 50, Math.min(150, cw * 0.55), { color: col, align: 'center' }); }); },
     },
   };
 }
