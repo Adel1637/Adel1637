@@ -1,0 +1,62 @@
+VIDÉO LONGUE YOUTUBE — UI in 2026: what's in, what's out
+Format 16:9 · 1:44 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+Contenu vérifié en ligne le 22 novembre 2026 (sources en bas de ce fichier, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+UI in 2026: what's in, what's out | الواجهات في 2026: ما الرائج وما المتراجع؟
+
+==================================================================
+DESCRIPTION YOUTUBE (EN + AR)
+==================================================================
+6 UI styles that are in for 2026, and 2 that are fading:
+In: Liquid Glass with enough contrast, Material 3 Expressive, generative UI, bento grids, sharp minimal, calm and accessible design.
+Out: full-page neo-brutalism, glass without contrast.
+
+ستة أنماط واجهات رائجة في 2026، واثنان في تراجع:
+الرائج: زجاج Liquid Glass مع تباين كافٍ، وMaterial 3 Expressive، والواجهات التوليدية، وشبكات Bento، والبساطة الحادّة، والتصميم الهادئ وسهل الوصول.
+المتراجع: أسلوب Neo-brutalism في الصفحة كلها، والزجاج بلا تباين كافٍ.
+
+Each style comes with when to use it and one practical tip.
+مع كل نمط: متى تستخدمه ونصيحة عملية.
+
+Chapters / الفصول
+0:00 In: Liquid Glass, done right · زجاج Liquid Glass
+0:16 Material 3 Expressive
+0:27 Generative UI · الواجهات التوليدية
+0:37 Bento grids · شبكات Bento
+0:47 Sharp minimal · البساطة الحادّة
+0:58 Calm & accessible · التصميم الهادئ وسهل الوصول
+1:08 Out: full-page brutalism · المتراجع: Neo-brutalism
+1:21 Out: glass without contrast · المتراجع: زجاج بلا تباين
+1:31 Recap · ملخّص
+
+All interfaces in this video are fictional examples.
+جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+
+#uidesign #uxdesign #designtrends #liquidglass #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+ui design trends 2026, ui trends 2026, liquid glass, ios 27 liquid glass, material 3 expressive, generative ui, agentic ux, bento grid, minimal ui, neo brutalism, accessible design, dark ui, learn ui ux, اتجاهات تصميم الواجهات 2026, تصميم الواجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which style are you using in 2026? 👇
+أيّ نمط تستخدم في 2026؟ 👇
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+MacRumors, Liquid Glass in iOS 27 : https://www.macrumors.com/2026/06/10/how-liquid-glass-is-changing-in-ios-27/
+Infinum, Liquid Glass accessibility : https://infinum.com/blog/apples-ios-26-liquid-glass-sleek-shiny-and-questionably-accessible/
+Android Authority, Material 3 Expressive rollout : https://www.androidauthority.com/when-material-3-expressive-desktop-mode-roll-out-3565381/
+Design Agent, trends July 2026 (generative UI) : https://design-agent.dev/blog/design-trends-july-2026-vol5/
+Phenomenon Studio, agentic UX : https://phenomenonstudio.com/article/ai-product-design-trends-to-watch-in-2026/
+Fuselab Creative, UI/UX trends 2026 : https://fuselabcreative.com/ui-ux-design-trends-2026-modern-ui-trends-ux-trends-guide/
+Netguru, web design trends 2026 : https://www.netguru.com/blog/top-web-design-trends
+DesignRush, web design trends 2026 : https://www.designrush.com/agency/website-design-development/trends/web-design-trends

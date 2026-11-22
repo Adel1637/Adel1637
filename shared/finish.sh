@@ -13,7 +13,7 @@ if ! shared/check-hook.sh "$FILM" "$FMT"; then
   exit 1
 fi
 node "$SKILL/scripts/render.mjs" --film "$FILM" --format "$FMT" --video-only --fps 30
-node "$SKILL/scripts/sfx.mjs" "$FILM"
+node shared/sfx-ag.mjs "$FILM"   # AG Studio sound palette (shared/sfx-ag.mjs)
 node "$SKILL/scripts/mix.mjs" "$FILM"
 # cover mode lives in film.js or in a shared builder it imports (e.g. shared/basics.js)
 if grep -qE "get\('cover'\)|cover:" "$FILM/film.js" || grep -l "get('cover')" $(grep -oE "\.\./shared/[a-z-]+\.js" "$FILM/film.js" | sed "s#^\.\./#./#") 2>/dev/null | grep -q .; then

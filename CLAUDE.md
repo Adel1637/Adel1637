@@ -13,7 +13,7 @@ Dialogue en **français**. Vidéos : titre en anglais + sous-titre arabe (traduc
 - Logos : seulement les fichiers fournis, jamais redessinés (sinon le nom en texte).
 
 ## Forme
-- Sans musique, effets sonores seulement, -14 LUFS. Accroche obligatoire (`shared/accroche.md`, vérifiée par `shared/finish.sh`).
+- Sans musique, effets sonores seulement, -14 LUFS. **Palette sonore AG Studio** (`shared/sfx-ag.mjs`, validée par Adel) : sons modélisés (bois, clavier mécanique, corde, verre, feutre, souffle, bande), une seule gamme (ré pentatonique), signature de 3 notes au début et à la fin. Ne plus utiliser les sons génériques de motion-reel. Accroche obligatoire (`shared/accroche.md`, vérifiée par `shared/finish.sh`).
 - Style actuel : **motion cinétique « logiciel sombre »** (gris de logiciel, IBM Plex, ressorts, masques, flou de mouvement), sans orange, pas de beige, pas de violet décoratif, pas de grille à points. Modules : `shared/kinetic.js`, `shared/kinetic-film.js`.
 - Téléphones avec de vraies proportions (environ 1:2,1).
 - Fin : une seule page bleue « Keep it simple. / اجعلها بسيطة. » + « Follow for more UI/UX tutorials / تابعني لمزيد من دروس UI/UX », sans logo.
