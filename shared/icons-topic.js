@@ -178,7 +178,7 @@ export function iconsTopic(K, I, long) {
     recap: { title: ['6 CHECKS,', 'ONE ICON SET.'], ar: 'ست خطوات ومجموعة أيقونات واحدة.', en: 'PLATFORM · STYLE · STROKE · GRID · MEANING · LICENSE', vig: I.recapVig },
     cover: {
       lines: ['HOW TO CHOOSE', 'THE RIGHT', 'ICONS.'], ar: 'كيف تختار الأيقونات المناسبة؟',
-      art: (ctx, x, y, w, h) => { const names = ['home', 'search', 'bell', 'heart', 'user', 'gear']; const cs = Math.min(140, (w - 5 * 20) / 6); names.forEach((n, i) => { const cx = x + i * (cs + 20); rr(ctx, cx, y + 20, cs, cs, 24, i === 0 ? C.sel : '#262626', '#3A3A3A', 2); I.icon(ctx, n, cx + cs / 2, y + 20 + cs / 2, cs * 0.5, { stroke: 2 }); }); },
+      art: (ctx, x, y, w, h) => { const names = ['home', 'search', 'bell', 'heart', 'user', 'gear']; const cols = w > 800 ? 6 : 2, gap = 24, cs = Math.min(w > 800 ? 140 : 260, (w - (cols - 1) * gap) / cols); names.forEach((n, i) => { const cx = x + (i % cols) * (cs + gap), cy = y + 20 + Math.floor(i / cols) * (cs + gap); rr(ctx, cx, cy, cs, cs, 28, i === 0 ? C.sel : '#262626', '#3A3A3A', 2); I.icon(ctx, n, cx + cs / 2, cy + cs / 2, cs * 0.5, { stroke: 2 }); }); },
     },
   };
 }
