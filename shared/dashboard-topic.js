@@ -50,9 +50,10 @@ export function makeDashboard(M, K) {
     const deco = 1 - e5, dk = th;
     rr(ctx, 80, 300, 920, 850, 24, mix('#F4F4F6', BG, Math.max(e5, th)), e5 > 0.5 ? LINE : null, 1.5);
     // header: loud banner -> thin breadcrumb bar with period switch
-    if (deco > 0) { ctx.save(); ctx.globalAlpha = deco; const g = ctx.createLinearGradient(80, 0, 1000, 0); g.addColorStop(0, '#00C2FF'); g.addColorStop(1, '#FF4D6D'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(80, 300, 920, 80, [24, 24, 0, 0]); ctx.fill(); txt(ctx, 'DASHBOARD!!', 120, 354, 34, { color: '#FFFFFF' }); ctx.restore(); }
-    if (e5 > 0) {
-      ctx.save(); ctx.globalAlpha = e5;
+    const bannerA = 1 - clamp(e5 / 0.45);
+    if (bannerA > 0) { ctx.save(); ctx.globalAlpha = bannerA; const g = ctx.createLinearGradient(80, 0, 1000, 0); g.addColorStop(0, '#00C2FF'); g.addColorStop(1, '#FF4D6D'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(80, 300, 920, 80, [24, 24, 0, 0]); ctx.fill(); txt(ctx, 'DASHBOARD!!', 120, 354, 34, { color: '#FFFFFF' }); ctx.restore(); }
+    if (e5 > 0.4) {
+      ctx.save(); ctx.globalAlpha = clamp((e5 - 0.4) / 0.6);
       T(ctx, 'Store', X0, 350, 17, 500, DIM); T(ctx, '/', X0 + 52, 350, 17, 400, FAINT); T(ctx, 'Analytics', X0 + 68, 350, 17, 600, TXT);
       const sx = X1 - 214; rr(ctx, sx, 326, 214, 36, 8, SURF, LINE, 1); rr(ctx, sx + 74, 329, 66, 30, 6, SEG, th < 0.5 ? LINE : null, 1);
       ['24h', '7d', '30d'].forEach((l, i) => T(ctx, l, sx + 37 + i * 70, 349, 14, i === 1 ? 600 : 500, i === 1 ? TXT : DIM, 'center', F.mono));
@@ -68,7 +69,7 @@ export function makeDashboard(M, K) {
         if (i === 5) { col = lerp(1, 0, E.inOutCubic(e2)); row = lerp(1, 0, E.inOutCubic(e2)); }
         if (i === 0) { col = lerp(0, 1, E.inOutCubic(e2)); row = lerp(0, 1, E.inOutCubic(e2)); }
         const x = 104 + col * (tw + 12), y = 400 + row * (th + 12);
-        const dim = t.keep ? 1 : lerp(1, 0.22, e1), a = (1 - e3) * dim;
+        const dim = t.keep ? 1 : lerp(1, 0.22, e1), a = (1 - clamp(e3 / 0.4)) * dim;
         ctx.save(); ctx.globalAlpha = a;
         if (deco > 0) { ctx.fillStyle = 'rgba(0,0,0,0.25)'; ctx.fillRect(x + 6, y + 6, tw, th); }
         rr(ctx, x, y, tw, th, 8, '#FFFFFF', t.c, 4);
@@ -76,12 +77,12 @@ export function makeDashboard(M, K) {
         txt(ctx, i === 5 ? 'Revenue' : t.l, x + 64, y + 40, 16, { color: '#555' }); txt(ctx, i === 5 ? KPI[0].v : String(t.v), x + 64, y + 72, 22, { color: '#111' });
         ctx.restore();
         if (!t.keep && e1 > 0.3 && e3 < 0.2) { ctx.save(); ctx.globalAlpha = Math.min(1, e1) * (1 - e3 * 5); ctx.strokeStyle = C.red; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x + tw - 30, y + 14); ctx.lineTo(x + tw - 14, y + 30); ctx.moveTo(x + tw - 14, y + 14); ctx.lineTo(x + tw - 30, y + 30); ctx.stroke(); ctx.restore(); }
-        if (i === 5 && e2 > 0 && e3 < 1) { ctx.save(); ctx.globalAlpha = Math.min(1, e2) * (1 - e3); rr(ctx, x - 6, y - 6, tw + 12, th + 12, 12, null, ACC, 5); ctx.restore(); }
+        if (i === 5 && e2 > 0 && e3 < 0.4) { ctx.save(); ctx.globalAlpha = Math.min(1, e2) * (1 - clamp(e3 / 0.4)); rr(ctx, x - 6, y - 6, tw + 12, th + 12, 12, null, ACC, 5); ctx.restore(); }
       });
     }
     // ---- hero metric (Stripe-like): big revenue, delta, and below it the chart (principle 4)
-    if (e3 > 0) {
-      const s = clamp(e3 * 1.5);
+    if (e3 > 0.35) {
+      const s = clamp((e3 - 0.35) / 0.5);
       ctx.save(); ctx.globalAlpha = s;
       const up = KPI[0].d >= 0; ctx.font = `600 54px ${F.title}`; const vw = ctx.measureText(KPI[0].v).width;
       ctx.font = `500 14px ${F.title}`; const sw = Math.max(ctx.measureText('vs previous 7d').width, 64);
@@ -170,7 +171,7 @@ export function makeDashboard(M, K) {
       hits: [[2.8, `principle ${k}`, 'whoosh', { len: 0.6 }], [4.6, `clean ${k}`, 'pop', { pitch: ['D5', 'E5', 'F#5', 'A5', 'B5', 'D6', 'E6'][k - 1] }], [7.2, `done ${k}`, 'bell', { pitch: 'F#6' }]],
     };
   }
-  const q = (ctx, v) => { const p = spr(v, 3.2, { stiffness: 280, damping: 14 }); if (p > 0) pill(ctx, 'Q: How is the store doing this week?', 540, 330, p, C.sel, 24); };
+  const q = (ctx, v) => { const p = spr(v, 3.2, { stiffness: 280, damping: 14 }); if (p > 0) pill(ctx, 'Q: How is the store doing this week?', 724, 340, p, C.sel, 24); };
   const fpath = (ctx, v) => { const p = ez(v, 3, 6, (t) => t); if (p <= 0 || v > 8.5) return; ctx.save(); ctx.strokeStyle = 'rgba(47,124,246,0.75)'; ctx.lineWidth = 10; ctx.lineCap = 'round'; ctx.setLineDash([1, 22]); const P = [[110, 420], [990, 420], [110, 540], [700, 540], [110, 660], [110, 1100]]; ctx.beginPath(); let left = p * 5; P.forEach(([x, y], i) => { if (i === 0) { ctx.moveTo(x, y); return; } const [x0, y0] = P[i - 1], f = clamp(left); if (f > 0) ctx.lineTo(lerp(x0, x, f), lerp(y0, y, f)); left -= 1; }); ctx.stroke(); ctx.restore(); };
   const hover = (ctx, v) => { if (v >= 3 && v < 9) { const [px, py] = trendPoint(9); const m = ez(v, 3, 4.2, E.inOutCubic); cursor(ctx, lerp(860, px + 6, m), lerp(1100, py + 6, m)); } };
   const steps = [step(1, q), step(2, fpath), step(3), step(4), step(5), step(6, hover), step(7)];
