@@ -27,27 +27,27 @@ export function makeDashboard(M, K) {
   function spark(ctx, x, y, w, h, pts, col, lw = 3) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.lineJoin = 'round'; ctx.beginPath(); pts.forEach((p, i) => { const px = x + (i / (pts.length - 1)) * w, py = y + h - p * h; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }); ctx.stroke(); }
 
   // ---------------------------------------------------------------- the dashboard at level L
-  // clear state = EDITORIAL dashboard (newspaper data-desk style, Tufte/Few): no cards, no shadows, no pills, no
-  // avatars; hairline rules and a grid, a headline sentence that answers the question, big serif numerals,
-  // direct labels on the chart, one accent colour (deep teal). The cluttered "before" state is unchanged.
-  const INKC = '#141414', MUTE = '#6B6B6B', RULE = '#D9D9D9', TEAL = '#0F6B66';
-  const X0 = 112, X1 = 968;                                   // editorial content margins
-  const plot = { x: X0 + 40, y: 690, w: 520, h: 210 };
+  // clear state = DARK, DENSE, MONOCHROME (inspired by how Linear, Vercel and Stripe build their analytics):
+  // near-black surfaces, hairline borders, colour only for meaning, one hero chart with the previous period
+  // dashed for comparison, a dense metric strip with bar sparklines, compact lists. The "before" state is unchanged.
+  const BG = '#0A0A0B', LINE = '#232327', TXT = '#EDEDED', DIM = '#8B8B93', FAINT = '#55555D', UP = '#3DD68C', DOWN = '#FF6166';
+  const X0 = 110, X1 = 970;
+  const plot = { x: X0 + 4, y: 520, w: X1 - X0 - 8, h: 180 };
+  const PREV = TREND.map((p, i) => Math.max(0.08, p * 0.86 - 0.03 + 0.04 * Math.sin(i * 1.7)));
   const trendPoint = (k) => [plot.x + (k / (TREND.length - 1)) * plot.w, plot.y + plot.h - TREND[k] * plot.h];
   const T = (ctx, s, x, y, size, w, color, align = 'left', family = F.title) => txt(ctx, s, x, y, size, { w, color, align, family });
-  const hair = (ctx, x0, y, x1, col = RULE, lw = 1) => { ctx.fillStyle = col; ctx.fillRect(x0, y, x1 - x0, lw); };
-  const top = CATS[0].n;
   function dash(ctx, L, v = 0, opts = {}) {
     const e1 = e(L, 1), e2 = e(L, 2), e3 = e(L, 3), e4 = e(L, 4), e5 = e(L, 5), e6 = e(L, 6), e7 = opts.color ? e(L, 7) : 1;
-    const deco = 1 - e5, clean = e5;
-    rr(ctx, 80, 300, 920, 850, 24, mix('#F4F4F6', '#FFFFFF', e5));
-    // header: loud gradient banner -> editorial masthead + headline sentence
+    const deco = 1 - e5, dk = e3;                               // the UI turns dark when the real components arrive
+    rr(ctx, 80, 300, 920, 850, 24, mix('#F4F4F6', BG, dk), dk > 0.5 ? LINE : null, 1.5);
+    // header: loud banner -> thin breadcrumb bar with period switch
     if (deco > 0) { ctx.save(); ctx.globalAlpha = deco; const g = ctx.createLinearGradient(80, 0, 1000, 0); g.addColorStop(0, '#00C2FF'); g.addColorStop(1, '#FF4D6D'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(80, 300, 920, 80, [24, 24, 0, 0]); ctx.fill(); txt(ctx, 'DASHBOARD!!', 120, 354, 34, { color: '#FFFFFF' }); ctx.restore(); }
-    if (clean > 0) {
-      ctx.save(); ctx.globalAlpha = clean;
-      T(ctx, 'STORE · WEEK 47', X0, 336, 13, 600, MUTE, 'left', F.mono); T(ctx, 'LAST 7 DAYS', X1, 336, 13, 600, MUTE, 'right', F.mono);
-      hair(ctx, X0, 348, X1, INKC, 2);
-      T(ctx, `Revenue is up ${Math.abs(KPI[0].d)}% this week, led by ${top}.`, X0, 392, fit(ctx, `Revenue is up ${Math.abs(KPI[0].d)}% this week, led by ${top}.`, 36, X1 - X0, 400, F.serif), 400, INKC, 'left', F.serif);
+    if (e5 > 0) {
+      ctx.save(); ctx.globalAlpha = e5;
+      T(ctx, 'Store', X0, 350, 17, 500, DIM); T(ctx, '/', X0 + 52, 350, 17, 400, FAINT); T(ctx, 'Analytics', X0 + 68, 350, 17, 600, TXT);
+      const sx = X1 - 214; rr(ctx, sx, 326, 214, 36, 8, '#141416', LINE, 1); rr(ctx, sx + 74, 329, 66, 30, 6, '#26262B');
+      ['24h', '7d', '30d'].forEach((l, i) => T(ctx, l, sx + 37 + i * 70, 349, 14, i === 1 ? 600 : 500, i === 1 ? TXT : DIM, 'center', F.mono));
+      ctx.fillStyle = LINE; ctx.fillRect(80, 380, 920, 1);
       ctx.restore();
     }
     txt(ctx, 'DEMO DATA', 980, 296, 16, { w: 600, family: F.mono, color: '#888', align: 'right' });
@@ -70,25 +70,16 @@ export function makeDashboard(M, K) {
         if (i === 5 && e2 > 0 && e3 < 1) { ctx.save(); ctx.globalAlpha = Math.min(1, e2) * (1 - e3); rr(ctx, x - 6, y - 6, tw + 12, th + 12, 12, null, ACC, 5); ctx.restore(); }
       });
     }
-    // ---- KPI strip: no cards, columns split by hairlines, big serif numerals, delta in words, tiny sparkline
+    // ---- hero metric (Stripe-like): big revenue, delta, and below it the chart (principle 4)
     if (e3 > 0) {
-      const cw = (X1 - X0) / 4, y = 420;
-      KPI.forEach((k, i) => {
-        const s = clamp(e3 * 1.6 - i * 0.15); if (s <= 0) return;
-        const x = X0 + i * cw;
-        ctx.save(); ctx.globalAlpha = s;
-        if (deco > 0) { ctx.save(); ctx.globalAlpha = s * deco; ctx.fillStyle = `rgba(0,0,0,0.2)`; ctx.fillRect(x + 10, y + 6, cw - 14, 150); rr(ctx, x + 4, y, cw - 14, 150, 12, '#FFFFFF', '#9AA4B2', 4); ctx.fillStyle = ['#00C2FF', '#FFC300', '#FF4D6D', '#7CFC00'][i]; ctx.beginPath(); ctx.arc(x + cw - 40, y + 30, 16, 0, TAU); ctx.fill(); ctx.restore(); }
-        if (i > 0) { ctx.globalAlpha = s * clean; ctx.fillStyle = RULE; ctx.fillRect(x, y, 1, 150); ctx.globalAlpha = s; }
-        const px = x + (i ? 22 : 14);
-        T(ctx, k.l.toUpperCase(), px, y + 26, 13, 600, MUTE, 'left', F.mono);
-        T(ctx, k.v, px, y + 88, fit(ctx, k.v, 56, cw - 36, 400, F.serif), 400, INKC, 'left', F.serif);
-        const up = k.d >= 0, good = e7 > 0.5, dc = good ? (up ? '#1B6B3A' : '#A61B1B') : ['#FF7AE0', '#00C2FF', '#FFC300', '#7CFC00'][i];
-        T(ctx, `${up ? '▲' : '▼'} ${Math.abs(k.d)}%`, px, y + 120, 15, 600, dc); T(ctx, 'vs last week', px + 72, y + 120, 13, 400, MUTE);
-        ctx.strokeStyle = good ? INKC : dc; ctx.lineWidth = 1.5; ctx.beginPath(); k.spark.forEach((p, j) => { const sx = px + (j / 11) * (cw - 50), sy = y + 146 - p * 14; j ? ctx.lineTo(sx, sy) : ctx.moveTo(sx, sy); }); ctx.stroke();
-        ctx.fillStyle = good ? TEAL : dc; ctx.beginPath(); ctx.arc(px + cw - 50, y + 146 - k.spark[11] * 14, 3.5, 0, TAU); ctx.fill();
-        ctx.restore();
-      });
-      ctx.save(); ctx.globalAlpha = Math.min(1, e3) * clean; hair(ctx, X0, 600, X1); ctx.restore();
+      const s = clamp(e3 * 1.5);
+      ctx.save(); ctx.globalAlpha = s;
+      if (deco > 0) { ctx.save(); ctx.globalAlpha = s * deco; rr(ctx, X0 - 6, 396, 300, 110, 14, '#1C1C20', '#6B7280', 4); ctx.fillStyle = '#00C2FF'; ctx.beginPath(); ctx.arc(X0 + 262, 424, 16, 0, TAU); ctx.fill(); ctx.restore(); }
+      T(ctx, 'Gross revenue', X0, 426, 17, 500, DIM);
+      T(ctx, KPI[0].v, X0, 486, 54, 600, TXT);
+      const up = KPI[0].d >= 0; ctx.font = `600 54px ${F.title}`; const vw = ctx.measureText(KPI[0].v).width;
+      T(ctx, `${up ? '+' : '−'}${Math.abs(KPI[0].d)}%`, X0 + vw + 18, 470, 18, 600, e7 > 0.5 ? (up ? UP : DOWN) : '#FF7AE0', 'left', F.mono); T(ctx, 'vs previous 7d', X0 + vw + 18, 492, 14, 500, FAINT);
+      ctx.restore();
     }
     // ---- cluttered charts: pie + gauge (until principle 4)
     if (e4 < 1) {
@@ -97,49 +88,59 @@ export function makeDashboard(M, K) {
       const cx = 300, cy = 950, R = 150; let ang = -Math.PI / 2; const tot = CATS.reduce((s2, c) => s2 + c.v, 0);
       if (deco > 0) { ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.beginPath(); ctx.ellipse(cx + 10, cy + 20, R, R * 0.9, 0, 0, TAU); ctx.fill(); }
       CATS.forEach((c, i) => { const da = (c.v / tot) * TAU; ctx.fillStyle = ['#FF4D6D', '#00C2FF', '#FFC300', '#7CFC00', '#FF7AE0'][i]; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, R, ang, ang + da); ctx.closePath(); ctx.fill(); ang += da; });
-      txt(ctx, 'Sales by category', cx, cy - R - 20, 20, { color: '#555', align: 'center' });
+      txt(ctx, 'Sales by category', cx, cy - R - 20, 20, { color: dk > 0.5 ? '#BBB' : '#555', align: 'center' });
       const gx = 760, gy = 1010; ctx.lineWidth = 34; ctx.lineCap = 'butt'; ctx.strokeStyle = '#E3E3E3'; ctx.beginPath(); ctx.arc(gx, gy, 140, Math.PI, 0); ctx.stroke();
-      ctx.strokeStyle = '#FF4D6D'; ctx.beginPath(); ctx.arc(gx, gy, 140, Math.PI, Math.PI * 1.62); ctx.stroke(); txt(ctx, 'Trend?', gx, gy - 20, 30, { color: '#111', align: 'center' });
+      ctx.strokeStyle = '#FF4D6D'; ctx.beginPath(); ctx.arc(gx, gy, 140, Math.PI, Math.PI * 1.62); ctx.stroke(); txt(ctx, 'Trend?', gx, gy - 20, 30, { color: dk > 0.5 ? '#EEE' : '#111', align: 'center' });
       ctx.restore();
     }
-    // ---- clear charts (editorial): line with direct labels + ranked dot plot + plain table
+    // ---- clear content: hero chart with previous period, dense metric strip, compact lists
     if (e4 > 0) {
-      const a = Math.min(1, e4 * 1.4);
+      const a = Math.min(1, e4 * 1.4), n = Math.max(2, Math.round(1 + clamp(e4 * 1.5) * (TREND.length - 1)));
       ctx.save(); ctx.globalAlpha = a;
-      if (deco > 0) { ctx.save(); ctx.globalAlpha = a * deco; ctx.fillStyle = 'rgba(0,0,0,0.2)'; ctx.fillRect(X0 + 6, 626, 600, 300); rr(ctx, X0, 620, 600, 300, 12, '#FFFFFF', '#9AA4B2', 4); rr(ctx, 730, 620, 238, 300, 12, '#FFFFFF', '#9AA4B2', 4); ctx.restore(); }
-      T(ctx, 'Daily revenue', X0, 650, 18, 600, INKC); T(ctx, 'USD, thousands', X0 + 140, 650, 14, 400, MUTE);
-      [0, 1, 2, 3].forEach((g) => { const y = plot.y + (g / 3) * plot.h; hair(ctx, plot.x, y, plot.x + plot.w, '#EDEDED'); T(ctx, `${(3 - g) * 4}`, plot.x - 12, y + 5, 12, 500, MUTE, 'right', F.mono); });
-      ['M', 'T', 'W', 'T', 'F', 'S', 'S'].forEach((d, i) => T(ctx, d, plot.x + (i / 6) * plot.w, plot.y + plot.h + 26, 12, 600, MUTE, 'center', F.mono));
-      const n = Math.max(2, Math.round(1 + clamp(e4 * 1.5) * (TREND.length - 1)));
-      ctx.strokeStyle = e7 > 0.5 ? TEAL : ACC; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath(); TREND.slice(0, n).forEach((p, i) => { const [x, y] = trendPoint(i); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke();
-      // direct label on the line end + annotated best day
-      if (n >= TREND.length) {
-        const [ex, ey] = trendPoint(TREND.length - 1); ctx.fillStyle = TEAL; ctx.beginPath(); ctx.arc(ex, ey, 5, 0, TAU); ctx.fill();
-        T(ctx, 'This week', ex - 8, ey - 16, 14, 600, TEAL, 'right');
-        let mi = 0; TREND.forEach((p, i) => { if (p < TREND[mi]) mi = i; });
-        if (clean > 0) { const [bx, by] = trendPoint(mi); ctx.save(); ctx.globalAlpha = a * clean; ctx.strokeStyle = INKC; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(bx, by + 8); ctx.lineTo(bx, by + 46); ctx.stroke(); T(ctx, 'Slowest day', bx + 6, by + 44, 13, 600, INKC); ctx.restore(); }
-      }
-      // ranked categories: thin bars, values written at the end, no colours
-      const rx = 740; T(ctx, 'Top categories', rx, 650, 18, 600, INKC);
+      [0.25, 0.5, 0.75].forEach((g) => { ctx.fillStyle = '#17171A'; ctx.fillRect(plot.x, plot.y + plot.h * g, plot.w, 1); });
+      const P = (arr, i) => [plot.x + (i / (arr.length - 1)) * plot.w, plot.y + plot.h - arr[i] * plot.h];
+      // previous period, dashed and faint
+      ctx.setLineDash([5, 7]); ctx.strokeStyle = FAINT; ctx.lineWidth = 2; ctx.beginPath(); PREV.forEach((p, i) => { const [x, y] = P(PREV, i); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke(); ctx.setLineDash([]);
+      // current period, with a soft fill
+      const g = ctx.createLinearGradient(0, plot.y, 0, plot.y + plot.h); g.addColorStop(0, 'rgba(237,237,237,0.16)'); g.addColorStop(1, 'rgba(237,237,237,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(plot.x, plot.y + plot.h); for (let i = 0; i < n; i++) { const [x, y] = P(TREND, i); ctx.lineTo(x, y); } ctx.lineTo(P(TREND, n - 1)[0], plot.y + plot.h); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = e7 > 0.5 ? TXT : '#00C2FF'; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.beginPath(); for (let i = 0; i < n; i++) { const [x, y] = P(TREND, i); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
+      ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].forEach((d, i) => T(ctx, d, plot.x + (i / 6) * plot.w, plot.y + plot.h + 24, 13, 500, FAINT, i === 0 ? 'left' : i === 6 ? 'right' : 'center', F.mono));
+      ctx.fillStyle = TXT; ctx.fillRect(X1 - 250, 424, 18, 2.5); T(ctx, 'This period', X1 - 226, 430, 13, 500, DIM); ctx.setLineDash([4, 4]); ctx.strokeStyle = FAINT; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X1 - 120, 425); ctx.lineTo(X1 - 102, 425); ctx.stroke(); ctx.setLineDash([]); T(ctx, 'Previous', X1 - 96, 430, 13, 500, DIM);
+      // dense metric strip: one bordered row, hairline separators, bar sparklines
+      const sy = 754, sh = 116, cw = (X1 - X0) / 3;
+      rr(ctx, X0, sy, X1 - X0, sh, 10, '#0F0F11', deco > 0.5 ? '#6B7280' : LINE, deco > 0.5 ? 3 : 1);
+      KPI.slice(1).forEach((k, i) => {
+        const x = X0 + i * cw; if (i) { ctx.fillStyle = LINE; ctx.fillRect(x, sy + 14, 1, sh - 28); }
+        if (deco > 0) { ctx.save(); ctx.globalAlpha = a * deco; ctx.fillStyle = ['#FFC300', '#FF4D6D', '#7CFC00'][i]; ctx.beginPath(); ctx.arc(x + cw - 30, sy + 28, 13, 0, TAU); ctx.fill(); ctx.restore(); }
+        T(ctx, k.l, x + 20, sy + 32, 14, 500, DIM);
+        T(ctx, k.v, x + 20, sy + 72, 30, 600, TXT);
+        const up = k.d >= 0; T(ctx, `${up ? '+' : '−'}${Math.abs(k.d)}%`, x + 20, sy + 98, 13, 600, e7 > 0.5 ? (up ? UP : DOWN) : ['#FFC300', '#FF4D6D', '#7CFC00'][i], 'left', F.mono);
+        k.spark.forEach((p, j) => { const bw = 6, bx = x + cw - 110 + j * 8, bh = 8 + p * 34; ctx.fillStyle = j === 11 ? TXT : '#2E2E34'; ctx.fillRect(bx, sy + 98 - bh, bw, bh); });
+      });
+      // compact lists: categories (inline bars) and recent orders (status dots, relative time)
+      const ly = 892;
+      T(ctx, 'Top categories', X0, ly + 18, 15, 600, TXT); T(ctx, 'Recent orders', 560, ly + 18, 15, 600, TXT);
+      ctx.fillStyle = LINE; ctx.fillRect(X0, ly + 32, 410, 1); ctx.fillRect(560, ly + 32, X1 - 560, 1);
       const tot = CATS.reduce((s2, c) => s2 + c.v, 0);
-      CATS.forEach((c, i) => { const y = 700 + i * 44, pct = Math.round((c.v / tot) * 100), w = 150 * (c.v / CATS[0].v) * clamp(e4 * 1.3 - i * 0.08); T(ctx, c.n, rx, y, 14, 500, INKC); ctx.fillStyle = e7 > 0.5 ? (i === 0 ? TEAL : '#9A9A9A') : ['#FF4D6D', '#00C2FF', '#FFC300', '#7CFC00', '#FF7AE0'][i]; ctx.fillRect(rx, y + 10, w, 6); T(ctx, `${pct}%`, rx + w + 8, y + 17, 13, 600, MUTE, 'left', F.mono); });
-      // orders: plain table, hairlines, right-aligned figures
-      hair(ctx, X0, 950, X1, INKC, 2);
-      T(ctx, 'Latest orders', X0, 982, 18, 600, INKC);
-      ['ORDER', 'ITEM', 'STATUS', 'AMOUNT'].forEach((h, i) => T(ctx, h, [X0, X0 + 160, X0 + 480, X1][i], 1012, 12, 600, MUTE, i === 3 ? 'right' : 'left', F.mono));
-      [['1042', 'Watches', 'Paid', money(r2(1))], ['1041', 'Bags', 'Paid', money(r2(2))], ['1040', 'Hats', 'Refunded', money(r2(3))]].forEach(([o, it, st, amt], i) => {
-        const y = 1046 + i * 34; hair(ctx, X0, y - 24, X1, '#EDEDED');
-        T(ctx, o, X0, y, 15, 500, INKC, 'left', F.mono); T(ctx, it, X0 + 160, y, 15, 400, INKC); T(ctx, st, X0 + 480, y, 15, 600, st === 'Paid' ? INKC : '#A61B1B'); T(ctx, amt, X1, y, 15, 500, INKC, 'right', F.mono);
+      CATS.slice(0, 4).forEach((c, i) => { const y = ly + 50 + i * 50, pct = Math.round((c.v / tot) * 100), w = 410 * (c.v / CATS[0].v) * clamp(e4 * 1.3 - i * 0.08); ctx.fillStyle = e7 > 0.5 ? (i === 0 ? '#2B2B31' : '#18181B') : ['#FF4D6D', '#00C2FF', '#FFC300', '#7CFC00'][i]; ctx.beginPath(); ctx.roundRect(X0, y, w, 38, 6); ctx.fill(); T(ctx, c.n, X0 + 14, y + 25, 15, 500, TXT); T(ctx, `${pct}%`, X0 + 400, y + 25, 14, 600, DIM, 'right', F.mono); });
+      [['#1042', money(r2(1)), 'Paid', '2m'], ['#1041', money(r2(2)), 'Paid', '9m'], ['#1040', money(r2(3)), 'Refunded', '14m'], ['#1039', money(r2(4)), 'Paid', '21m']].forEach(([o, amt, st, t], i) => {
+        const y = ly + 72 + i * 50, ok = st === 'Paid';
+        ctx.fillStyle = e7 > 0.5 ? (ok ? UP : DOWN) : '#FF7AE0'; ctx.beginPath(); ctx.arc(566, y - 5, 4.5, 0, TAU); ctx.fill();
+        T(ctx, o, 582, y, 15, 500, TXT, 'left', F.mono); T(ctx, st, 680, y, 14, 500, DIM); T(ctx, amt, X1 - 56, y, 15, 600, TXT, 'right', F.mono); T(ctx, t, X1, y, 13, 500, FAINT, 'right', F.mono);
       });
       ctx.restore();
     }
-    // ---- principle 6: details on demand (annotation-style tooltip)
+    // ---- principle 6: details on demand (crosshair + compact tooltip comparing both periods)
     if (e6 > 0 && opts.tooltip !== false) {
-      const k = 9, [px, py] = trendPoint(k);
+      const k = 9, [px, py] = trendPoint(k), prevY = plot.y + plot.h - PREV[k] * plot.h;
       ctx.save(); ctx.globalAlpha = Math.min(1, e6 * 1.5);
-      ctx.strokeStyle = INKC; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(px, plot.y); ctx.lineTo(px, plot.y + plot.h); ctx.stroke();
-      ctx.fillStyle = '#FFF'; ctx.beginPath(); ctx.arc(px, py, 6, 0, TAU); ctx.fill(); ctx.strokeStyle = TEAL; ctx.lineWidth = 3; ctx.stroke();
-      rr(ctx, px + 12, py - 70, 170, 58, 2, '#FFFFFF', INKC, 1.5); T(ctx, 'FRIDAY', px + 24, py - 48, 12, 600, MUTE, 'left', F.mono); T(ctx, money(TREND[k] * 12000), px + 24, py - 22, 22, 400, INKC, 'left', F.serif);
+      ctx.fillStyle = '#3A3A40'; ctx.fillRect(px, plot.y, 1, plot.h);
+      ctx.fillStyle = TXT; ctx.beginPath(); ctx.arc(px, py, 5, 0, TAU); ctx.fill(); ctx.fillStyle = FAINT; ctx.beginPath(); ctx.arc(px, prevY, 4, 0, TAU); ctx.fill();
+      rr(ctx, px + 14, plot.y + 8, 210, 92, 10, '#18181B', '#2E2E34', 1);
+      T(ctx, 'Fri, this week', px + 28, plot.y + 34, 13, 500, DIM); T(ctx, money(TREND[k] * 12000), px + 210, plot.y + 34, 14, 600, TXT, 'right', F.mono);
+      T(ctx, 'Fri, previous', px + 28, plot.y + 62, 13, 500, FAINT); T(ctx, money(PREV[k] * 12000), px + 210, plot.y + 62, 14, 600, DIM, 'right', F.mono);
+      const ch = Math.round((TREND[k] / PREV[k] - 1) * 100); T(ctx, `${ch >= 0 ? '+' : '−'}${Math.abs(ch)}%`, px + 210, plot.y + 88, 13, 600, ch >= 0 ? UP : DOWN, 'right', F.mono);
       ctx.restore();
     }
   }
