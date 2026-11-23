@@ -27,10 +27,18 @@ export function makeDashboard(M, K) {
   function spark(ctx, x, y, w, h, pts, col, lw = 3) { ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.lineJoin = 'round'; ctx.beginPath(); pts.forEach((p, i) => { const px = x + (i / (pts.length - 1)) * w, py = y + h - p * h; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); }); ctx.stroke(); }
 
   // ---------------------------------------------------------------- the dashboard at level L
-  // clear state = DARK GRAY (not black, as our own dark-mode video recommends), DENSE, MONOCHROME (inspired by how Linear, Vercel and Stripe build their analytics):
+  // clear state = LIGHT (main example) with a DARK GRAY bonus (not black, as our dark-mode video recommends); DENSE, MONOCHROME (inspired by how Linear, Vercel and Stripe build their analytics):
   // near-black surfaces, hairline borders, colour only for meaning, one hero chart with the previous period
   // dashed for comparison, a dense metric strip with bar sparklines, compact lists. The "before" state is unchanged.
-  const BG = '#26272C', LINE = '#3A3B42', TXT = '#EEEEF0', DIM = '#A3A3AC', FAINT = '#7A7A84', UP = '#3DD68C', DOWN = '#FF6166';
+  // light theme (main example) and dark-gray theme (bonus): the same layout, only the surfaces change
+  const PL = { bg: '#FFFFFF', line: '#E4E4E7', txt: '#18181B', dim: '#6B6B73', faint: '#A1A1AA', up: '#15803D', down: '#DC2626', surf: '#F4F4F5', grid: '#F0F0F2', mid: '#D4D4D8', seg: '#FFFFFF', xh: '#C4C4CA', fill: [24, 24, 27, 0.07] };
+  const PD = { bg: '#26272C', line: '#3A3B42', txt: '#EEEEF0', dim: '#A3A3AC', faint: '#7A7A84', up: '#3DD68C', down: '#FF6166', surf: '#2E2F35', grid: '#33343B', mid: '#4A4B53', seg: '#44454D', xh: '#5A5B63', fill: [238, 238, 240, 0.14] };
+  let BG, LINE, TXT, DIM, FAINT, UP, DOWN, SURF, GRID, MID, SEG, XH, FILL;
+  function setTheme(th) {
+    const m = (k) => mix(PL[k], PD[k], th);
+    [BG, LINE, TXT, DIM, FAINT, UP, DOWN, SURF, GRID, MID, SEG, XH] = ['bg', 'line', 'txt', 'dim', 'faint', 'up', 'down', 'surf', 'grid', 'mid', 'seg', 'xh'].map(m);
+    FILL = PL.fill.map((v, i) => v + (PD.fill[i] - v) * th);
+  }
   const X0 = 110, X1 = 970;
   const plot = { x: X0 + 4, y: 520, w: X1 - X0 - 8, h: 180 };
   const PREV = TREND.map((p, i) => Math.max(0.08, p * 0.86 - 0.03 + 0.04 * Math.sin(i * 1.7)));
@@ -38,14 +46,15 @@ export function makeDashboard(M, K) {
   const T = (ctx, s, x, y, size, w, color, align = 'left', family = F.title) => txt(ctx, s, x, y, size, { w, color, align, family });
   function dash(ctx, L, v = 0, opts = {}) {
     const e1 = e(L, 1), e2 = e(L, 2), e3 = e(L, 3), e4 = e(L, 4), e5 = e(L, 5), e6 = e(L, 6), e7 = opts.color ? e(L, 7) : 1;
-    const deco = 1 - e5, dk = e3;                               // the UI turns dark when the real components arrive
-    rr(ctx, 80, 300, 920, 850, 24, mix('#F4F4F6', BG, dk), dk > 0.5 ? LINE : null, 1.5);
+    const th = opts.theme || 0; setTheme(th);
+    const deco = 1 - e5, dk = th;
+    rr(ctx, 80, 300, 920, 850, 24, mix('#F4F4F6', BG, Math.max(e5, th)), e5 > 0.5 ? LINE : null, 1.5);
     // header: loud banner -> thin breadcrumb bar with period switch
     if (deco > 0) { ctx.save(); ctx.globalAlpha = deco; const g = ctx.createLinearGradient(80, 0, 1000, 0); g.addColorStop(0, '#00C2FF'); g.addColorStop(1, '#FF4D6D'); ctx.fillStyle = g; ctx.beginPath(); ctx.roundRect(80, 300, 920, 80, [24, 24, 0, 0]); ctx.fill(); txt(ctx, 'DASHBOARD!!', 120, 354, 34, { color: '#FFFFFF' }); ctx.restore(); }
     if (e5 > 0) {
       ctx.save(); ctx.globalAlpha = e5;
       T(ctx, 'Store', X0, 350, 17, 500, DIM); T(ctx, '/', X0 + 52, 350, 17, 400, FAINT); T(ctx, 'Analytics', X0 + 68, 350, 17, 600, TXT);
-      const sx = X1 - 214; rr(ctx, sx, 326, 214, 36, 8, '#2E2F35', LINE, 1); rr(ctx, sx + 74, 329, 66, 30, 6, '#44454D');
+      const sx = X1 - 214; rr(ctx, sx, 326, 214, 36, 8, SURF, LINE, 1); rr(ctx, sx + 74, 329, 66, 30, 6, SEG, th < 0.5 ? LINE : null, 1);
       ['24h', '7d', '30d'].forEach((l, i) => T(ctx, l, sx + 37 + i * 70, 349, 14, i === 1 ? 600 : 500, i === 1 ? TXT : DIM, 'center', F.mono));
       ctx.fillStyle = LINE; ctx.fillRect(80, 380, 920, 1);
       ctx.restore();
@@ -74,7 +83,7 @@ export function makeDashboard(M, K) {
     if (e3 > 0) {
       const s = clamp(e3 * 1.5);
       ctx.save(); ctx.globalAlpha = s;
-      if (deco > 0) { ctx.save(); ctx.globalAlpha = s * deco; rr(ctx, X0 - 6, 396, 300, 110, 14, '#30313A', '#8B93A0', 4); ctx.fillStyle = '#00C2FF'; ctx.beginPath(); ctx.arc(X0 + 262, 424, 16, 0, TAU); ctx.fill(); ctx.restore(); }
+      if (deco > 0) { ctx.save(); ctx.globalAlpha = s * deco; rr(ctx, X0 - 6, 396, 300, 110, 14, '#FFFFFF', '#9AA4B2', 4); ctx.fillStyle = '#00C2FF'; ctx.beginPath(); ctx.arc(X0 + 262, 424, 16, 0, TAU); ctx.fill(); ctx.restore(); }
       T(ctx, 'Gross revenue', X0, 426, 17, 500, DIM);
       T(ctx, KPI[0].v, X0, 486, 54, 600, TXT);
       const up = KPI[0].d >= 0; ctx.font = `600 54px ${F.title}`; const vw = ctx.measureText(KPI[0].v).width;
@@ -97,33 +106,33 @@ export function makeDashboard(M, K) {
     if (e4 > 0) {
       const a = Math.min(1, e4 * 1.4), n = Math.max(2, Math.round(1 + clamp(e4 * 1.5) * (TREND.length - 1)));
       ctx.save(); ctx.globalAlpha = a;
-      [0.25, 0.5, 0.75].forEach((g) => { ctx.fillStyle = '#33343B'; ctx.fillRect(plot.x, plot.y + plot.h * g, plot.w, 1); });
+      [0.25, 0.5, 0.75].forEach((g) => { ctx.fillStyle = GRID; ctx.fillRect(plot.x, plot.y + plot.h * g, plot.w, 1); });
       const P = (arr, i) => [plot.x + (i / (arr.length - 1)) * plot.w, plot.y + plot.h - arr[i] * plot.h];
       // previous period, dashed and faint
       ctx.setLineDash([5, 7]); ctx.strokeStyle = FAINT; ctx.lineWidth = 2; ctx.beginPath(); PREV.forEach((p, i) => { const [x, y] = P(PREV, i); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }); ctx.stroke(); ctx.setLineDash([]);
       // current period, with a soft fill
-      const g = ctx.createLinearGradient(0, plot.y, 0, plot.y + plot.h); g.addColorStop(0, 'rgba(238,238,240,0.14)'); g.addColorStop(1, 'rgba(238,238,240,0)');
+      const g = ctx.createLinearGradient(0, plot.y, 0, plot.y + plot.h); g.addColorStop(0, `rgba(${FILL[0]},${FILL[1]},${FILL[2]},${FILL[3]})`); g.addColorStop(1, `rgba(${FILL[0]},${FILL[1]},${FILL[2]},0)`);
       ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(plot.x, plot.y + plot.h); for (let i = 0; i < n; i++) { const [x, y] = P(TREND, i); ctx.lineTo(x, y); } ctx.lineTo(P(TREND, n - 1)[0], plot.y + plot.h); ctx.closePath(); ctx.fill();
       ctx.strokeStyle = e7 > 0.5 ? TXT : '#00C2FF'; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.beginPath(); for (let i = 0; i < n; i++) { const [x, y] = P(TREND, i); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); } ctx.stroke();
       ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].forEach((d, i) => T(ctx, d, plot.x + (i / 6) * plot.w, plot.y + plot.h + 24, 13, 500, FAINT, i === 0 ? 'left' : i === 6 ? 'right' : 'center', F.mono));
       ctx.fillStyle = TXT; ctx.fillRect(X1 - 250, 424, 18, 2.5); T(ctx, 'This period', X1 - 226, 430, 13, 500, DIM); ctx.setLineDash([4, 4]); ctx.strokeStyle = FAINT; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X1 - 120, 425); ctx.lineTo(X1 - 102, 425); ctx.stroke(); ctx.setLineDash([]); T(ctx, 'Previous', X1 - 96, 430, 13, 500, DIM);
       // dense metric strip: one bordered row, hairline separators, bar sparklines
       const sy = 754, sh = 116, cw = (X1 - X0) / 3;
-      rr(ctx, X0, sy, X1 - X0, sh, 10, '#2E2F35', deco > 0.5 ? '#6B7280' : LINE, deco > 0.5 ? 3 : 1);
+      rr(ctx, X0, sy, X1 - X0, sh, 10, SURF, deco > 0.5 ? '#6B7280' : LINE, deco > 0.5 ? 3 : 1);
       KPI.slice(1).forEach((k, i) => {
         const x = X0 + i * cw; if (i) { ctx.fillStyle = LINE; ctx.fillRect(x, sy + 14, 1, sh - 28); }
         if (deco > 0) { ctx.save(); ctx.globalAlpha = a * deco; ctx.fillStyle = ['#FFC300', '#FF4D6D', '#7CFC00'][i]; ctx.beginPath(); ctx.arc(x + cw - 30, sy + 28, 13, 0, TAU); ctx.fill(); ctx.restore(); }
         T(ctx, k.l, x + 20, sy + 32, 14, 500, DIM);
         T(ctx, k.v, x + 20, sy + 72, 30, 600, TXT);
         const up = k.d >= 0; T(ctx, `${up ? '+' : '−'}${Math.abs(k.d)}%`, x + 20, sy + 98, 13, 600, e7 > 0.5 ? (up ? UP : DOWN) : ['#FFC300', '#FF4D6D', '#7CFC00'][i], 'left', F.mono);
-        k.spark.forEach((p, j) => { const bw = 6, bx = x + cw - 110 + j * 8, bh = 8 + p * 34; ctx.fillStyle = j === 11 ? TXT : '#4A4B53'; ctx.fillRect(bx, sy + 98 - bh, bw, bh); });
+        k.spark.forEach((p, j) => { const bw = 6, bx = x + cw - 110 + j * 8, bh = 8 + p * 34; ctx.fillStyle = j === 11 ? TXT : MID; ctx.fillRect(bx, sy + 98 - bh, bw, bh); });
       });
       // compact lists: categories (inline bars) and recent orders (status dots, relative time)
       const ly = 892;
       T(ctx, 'Top categories', X0, ly + 18, 15, 600, TXT); T(ctx, 'Recent orders', 560, ly + 18, 15, 600, TXT);
       ctx.fillStyle = LINE; ctx.fillRect(X0, ly + 32, 410, 1); ctx.fillRect(560, ly + 32, X1 - 560, 1);
       const tot = CATS.reduce((s2, c) => s2 + c.v, 0);
-      CATS.slice(0, 4).forEach((c, i) => { const y = ly + 50 + i * 50, pct = Math.round((c.v / tot) * 100), w = 410 * (c.v / CATS[0].v) * clamp(e4 * 1.3 - i * 0.08); ctx.fillStyle = e7 > 0.5 ? (i === 0 ? '#4A4B53' : '#33343B') : ['#FF4D6D', '#00C2FF', '#FFC300', '#7CFC00'][i]; ctx.beginPath(); ctx.roundRect(X0, y, w, 38, 6); ctx.fill(); T(ctx, c.n, X0 + 14, y + 25, 15, 500, TXT); T(ctx, `${pct}%`, X0 + 400, y + 25, 14, 600, DIM, 'right', F.mono); });
+      CATS.slice(0, 4).forEach((c, i) => { const y = ly + 50 + i * 50, pct = Math.round((c.v / tot) * 100), w = 410 * (c.v / CATS[0].v) * clamp(e4 * 1.3 - i * 0.08); ctx.fillStyle = e7 > 0.5 ? (i === 0 ? MID : SURF) : ['#FF4D6D', '#00C2FF', '#FFC300', '#7CFC00'][i]; ctx.beginPath(); ctx.roundRect(X0, y, w, 38, 6); ctx.fill(); T(ctx, c.n, X0 + 14, y + 25, 15, 500, TXT); T(ctx, `${pct}%`, X0 + 400, y + 25, 14, 600, DIM, 'right', F.mono); });
       [['#1042', money(r2(1)), 'Paid', '2m'], ['#1041', money(r2(2)), 'Paid', '9m'], ['#1040', money(r2(3)), 'Refunded', '14m'], ['#1039', money(r2(4)), 'Paid', '21m']].forEach(([o, amt, st, t], i) => {
         const y = ly + 72 + i * 50, ok = st === 'Paid';
         ctx.fillStyle = e7 > 0.5 ? (ok ? UP : DOWN) : '#FF7AE0'; ctx.beginPath(); ctx.arc(566, y - 5, 4.5, 0, TAU); ctx.fill();
@@ -135,9 +144,9 @@ export function makeDashboard(M, K) {
     if (e6 > 0 && opts.tooltip !== false) {
       const k = 9, [px, py] = trendPoint(k), prevY = plot.y + plot.h - PREV[k] * plot.h;
       ctx.save(); ctx.globalAlpha = Math.min(1, e6 * 1.5);
-      ctx.fillStyle = '#5A5B63'; ctx.fillRect(px, plot.y, 1, plot.h);
+      ctx.fillStyle = XH; ctx.fillRect(px, plot.y, 1, plot.h);
       ctx.fillStyle = TXT; ctx.beginPath(); ctx.arc(px, py, 5, 0, TAU); ctx.fill(); ctx.fillStyle = FAINT; ctx.beginPath(); ctx.arc(px, prevY, 4, 0, TAU); ctx.fill();
-      rr(ctx, px + 14, plot.y + 8, 210, 92, 10, '#33343B', '#4A4B53', 1);
+      rr(ctx, px + 14, plot.y + 8, 210, 92, 10, mix('#FFFFFF', '#33343B', th), MID, 1);
       T(ctx, 'Fri, this week', px + 28, plot.y + 34, 13, 500, DIM); T(ctx, money(TREND[k] * 12000), px + 210, plot.y + 34, 14, 600, TXT, 'right', F.mono);
       T(ctx, 'Fri, previous', px + 28, plot.y + 62, 13, 500, FAINT); T(ctx, money(PREV[k] * 12000), px + 210, plot.y + 62, 14, 600, DIM, 'right', F.mono);
       const ch = Math.round((TREND[k] / PREV[k] - 1) * 100); T(ctx, `${ch >= 0 ? '+' : '−'}${Math.abs(ch)}%`, px + 210, plot.y + 88, 13, 600, ch >= 0 ? UP : DOWN, 'right', F.mono);
@@ -161,6 +170,21 @@ export function makeDashboard(M, K) {
   const fpath = (ctx, v) => { const p = ez(v, 3, 6, (t) => t); if (p <= 0 || v > 8.5) return; ctx.save(); ctx.strokeStyle = 'rgba(47,124,246,0.75)'; ctx.lineWidth = 10; ctx.lineCap = 'round'; ctx.setLineDash([1, 22]); const P = [[110, 420], [990, 420], [110, 540], [700, 540], [110, 660], [110, 1100]]; ctx.beginPath(); let left = p * 5; P.forEach(([x, y], i) => { if (i === 0) { ctx.moveTo(x, y); return; } const [x0, y0] = P[i - 1], f = clamp(left); if (f > 0) ctx.lineTo(lerp(x0, x, f), lerp(y0, y, f)); left -= 1; }); ctx.stroke(); ctx.restore(); };
   const hover = (ctx, v) => { if (v >= 3 && v < 9) { const [px, py] = trendPoint(9); const m = ez(v, 3, 4.2, E.inOutCubic); cursor(ctx, lerp(860, px + 6, m), lerp(1100, py + 6, m)); } };
   const steps = [step(1, q), step(2, fpath), step(3), step(4), step(5), step(6, hover), step(7)];
+  function bonus(Lmax, color) {
+    return {
+      draw(ctx, v) {
+        const th = ez(v, 3.6, 5.4, E.inOutCubic);
+        dash(ctx, Lmax, v, { color, theme: th });
+        const p = spr(v, 2.6, { stiffness: 280, damping: 14 }); if (p <= 0) return;
+        ctx.save(); ctx.translate(540, 250); ctx.scale(p, p);
+        rr(ctx, -150, -34, 300, 68, 34, '#2E2F35', '#4A4B53', 2);
+        txt(ctx, 'Light', -96, 9, 22, { w: 600, color: th < 0.5 ? '#FFFFFF' : '#8B8B93', align: 'center' }); txt(ctx, 'Dark', 96, 9, 22, { w: 600, color: th >= 0.5 ? '#FFFFFF' : '#8B8B93', align: 'center' });
+        rr(ctx, -40, -20, 80, 40, 20, mix('#D4D4D8', '#5B8DEF', th)); ctx.fillStyle = '#FFFFFF'; ctx.beginPath(); ctx.arc(lerp(-20, 20, th), 0, 15, 0, TAU); ctx.fill();
+        ctx.restore();
+      },
+      hits: [[2.6, 'toggle', 'pop', { pitch: 'A5' }], [3.6, 'switch', 'click'], [3.7, 'to dark', 'whoosh', { len: 0.6 }]],
+    };
+  }
   const recapVig = {
     draw(ctx, v) {
       [[0, 'BEFORE', C.red], [7, 'AFTER', C.green]].forEach(([L, lab, col], i) => {
@@ -171,7 +195,7 @@ export function makeDashboard(M, K) {
     },
     hits: [[1.2, 'before', 'thud', { pitch: 'C3' }], [2.0, 'after', 'bell', { pitch: 'F#6' }]],
   };
-  return { steps, recapVig, dash };
+  return { steps, recapVig, dash, bonus };
 }
 
 export function dashboardTopic(K, D, long) {
@@ -185,11 +209,12 @@ export function dashboardTopic(K, D, long) {
     ...(long ? [{ title: ['COLOR WITH', 'MEANING.'], ar: 'ألوان لها معنى.', en: 'ONE ACCENT. GREEN AND RED ONLY FOR STATUS.', vig: D.steps[6], tip: 'ADD AN ARROW OR A WORD: NEVER COLOR ALONE.', tipAr: 'أضف سهمًا أو كلمة: لا تعتمد على اللون وحده.', tipAt: 11 }] : []),
   ];
   const n = items.length;
+  items.push({ title: ['BONUS:', 'DARK MODE.'], ar: 'إضافة: الوضع الداكن.', en: 'SAME LAYOUT. DARK GRAY, NOT BLACK.', vig: D.bonus(long ? 7 : 6, long), tip: 'KEEP THE HIERARCHY, ONLY THE SURFACES CHANGE.', tipAr: 'حافظ على التسلسل نفسه، وغيّر الأسطح فقط.', tipAt: 9.5 });
   return {
     fonts: ['400 20px Plex', '500 20px Plex', '600 20px Plex'],
     hook: { lines: [`${n} UI/UX PRINCIPLES`, 'FOR DASHBOARDS.'], ar: `${n === 7 ? 'سبعة' : 'ستة'} مبادئ UI/UX لتصميم لوحات التحكم.`, en: 'FROM CLUTTERED TO CLEAR, STEP BY STEP.', tags: ['KPI', 'Chart', 'Filter', 'Trend', 'Table', 'Alert'] },
     items,
-    label: (i) => `PRINCIPLE 0${i + 1} / 0${n}`,
+    label: (i) => (i < n ? `PRINCIPLE 0${i + 1} / 0${n}` : 'BONUS'),
     recap: { title: ['CLUTTERED', 'TO CLEAR.'], ar: 'من الفوضى إلى الوضوح.', en: 'QUESTION · LAYOUT · KPIS · CHARTS · NO DECOR · DETAILS', vig: D.recapVig },
     cover: {
       lines: ['UI/UX', 'PRINCIPLES FOR', 'DASHBOARDS.'], ar: 'مبادئ UI/UX لتصميم لوحات التحكم',
