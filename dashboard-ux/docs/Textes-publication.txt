@@ -1,0 +1,47 @@
+SHORT / TIKTOK — 6 UI/UX principles for dashboards
+Format 9:16 · 50 s · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
+Contenu vérifié en ligne le 23 novembre 2026 (sources en bas, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE SHORTS
+==================================================================
+6 UI/UX principles for dashboards | مبادئ UI/UX لتصميم لوحات التحكم #shorts
+
+==================================================================
+DESCRIPTION YOUTUBE (EN + AR)
+==================================================================
+A cluttered store dashboard cleans itself, principle by principle: start with one question, put the most important number top-left, use a few KPI cards (value, comparison, trend), pick the right chart (lines for trends, bars to compare), remove the decoration, and show details on demand.
+
+لوحة تحكم متجر مزدحمة تُنظَّف أمامك مبدأً بعد مبدأ: ابدأ بسؤال واحد، وضع الرقم الأهم في الأعلى، واستخدم بطاقات مؤشرات قليلة (القيمة والمقارنة والاتجاه)، واختر الرسم المناسب (خطوط للاتجاهات وأعمدة للمقارنة)، واحذف الزخرفة، واعرض التفاصيل عند الطلب.
+
+The store and all values are fictional demo data.
+المتجر وجميع القيم بيانات توضيحية خيالية.
+
+#uidesign #uxdesign #dashboard #dashboarddesign #learnuiux
+
+==================================================================
+LÉGENDE TIKTOK
+==================================================================
+6 UI/UX principles for dashboards 📊
+ستة مبادئ لتصميم لوحات التحكم، من الفوضى إلى الوضوح.
+
+#uidesign #uxdesign #dashboard #dashboarddesign #dataviz #learnuiux #تصميم_واجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which principle does your dashboard break? 👇
+أيّ مبدأ تخالفه لوحتك؟ 👇
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+NN/g, Design guidelines for complex applications (icônes décoratives, grands chiffres, infobulles) : https://www.nngroup.com/articles/complex-application-design/
+Stephen Few, Information Dashboard Design (revue UXmatters) : https://uxmatters.com/mt/archives/2007/04/book-review-information-dashboard-design.php
+UXmatters, Dashboard design 101 : https://uxmatters.com/mt/archives/2010/11/dashboard-design-101.php
+Few, Why most dashboards fail : https://blogs.ischool.berkeley.edu/i247s13/files/2013/02/WhyMostDashboardsFail.pdf
+UXPin, Dashboard design principles 2026 : https://www.uxpin.com/studio/blog/dashboard-design-principles/
+SaaS UI, KPI card patterns 2026 : https://www.saasui.design/blog/saas-metric-kpi-card-ux-patterns
+Aufait UX, Dashboard best practices 2026 : https://www.aufaitux.com/blog/dashboard-design-examples-inspiration-best-practices/
+Données du tableau de bord : aléatoires (DEMO DATA), boutique fictive.
