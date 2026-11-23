@@ -212,7 +212,7 @@ export function kineticFilm(M, K, cfg) {
     if (s.kind === 'hook') hook(ctx, v, t); else if (s.kind === 'part') partCard(ctx, v, s.part, s.pi); else if (s.kind === 'item') item(ctx, v, s); else if (s.kind === 'recap') recap(ctx, v); else endPage(ctx, v);
   }
   M.film({
-    fonts: [`700 100px ${F.title}`, `600 40px ${F.mono}`, `700 60px ${F.ar}`, `400 60px ${F.serif}`],
+    fonts: [`700 100px ${F.title}`, `600 40px ${F.mono}`, `700 60px ${F.ar}`, `400 60px ${F.serif}`, ...(cfg.fonts || [])],
     images: cfg.images || {}, hits: HITS, shutter: 0.6,
     samples: (t) => { const u = t / K.B; return FAST.some((bb) => u > bb - 1.2 && u < bb + 3.2) ? 8 : 3; },
     async init() { await document.fonts.load(`700 60px ${F.ar}`, 'أيّ لغة برمجة').catch(() => {}); GRAIN = K.makeGrain(LONG ? 960 : 540, LONG ? 540 : 960); },
