@@ -1,0 +1,61 @@
+VIDÉO LONGUE YOUTUBE — What GTA 6's UI teaches designers
+Format 16:9 · 1:28 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+Contenu vérifié en ligne le 23 novembre 2026 (sources en bas, à ne pas publier). Interface de jeu fictive.
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+What GTA 6's UI teaches designers: 7 UX lessons | ماذا تعلّمنا واجهة GTA 6 عن التصميم؟
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+7 UI/UX lessons from GTA 6's interface, for apps and websites. The minimap hides until you need it, three navigation presets come before the detailed settings, police alerts move to the edges of the screen, the wanted level shows what the police know about you, a pre-release critique of the weapon wheel, iconic elements kept with a modern behavior, and accessibility built in from the start. Each lesson comes with a practical tip for your own product.
+
+سبعة دروس في تصميم الواجهات من لعبة GTA 6، تنفع التطبيقات والمواقع. الخريطة المصغّرة تختفي حتى تحتاجها، وثلاثة إعدادات جاهزة قبل الإعدادات التفصيلية، وتنبيهات الشرطة تنتقل إلى أطراف الشاشة، ومستوى الملاحقة يُظهر ما تعرفه الشرطة عنك، ونقد لعجلة الأسلحة صدر قبل إطلاق اللعبة، وعناصر مميزة حُوفظ عليها بسلوك عصري، وسهولة وصول مدروسة منذ البداية. مع نصيحة عملية لكل درس.
+
+Chapters / الفصول
+0:00 Show it when it matters · أظهر المعلومة عندما تفيد
+0:14 Smart default, full control · إعداد افتراضي ذكي وتحكم كامل
+0:24 Signal at the edges · نبّه من أطراف الشاشة
+0:34 Show why, not just how much · أظهر السبب لا المقدار فقط
+0:45 The form follows the gesture · الشكل يتبع الحركة
+0:55 Keep your signature · حافظ على بصمتك
+1:05 Accessible from day one · سهولة الوصول من البداية
+1:15 Recap · ملخّص
+
+The game screens in this video are fictional, drawn to explain the ideas. Not affiliated with Rockstar Games.
+شاشات اللعبة في هذا الفيديو خيالية، رُسمت لشرح الأفكار فقط. لا علاقة للفيديو بشركة Rockstar Games.
+
+#uidesign #uxdesign #gta6 #gameui #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+gta 6 ui, gta 6 hud, gta 6 interface, game ui design, hud design, ui ux lessons, ux design, minimap design, accessibility in games, smart defaults, progressive disclosure, learn ui ux, تصميم الواجهات, تجربة المستخدم, واجهة الألعاب
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which lesson would you apply to your app first? 👇
+أيّ درس ستطبّقه أولًا في تطبيقك؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Rapport complet : reports/Interface UI UX de GTA 6.md (recherche du 23 novembre 2026, lue par extraits : plusieurs sites bloqués, citations à revérifier).
+Creative Bloq, How Rockstar updated the Vice City HUD (Stuart Petri, Sam Grosset) : https://www.creativebloq.com/news/how-gta-6s-interface-kept-the-classic-pricedown-font-but-still-managed-to-feel-modern
+Inven Global, GTA 6 developers on Vice City : https://www.invenglobal.com/articles/28826/gta-6-developers-share-insights-on-the-creation-of-vice-city
+Navigation Experience (3 préréglages) : https://beebom.com/gta-6-minimap-and-compass-navigation-experience-guide/ · https://allthings.how/gta-6-hud-settings-minimap-street-names/
+Engadget, système de recherche (icônes de ce que sait la police, police absente de la carte) : https://www.engadget.com/2322564/gta-6-wanted-level-star-system-details/
+GTA Nerd, HUD et mini-carte (zone rouge, lueur au bord) : https://gtanerd.com/guides/gta-6-hud-and-minimap/
+Muzli/Medium, critique de la roue d'armes (avant la sortie, août-sept. 2026) : https://medium.muz.li/gta-6s-ui-looks-cheap-as-a-product-designer-i-think-that-s-partly-the-point-6e397b2ddbc2
+Accessibilité : https://kotaku.com/gta-6-has-an-impressive-number-of-accessibility-options-to-make-the-game-less-frustrating-2000758984 · https://vicemanual.com/gta-6-accessibility · https://caniplaythat.com/2026/11/18/early-looks-at-gta-vi-accessibility-features/
+Sortie le 19 novembre 2026 : https://www.cnbc.com/2026/11/14/gta-6-grand-theft-auto-launch.html
+Droits : aucune image, aucun logo ni police de Rockstar dans la vidéo ; interface de jeu entièrement fictive (mention FICTIONAL GAME UI à l'écran).
