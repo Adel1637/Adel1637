@@ -83,16 +83,20 @@ export function makeDashboard(M, K) {
     if (e3 > 0) {
       const s = clamp(e3 * 1.5);
       ctx.save(); ctx.globalAlpha = s;
-      if (deco > 0) { ctx.save(); ctx.globalAlpha = s * deco; rr(ctx, X0 - 6, 396, 300, 110, 14, '#FFFFFF', '#9AA4B2', 4); ctx.fillStyle = '#00C2FF'; ctx.beginPath(); ctx.arc(X0 + 262, 424, 16, 0, TAU); ctx.fill(); ctx.restore(); }
+      const up = KPI[0].d >= 0; ctx.font = `600 54px ${F.title}`; const vw = ctx.measureText(KPI[0].v).width;
+      ctx.font = `500 14px ${F.title}`; const sw = Math.max(ctx.measureText('vs previous 7d').width, 64);
+      if (deco > 0) { // the boxed "before" card is sized to its content, so nothing crosses its border
+        const bw = vw + 18 + sw + 56;
+        ctx.save(); ctx.globalAlpha = s * deco; rr(ctx, X0 - 14, 396, bw, 116, 14, '#FFFFFF', '#9AA4B2', 4); ctx.fillStyle = '#00C2FF'; ctx.beginPath(); ctx.arc(X0 - 14 + bw - 30, 424, 14, 0, TAU); ctx.fill(); ctx.restore();
+      }
       T(ctx, 'Gross revenue', X0, 426, 17, 500, DIM);
       T(ctx, KPI[0].v, X0, 486, 54, 600, TXT);
-      const up = KPI[0].d >= 0; ctx.font = `600 54px ${F.title}`; const vw = ctx.measureText(KPI[0].v).width;
       T(ctx, `${up ? '+' : '−'}${Math.abs(KPI[0].d)}%`, X0 + vw + 18, 470, 18, 600, e7 > 0.5 ? (up ? UP : DOWN) : '#FF7AE0', 'left', F.mono); T(ctx, 'vs previous 7d', X0 + vw + 18, 492, 14, 500, FAINT);
       ctx.restore();
     }
     // ---- cluttered charts: pie + gauge (until principle 4)
-    if (e4 < 1) {
-      const a = 1 - e4;
+    if (e4 < 0.35) {
+      const a = 1 - clamp(e4 / 0.35);   // the messy charts leave before the clean ones settle in
       ctx.save(); ctx.globalAlpha = a;
       const cx = 300, cy = 950, R = 150; let ang = -Math.PI / 2; const tot = CATS.reduce((s2, c) => s2 + c.v, 0);
       if (deco > 0) { ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.beginPath(); ctx.ellipse(cx + 10, cy + 20, R, R * 0.9, 0, 0, TAU); ctx.fill(); }
@@ -104,7 +108,7 @@ export function makeDashboard(M, K) {
     }
     // ---- clear content: hero chart with previous period, dense metric strip, compact lists
     if (e4 > 0) {
-      const a = Math.min(1, e4 * 1.4), n = Math.max(2, Math.round(1 + clamp(e4 * 1.5) * (TREND.length - 1)));
+      const a = clamp((e4 - 0.3) * 2), n = Math.max(2, Math.round(1 + clamp((e4 - 0.3) * 1.8) * (TREND.length - 1)));  // clean charts arrive once the pie is gone
       ctx.save(); ctx.globalAlpha = a;
       [0.25, 0.5, 0.75].forEach((g) => { ctx.fillStyle = GRID; ctx.fillRect(plot.x, plot.y + plot.h * g, plot.w, 1); });
       const P = (arr, i) => [plot.x + (i / (arr.length - 1)) * plot.w, plot.y + plot.h - arr[i] * plot.h];
