@@ -6,7 +6,7 @@
 //   label: (i, n) => 'STEP 01 / 05',
 //   recap: { title: [..], ar, en, vig, len? },
 //   cover: { lines: [..], ar, art(ctx, x, y, w, h) },
-//   span, hookLen,
+//   span, hookLen, arFonts?: ['400 20px MyArabicFamily'] (Arabic faces to preload),
 // }
 // Vignettes are drawn in the Short's coordinates (area x 80..1000, y 280..1150); the long film maps them to its right half.
 export function kineticFilm(M, K, cfg) {
@@ -215,7 +215,7 @@ export function kineticFilm(M, K, cfg) {
     fonts: [`700 100px ${F.title}`, `600 40px ${F.mono}`, `700 60px ${F.ar}`, `400 60px ${F.serif}`, ...(cfg.fonts || [])],
     images: cfg.images || {}, hits: HITS, shutter: 0.6,
     samples: (t) => { const u = t / K.B; return FAST.some((bb) => u > bb - 1.2 && u < bb + 3.2) ? 8 : 3; },
-    async init() { await document.fonts.load(`700 60px ${F.ar}`, 'أيّ لغة برمجة').catch(() => {}); GRAIN = K.makeGrain(LONG ? 960 : 540, LONG ? 540 : 960); },
+    async init() { await document.fonts.load(`700 60px ${F.ar}`, 'أيّ لغة برمجة').catch(() => {}); await Promise.all((cfg.arFonts || []).map((f) => document.fonts.load(f, 'الإعدادات ادفع').catch(() => {}))); GRAIN = K.makeGrain(LONG ? 960 : 540, LONG ? 540 : 960); },
     draw(ctx, u, t, IMG) {
       IMGS = IMG || {};
       ctx.save();
