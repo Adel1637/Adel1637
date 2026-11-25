@@ -1,0 +1,48 @@
+SHORT / TIKTOK — UX terms in 60 seconds
+Format 9:16 · 61 s (≥ 1 min pour TikTok) · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
+Contenu vérifié en ligne le 25 novembre 2026 (sources en bas, à ne pas publier).
+Astuce : reliez ce Short à la vidéo longue « UI & UX terms » avec le champ « Vidéo associée » de YouTube.
+
+==================================================================
+TITRE YOUTUBE SHORTS
+==================================================================
+UX terms in 60 seconds | مصطلحات تجربة المستخدم في دقيقة #shorts
+
+==================================================================
+DESCRIPTION YOUTUBE (EN + AR)
+==================================================================
+10 UX terms you will hear in every team: wireframe, mockup and prototype, affordance vs signifier, user flow vs user journey, persona, information architecture, Fitts's law, Hick's law, Jakob's law, usability test and A/B test.
+
+عشرة مصطلحات ستسمعها في كل فريق: الإطار الشبكي والنموذج المرئي والنموذج الأولي، ودلالة الاستخدام والمؤشر، ومسار المستخدم ورحلة المستخدم، والشخصية الافتراضية، وهندسة المعلومات، وقانون فيتس، وقانون هيك، وقانون ياكوب، واختبار قابلية الاستخدام، واختبار A/B.
+
+#uxdesign #uidesign #uxterms #productdesign #learnuiux
+
+==================================================================
+LÉGENDE TIKTOK
+==================================================================
+UX terms in 60 seconds 🧠
+مصطلحات تجربة المستخدم في دقيقة واحدة.
+
+#uxdesign #uidesign #uxterms #productdesign #learnuiux #تصميم_واجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which UX term should we explain next? 👇
+أيّ مصطلح تريد أن نشرحه بالتفصيل؟ 👇
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 25 novembre 2026.
+NN/g, User journeys vs user flows : https://www.nngroup.com/articles/user-journeys-vs-user-flows/
+UX Design Institute, glossaire UI (100 termes) : https://www.uxdesigninstitute.com/blog/ui-glossary/
+UX Design Institute, glossaire UX (101 termes) : https://www.uxdesigninstitute.com/blog/glossary-ux-terms/
+UI Systems, répertoire de composants (modal = dialog, toast = snackbar, popover au clic) : https://userinterface.systems/components
+UI Component Glossary (drawer = slide-over) : https://ui-glossary.joshvh.com/
+Speak Tech English, noms des éléments d'interface : https://speaktechenglish.com/ui-elements-names/
+Koru UX, glossaire UI/UX : https://www.koruux.com/blog/ui-ux-glossary-for-designers/
+Laws of UX (Fitts, Hick, Jakob) : https://lawsofux.com/index.md
+UK Department for Education, Laws of UX : https://accessibility.education.gov.uk/profession-guidance/interaction-design/laws-of-ux
+Interfaces entièrement fictives (« Workspace », prénoms, tâches, persona) dessinées pour la vidéo.

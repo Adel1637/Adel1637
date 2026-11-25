@@ -1,0 +1,63 @@
+VIDÉO LONGUE YOUTUBE — UI & UX terms, explained visually
+Format 16:9 · 4:48 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+Contenu vérifié en ligne le 25 novembre 2026 (sources en bas, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+UI & UX terms explained visually: 37 UI elements + 10 UX concepts | مصطلحات الواجهة وتجربة المستخدم
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+The words designers and developers use every day, shown on real-looking interfaces. UI elements: navigation (navbar, sidebar, breadcrumb, search bar, tabs, pagination), content (hero, CTA, card grid, carousel, accordion, footer), forms (text field, error message, select, checkbox, radio button, toggle, slider), actions and status (buttons, ghost button, badge, chip, avatar, progress bar, table), overlays and feedback (tooltip vs popover, modal, drawer, toast, skeleton) and mobile (tab bar, hamburger menu, FAB, bottom sheet, segmented control). Then 10 UX concepts: wireframe, mockup and prototype, affordance vs signifier, user flow vs user journey, persona, information architecture, Fitts's law, Hick's law, Jakob's law, usability test and A/B test.
+
+الكلمات التي يستخدمها المصممون والمطوّرون كل يوم، معروضة على واجهات واقعية. عناصر الواجهة: التنقل (شريط التنقل، والشريط الجانبي، ومسار التنقل، وشريط البحث، وعلامات التبويب، وترقيم الصفحات)، والمحتوى (القسم الرئيسي، وزر الدعوة إلى الإجراء، وشبكة البطاقات، والعرض الدوّار، والقائمة القابلة للطي، والتذييل)، والنماذج (حقل الإدخال، ورسالة الخطأ، والقائمة المنسدلة، ومربع الاختيار، وزر الاختيار الواحد، ومفتاح التبديل، وشريط التمرير)، والإجراءات والحالات، والطبقات والتنبيهات، والهاتف. ثم عشرة مفاهيم في تجربة المستخدم، مع نصيحة عملية لكل مفهوم.
+
+Chapters / الفصول
+0:00 UI · Navigation · التنقل
+0:31 UI · Content · المحتوى
+1:00 UI · Forms · النماذج
+1:32 UI · Actions & status · الإجراءات والحالات
+2:04 UI · Overlays & feedback · الطبقات والتنبيهات
+2:32 UI · Mobile · الهاتف
+2:56 UX · Process · العملية
+3:46 UX · Laws & tests · القوانين والاختبارات
+4:36 Recap · ملخّص
+
+All interfaces, names and data shown are fictional.
+جميع الواجهات والأسماء والبيانات المعروضة خيالية.
+
+#uidesign #uxdesign #uielements #uxterms #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+ui elements names, ui components, ui terms, ux terms, ui ux glossary, navbar, sidebar, modal, toast, tooltip, wireframe vs mockup vs prototype, user flow vs user journey, fitts law, hicks law, jakobs law, learn ui ux, مصطلحات تصميم الواجهات, تجربة المستخدم, عناصر الواجهة
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which term did you learn today? 👇
+ما المصطلح الذي تعلّمته اليوم؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 25 novembre 2026.
+NN/g, User journeys vs user flows : https://www.nngroup.com/articles/user-journeys-vs-user-flows/
+UX Design Institute, glossaire UI (100 termes) : https://www.uxdesigninstitute.com/blog/ui-glossary/
+UX Design Institute, glossaire UX (101 termes) : https://www.uxdesigninstitute.com/blog/glossary-ux-terms/
+UI Systems, répertoire de composants (modal = dialog, toast = snackbar, popover au clic) : https://userinterface.systems/components
+UI Component Glossary (drawer = slide-over) : https://ui-glossary.joshvh.com/
+Speak Tech English, noms des éléments d'interface : https://speaktechenglish.com/ui-elements-names/
+Koru UX, glossaire UI/UX : https://www.koruux.com/blog/ui-ux-glossary-for-designers/
+Laws of UX (Fitts, Hick, Jakob) : https://lawsofux.com/index.md
+UK Department for Education, Laws of UX : https://accessibility.education.gov.uk/profession-guidance/interaction-design/laws-of-ux
+Interfaces entièrement fictives (« Workspace », prénoms, tâches, persona) dessinées pour la vidéo.
