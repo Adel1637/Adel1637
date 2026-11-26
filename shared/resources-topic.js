@@ -52,7 +52,7 @@ export function resourcesTopic(M, K, long) {
     },
     hits: SITES[id].card ? [[0.3, 'card', 'whoosh', { len: 0.4 }], [1.2, 'row', 'tick'], [1.6, 'row', 'tick'], [2, 'row', 'tick'], [2.4, 'row', 'tick']] : [[0.4, 'shot', 'whoosh', { len: 0.45 }], [0.8, 'shot in', 'pop', { pitch: 'A5' }]],
   });
-  const mk = (id, part) => { const s = SITES[id]; return { part, title: s.name, en: `${s.cat} · ${s.en}`, ar: s.ar, tip: s.tip, tipAr: s.tipAr, tipAt: 12, vig: vig(id), real: HAS_SHOT(id) ? { img: id, url: s.url, label: s.cat, at: 0.4, atLong: 0.4 } : undefined }; };
+  const mk = (id, part) => { const s = SITES[id]; return { part, title: s.name, en: `${s.cat} · ${s.en}`, ar: s.ar, tip: s.tip, tipAr: s.tipAr, tipAt: 12, vig: vig(id), real: HAS_SHOT(id) ? { img: id, url: s.url, label: s.cat, at: 0.4, atLong: 0.4, noPill: true } : undefined }; };
   let items, parts;
   if (long) { items = []; PARTS.forEach(([, , ids], pi) => ids.forEach((id) => items.push(mk(id, pi)))); parts = PARTS.map(([en, ar, ids]) => ({ en, ar, count: `${ids.length} SITES` })); }
   else items = SHORT.map((id) => mk(id));

@@ -139,7 +139,7 @@ export function kineticFilm(M, K, cfg) {
     ctx.save(); ctx.beginPath(); ctx.roundRect(x, y + 54, w, ih, [0, 0, 16, 16]); ctx.clip();
     ctx.translate(x + w / 2, y + 54 + ih / 2); ctx.scale(zoom, zoom); ctx.drawImage(im, -w / 2, -ih / 2, w, ih); ctx.restore();
     ctx.restore();
-    K.pill(ctx, `REAL EXAMPLE · ${r.label}`, 540, y - 56, spr(v, at + 0.4, { stiffness: 300, damping: 13 }), C.sel, LONG ? 24 : 30);
+    if (!r.noPill) K.pill(ctx, `REAL EXAMPLE · ${r.label}`, 540, y - 56, spr(v, at + 0.4, { stiffness: 300, damping: 13 }), C.sel, LONG ? 24 : 30);
   }
   const lerpN = (a, b, k) => a + (b - a) * k;
   function seenIn(ctx, v, it) {
