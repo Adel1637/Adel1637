@@ -1,4 +1,4 @@
-// "Beginner developer? Start here." — a roadmap in 9 steps for a beginner who wants to build web interfaces.
+// "Where should a beginner developer start?" — a roadmap in 9 steps for a beginner who wants to build web interfaces.
 // Short coordinates: x 80..1000, y 280..1150. Facts checked online on 26 Nov 2026: roadmaps agree on HTML + CSS
 // (Flexbox, Grid, responsive) -> JavaScript fundamentals -> Git/GitHub -> projects -> one framework later; MDN as the
 // reference; Stack Overflow Developer Survey 2025: AI tools increasingly used to learn, low trust, time spent fixing
@@ -138,10 +138,10 @@ export function devTopic(K, D, long) {
   return {
     fonts: ['400 20px Plex', '500 20px Plex', '600 20px Plex'],
     span: long ? 26 : 13,
-    hook: { lines: ['BEGINNER DEVELOPER?', 'START HERE.'], ar: 'مطوّر مبتدئ؟ ابدأ من هنا.', en: `THE ${n} STEPS, IN THE RIGHT ORDER.`, tags: ['HTML', 'CSS', 'JS', 'Git', 'Docs', 'AI'] },
+    hook: { lines: ['WHERE SHOULD A', 'BEGINNER DEVELOPER', 'START?'], ar: 'من أين يبدأ المطوّر المبتدئ؟', en: `THE ${n} STEPS, IN THE RIGHT ORDER.`, tags: ['HTML', 'CSS', 'JS', 'Git', 'Docs', 'AI'] },
     items, parts: long ? parts : undefined,
     label: (i) => `STEP 0${items[i].part + 1 || i + 1} / 0${n}`,
     recap: { title: ['ONE STEP', 'AT A TIME.'], ar: 'خطوة بعد خطوة.', en: 'GOAL · HTML · CSS · JS · GIT · PROJECTS · DOCS · AI' + (long ? ' · FRAMEWORK' : ''), vig: D.recapVig, len: long ? 16 : 14 },
-    cover: { lines: ['BEGINNER', 'DEVELOPER?', 'START HERE.'], ar: 'مطوّر مبتدئ؟ ابدأ من هنا', art: (ctx, x, y, w, h) => { const s = Math.min(w / 920, h / 760); ctx.save(); ctx.translate(x + (w - 920 * s) / 2, y + 10); ctx.scale(s, s); ctx.translate(-80, -300); D.rail(ctx, 3); D.browser(ctx, 80, 380, 920, 560, 'my-first-page', (bx, by, bw, bh) => D.page(ctx, bx, by, bw, bh, { styled: 1, count: 2 })); ctx.restore(); } },
+    cover: { lines: ['WHERE SHOULD', 'A BEGINNER DEV', 'START?'], ar: 'من أين يبدأ المطوّر المبتدئ؟', art: (ctx, x, y, w, h) => { const s = Math.min(w / 920, h / 760); ctx.save(); ctx.translate(x + (w - 920 * s) / 2, y + 10); ctx.scale(s, s); ctx.translate(-80, -300); D.rail(ctx, 3); D.browser(ctx, 80, 380, 920, 560, 'my-first-page', (bx, by, bw, bh) => D.page(ctx, bx, by, bw, bh, { styled: 1, count: 2 })); ctx.restore(); } },
   };
 }

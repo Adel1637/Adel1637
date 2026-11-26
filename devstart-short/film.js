@@ -1,4 +1,4 @@
-// Beginner developer? Start here. — kinetic dark-software style, fictional page and code.
+// Where should a beginner developer start? — kinetic dark-software style, fictional page and code.
 // Content: shared/devstart-topic.js (checked online on 26 Nov 2026).
 import * as M from './lib/motion.js';
 import { makeKinetic } from '../shared/kinetic.js';

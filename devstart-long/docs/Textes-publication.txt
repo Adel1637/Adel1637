@@ -1,9 +1,9 @@
-VIDÉO LONGUE YOUTUBE — Beginner developer? Start here.
+VIDÉO LONGUE YOUTUBE — Where should a beginner developer start?
 Format 16:9 · 4:21 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
 Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
 
 TITRE YOUTUBE
-Beginner developer? Start here: 9 steps in the right order | مطوّر مبتدئ؟ ابدأ من هنا
+Where should a beginner developer start? 9 steps in the right order | من أين يبدأ المطوّر المبتدئ؟
 
 DESCRIPTION (EN + AR)
 A roadmap for beginners who want to build web interfaces: 9 steps in the right order, each with a practical tip and the mistake to avoid. Pick one goal, HTML (real tags, not divs everywhere), CSS (Flexbox, Grid, responsive), JavaScript basics before any framework, Git and GitHub from week one, small projects instead of tutorial hell, docs and error messages, AI as a tutor and not a crutch, and a framework later.

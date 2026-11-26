@@ -1,10 +1,10 @@
-SHORT / TIKTOK — Beginner developer? Start here.
+SHORT / TIKTOK — Where should a beginner developer start?
 Format 9:16 · 61 s (≥ 1 min pour TikTok) · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
 Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
 Astuce : reliez ce Short à la vidéo longue avec le champ « Vidéo associée ».
 
 TITRE YOUTUBE SHORTS
-Beginner developer? Start here. | مطوّر مبتدئ؟ ابدأ من هنا #shorts
+Where should a beginner developer start? | من أين يبدأ المطوّر المبتدئ؟ #shorts
 
 DESCRIPTION YOUTUBE (EN + AR)
 The 8 steps for a beginner who wants to build web interfaces, in the right order: pick one goal, HTML, CSS, JavaScript basics, Git and GitHub from week one, small projects, docs and error messages, and AI as a tutor, not a crutch.
@@ -14,8 +14,8 @@ The 8 steps for a beginner who wants to build web interfaces, in the right order
 #webdevelopment #learntocode #frontend #html #css #javascript #learnuiux
 
 LÉGENDE TIKTOK
-Beginner developer? Start here. 💻
-مطوّر مبتدئ؟ ابدأ من هنا: ثماني خطوات بالترتيب الصحيح.
+Where should a beginner developer start? 💻
+من أين يبدأ المطوّر المبتدئ؟ ثماني خطوات بالترتيب الصحيح.
 
 #webdevelopment #learntocode #frontend #coding #learnuiux #برمجة
 
