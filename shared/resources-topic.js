@@ -66,6 +66,11 @@ export function resourcesTopic(M, K, long) {
     items, parts,
     label: (i) => (long ? `${PARTS[items[i].part][0]} · ${String(i + 1).padStart(2, '0')} / ${n}` : `SITE ${String(i + 1).padStart(2, '0')} / ${n}`),
     recap: { title: ['SAVE THEM.', 'CHECK THE LICENSE.'], ar: 'احفظها، وتحقّق من الترخيص.', en: 'KITS · INSPIRATION · ICONS · ILLUSTRATIONS · FONTS · TOOLS · LEARN', vig: recapVig, len: long ? 16 : 8 },
-    cover: { lines: ['FREE', 'RESOURCES FOR', 'DESIGNERS.'], ar: 'مصادر مجانية للمصممين', art: (ctx, x, y, w, h) => { const ids = SHORT.slice(0, 8); const cw = (w - 20) / 2, ch = Math.min(110, (h - 60) / 4); ids.forEach((id, i) => { const cx = x + (i % 2) * (cw + 20), cy = y + Math.floor(i / 2) * (ch + 16); rr(ctx, cx, cy, cw, ch, 14, '#26272C', '#3A3B42', 1.5); txt(ctx, SITES[id].url, cx + 20, cy + ch / 2 + 10, Math.min(30, ch * 0.3), { w: 600, color: '#FFFFFF' }); }); } },
+    cover: { lines: ['FREE', 'RESOURCES FOR', 'DESIGNERS.'], ar: 'مصادر مجانية للمصممين', art: (ctx, x, y, w, h) => {
+      // teaser only: categories and hidden names (no site named on the cover, so people watch to find out)
+      const ids = SHORT.slice(0, 8); const cw = (w - 20) / 2, ch = Math.min(110, (h - 60) / 4), fs = Math.min(24, ch * 0.24);
+      ids.forEach((id, i) => { const cx = x + (i % 2) * (cw + 20), cy = y + Math.floor(i / 2) * (ch + 16); rr(ctx, cx, cy, cw, ch, 14, '#26272C', '#3A3B42', 1.5);
+        txt(ctx, `${String(i + 1).padStart(2, '0')} · ${SITES[id].cat}`, cx + 18, cy + ch * 0.38, fs * 0.8, { w: 600, family: F.mono, color: C.sub });
+        rr(ctx, cx + 18, cy + ch * 0.55, cw * 0.62, ch * 0.24, ch * 0.12, '#3A3B42'); txt(ctx, '?', cx + cw - 30, cy + ch * 0.74, fs * 1.4, { w: 700, color: C.sel, align: 'center' }); }); } },
   };
 }

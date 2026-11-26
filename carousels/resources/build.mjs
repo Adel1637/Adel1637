@@ -30,8 +30,8 @@ const swipe = '<div class="swipe"><span class="sp">SWIPE →</span><span class="
 let html = `<div class="s" id="s1"><div class="top"><span>LEARN UI/UX</span><span>AG STUDIO</span></div>
 <div class="h" style="position:absolute;top:380px;left:76px;font-size:108px">FREE<br>RESOURCES<br>FOR DESIGNERS.</div>
 <div class="ar" style="position:absolute;top:735px;right:80px;font-size:56px">مصادر مجانية للمصممين.</div>
-<div style="position:absolute;top:840px;left:80px;font:600 28px Mono;color:#A8A8A8">10 SITES TO SAVE. LICENSES CHECKED.</div>
-<div style="position:absolute;top:900px;left:80px;right:80px;display:grid;grid-template-columns:1fr 1fr;gap:16px">${IDS.map((id) => `<div style="background:#26272C;border:1.5px solid #3A3B42;border-radius:14px;padding:16px 20px"><div style="font:600 26px Plex;color:#fff">${SITES[id].url}</div><div style="font:600 17px Mono;color:#A8A8A8;margin-top:4px">${SITES[id].cat}</div></div>`).join('')}</div>${swipe}</div>`;
+<div style="position:absolute;top:840px;left:80px;font:600 28px Mono;color:#A8A8A8">10 SITES TO SAVE. SWIPE TO SEE THEM.</div>
+<div style="position:absolute;top:900px;left:80px;right:80px;display:grid;grid-template-columns:1fr 1fr;gap:16px">${IDS.map((id, i) => `<div style="background:#26272C;border:1.5px solid #3A3B42;border-radius:14px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center"><div><div style="font:600 17px Mono;color:#A8A8A8">${String(i + 1).padStart(2, '0')} · ${SITES[id].cat}</div><div style="margin-top:10px;width:220px;height:22px;border-radius:11px;background:#3A3B42"></div></div><div style="font:700 40px Plex;color:#0D99FF">?</div></div>`).join('')}</div>${swipe}</div>`;
 IDS.forEach((id, i) => {
   const s = SITES[id];
   html += `<div class="s" id="s${i + 2}"><div class="top"><span>SITE ${String(i + 1).padStart(2, '0')} / 10</span><span>AG STUDIO</span></div>
