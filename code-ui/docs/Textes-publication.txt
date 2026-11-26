@@ -1,0 +1,52 @@
+Web, iPhone or Android: which language? — AG Studio
+Série : Learn UI/UX · Durée : 42 s · Sans musique
+Accroche : « Web, iPhone or Android: which language? » / « ويب أم iPhone أم Android: أيّ لغة؟ »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+Web, iPhone or Android: Which Language? | ويب أم iPhone أم Android: أيّ لغة؟
+
+DESCRIPTION (EN)
+Same card, five ways to build it:
+1. Web: HTML + CSS.
+2. Interactive web: JavaScript or TypeScript + React.
+3. iPhone: Swift with SwiftUI.
+4. Android: Kotlin with Jetpack Compose.
+5. Both mobiles: Dart with Flutter.
+Pick the platform first, then the language.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+نفس البطاقة، خمس طرق لبنائها:
+1. الويب: HTML وCSS.
+2. الويب التفاعلي: JavaScript أو TypeScript مع React.
+3. iPhone: لغة Swift مع SwiftUI.
+4. Android: لغة Kotlin مع Jetpack Compose.
+5. الاثنان معًا: لغة Dart مع Flutter.
+اختر المنصّة أولًا، ثم اللغة.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uidesign #frontend #swiftui #jetpackcompose #flutter #تصميم_واجهات #تطوير_الواجهات
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+Web, iPhone or Android: which language should you learn? 📌
+More UI/UX tips on my profile.
+
+LÉGENDE (AR)
+ويب أم iPhone أم Android: أيّ لغة تتعلّم؟ 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uidesign #frontend #flutter #designtok #codetok #تصميم_واجهات #تطوير_الواجهات
+
+COMMENTAIRE À ÉPINGLER
+Which platform are you building for? 👇
+لأيّ منصّة تبني؟ 👇

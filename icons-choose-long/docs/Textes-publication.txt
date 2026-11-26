@@ -1,0 +1,60 @@
+VIDÉO LONGUE YOUTUBE — How to choose the right icons
+Format 16:9 · 1:18 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+Contenu vérifié en ligne le 22 novembre 2026 (sources en bas, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+How to choose the right icons for your UI | كيف تختار الأيقونات المناسبة لواجهتك؟
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+How to choose the right icons, in 6 checks: start from your platform (SF Symbols on iPhone, Material Symbols on Android, Lucide or Phosphor on the web), one style (outline or filled), a stroke that matches your font, one grid and one size, a clear meaning with a visible label, and the license. Each check comes with a practical tip.
+
+كيف تختار الأيقونات المناسبة في 6 خطوات: ابدأ من منصّتك (SF Symbols على iPhone، وMaterial Symbols على Android، وLucide أو Phosphor على الويب)، واختر أسلوبًا واحدًا (محدّد أو ممتلئ)، وطابق سُمك الأيقونة مع خط النص، واعتمد شبكة واحدة وحجمًا واحدًا، ومعنى واضحًا مع عنوان ظاهر، ثم تحقّق من الترخيص. مع نصيحة عملية لكل خطوة.
+
+Chapters / الفصول
+0:00 Start from your platform · ابدأ من منصّتك
+0:14 One style: outline or filled · أسلوب واحد
+0:24 Match the stroke to your font · طابق السُّمك مع الخط
+0:34 One grid, one size · شبكة واحدة وحجم واحد
+0:45 Clear meaning, visible label · معنى واضح وعنوان ظاهر
+0:55 Check the license · تحقّق من الترخيص
+1:05 Recap · ملخّص
+
+Real examples: lucide.dev, tabler.io and fonts.google.com/icons screenshots, shown for illustration. The other interfaces are fictional.
+أمثلة حقيقية: لقطات من lucide.dev وtabler.io وfonts.google.com/icons معروضة للتوضيح. باقي الواجهات خيالية.
+
+#uidesign #uxdesign #icons #iconography #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+how to choose icons, ui icons, icon design, icon library, lucide icons, phosphor icons, tabler icons, material symbols, sf symbols, icon grid 24px, icon stroke weight, icon labels, icon license, learn ui ux, أيقونات الواجهات, تصميم الأيقونات, تصميم الواجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which icon set do you use? 👇
+أيّ مجموعة أيقونات تستخدم؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+NN/g, icon usability : https://www.nngroup.com/articles/icon-usability/
+NN/g, icons need text labels : https://www.nngroup.com/videos/icon-text-labels/
+SF Symbols license (Apple developer forums) : https://developer.apple.com/forums/thread/739523
+Material system icons (grid, keylines) : https://material.io/design/iconography/system-icons.html
+Tabler design guide (2px stroke, 24px) : https://docs.tabler.io/icons/design-guide
+GitLab iconography (1.5px stroke) : https://design.gitlab.com/product-foundations/iconography
+Lucide design guide : https://lucide.dev/guide/design/icon-design-guide
+Licences (Iconify) : https://icon-sets.iconify.design/
+Untitled UI, free icon sets 2026 : https://www.untitledui.com/blog/free-icon-sets
+Captures réelles prises le 22/11/2026 : lucide.dev/icons, tabler.io/icons, fonts.google.com/icons

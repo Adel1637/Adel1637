@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Plex;src:url(../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:Plex;src:url(../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Plex;src:url(../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:Plex;src:url(../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:Mono;src:url(../../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:Ar;src:url(../../node_modules/@fontsource/ibm-plex-sans-arabic/files/ibm-plex-sans-arabic-arabic-700-normal.woff2);font-weight:700;unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200F}
+@font-face{font-family:Ar;src:url(../../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-700-normal.woff2);font-weight:700;unicode-range:U+0000-024F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000}
+.s{width:1080px;height:1920px;position:relative;overflow:hidden;background:#1B1B1B;color:#EDEDED;font-family:Plex;padding:0 80px}
+.top{position:absolute;top:260px;left:80px;right:80px;display:flex;justify-content:space-between;font:600 26px Mono;color:#A8A8A8;letter-spacing:.02em}
+.h{font-weight:700;color:#fff;line-height:.98;letter-spacing:-.01em}
+.ar{font-family:Ar;font-weight:700;direction:rtl;text-align:right;color:#EDEDED}
+.mono{font:600 28px Mono;color:#A8A8A8;letter-spacing:.03em}
+.pill{display:inline-block;background:#0D99FF;color:#fff;font:600 28px Mono;padding:12px 26px;border-radius:40px}
+.card{background:#26272C;border:1.5px solid #3A3B42;border-radius:28px;padding:40px}
+.white{background:#fff;color:#18181B;border-radius:28px}
+.blue{background:#0C8CE9}
+</style></head><body>
+
+<!-- 1 hook -->
+<div class="s" id="s1">
+ <div class="top"><span>LEARN UI/UX</span><span>AG STUDIO</span></div>
+ <div style="position:absolute;top:420px;left:80px"><span class="pill">NEW VIDEO</span></div>
+ <div class="h" style="position:absolute;top:560px;left:76px;font-size:178px">UI AND UX<br>ARE NOT<br>THE SAME.</div>
+ <div class="ar" style="position:absolute;top:1150px;right:80px;font-size:66px">ليسا الشيء نفسه: UI وUX.</div>
+ <div class="mono" style="position:absolute;top:1290px;left:80px">HERE IS THE DIFFERENCE, IN ONE APP.</div>
+ <div style="position:absolute;top:1390px;left:80px;display:flex;gap:18px">
+  <span style="background:#0D99FF;color:#fff;font:600 34px Mono;padding:14px 30px;border-radius:14px;transform:rotate(-4deg)">UI</span>
+  <span style="background:#2A2A2A;color:#fff;font:600 34px Mono;padding:14px 30px;border-radius:14px;transform:rotate(3deg)">UX</span>
+ </div>
+</div>
+
+<!-- 2 quiz (poll sticker goes in the empty box) -->
+<div class="s" id="s2">
+ <div class="top"><span>LEARN UI/UX</span><span>QUICK QUIZ</span></div>
+ <div class="h" style="position:absolute;top:430px;left:76px;font-size:104px">CHOOSING THE<br>BUTTON COLOR<br>IS…</div>
+ <div class="ar" style="position:absolute;top:820px;right:80px;font-size:58px">اختيار لون الزر هو…</div>
+ <div style="position:absolute;top:960px;left:80px;right:80px;height:150px;display:flex;align-items:center;justify-content:center;gap:40px">
+  <div style="background:#fff;color:#18181B;font:700 56px Plex;padding:26px 60px;border-radius:20px">Pay now</div>
+  <div style="background:#2F7CF6;color:#fff;font:700 56px Plex;padding:26px 60px;border-radius:20px">Pay now</div>
+ </div>
+ <div style="position:absolute;top:1190px;left:80px;right:80px;height:250px;border:3px dashed #4A4B53;border-radius:28px;display:flex;align-items:center;justify-content:center" class="mono">UI &nbsp;·&nbsp; UX</div>
+</div>
+
+<!-- 3 answer -->
+<div class="s" id="s3">
+ <div class="top"><span>LEARN UI/UX</span><span>THE ANSWER</span></div>
+ <div class="card" style="position:absolute;top:400px;left:80px;right:80px;height:500px">
+  <div class="mono" style="color:#0D99FF">UI · USER INTERFACE</div>
+  <div class="h" style="font-size:84px;margin-top:26px">WHAT YOU<br>SEE &amp; TOUCH.</div>
+  <div class="ar" style="font-size:46px;margin-top:30px">واجهة المستخدم: ما تراه وتلمسه.</div>
+  <div class="mono" style="margin-top:26px;font-size:24px">BUTTONS · ICONS · TYPE · COLOR · SPACING</div>
+ </div>
+ <div class="card" style="position:absolute;top:940px;left:80px;right:80px;height:560px">
+  <div class="mono" style="color:#30A46C">UX · USER EXPERIENCE</div>
+  <div class="h" style="font-size:84px;margin-top:26px">THE WHOLE<br>JOURNEY.</div>
+  <div class="ar" style="font-size:46px;margin-top:30px">تجربة المستخدم: الرحلة كاملة.</div>
+  <div style="display:flex;align-items:center;gap:14px;margin-top:34px;font:600 26px Plex;color:#EDEDED">
+   <span style="background:#3A3B42;padding:12px 20px;border-radius:12px">Find</span>→<span style="background:#3A3B42;padding:12px 20px;border-radius:12px">Choose</span>→<span style="background:#3A3B42;padding:12px 20px;border-radius:12px">Pay</span>→<span style="background:#30A46C;padding:12px 20px;border-radius:12px">Done</span>
+  </div>
+ </div>
+ <div class="mono" style="position:absolute;top:1530px;left:80px;font-size:26px">THE BUTTON COLOR? UI. AND UI IS PART OF UX.</div>
+</div>
+
+<!-- 4 example -->
+<div class="s" id="s4">
+ <div class="top"><span>LEARN UI/UX</span><span>EXAMPLE</span></div>
+ <div class="white" style="position:absolute;top:400px;left:180px;width:720px;height:640px;padding:44px">
+  <div style="font:700 44px Plex">Find a movie</div>
+  <div style="margin-top:30px;border:2px solid #D4D4D8;border-radius:16px;padding:22px 26px;font:500 34px Plex;color:#18181B">The film you want</div>
+  <div style="margin-top:24px;background:#18181B;color:#fff;border-radius:16px;padding:24px;text-align:center;font:600 34px Plex">Search</div>
+  <div style="margin-top:60px;text-align:center;font:600 40px Plex;color:#71717A">No results</div>
+  <div style="margin-top:10px;text-align:center;font:400 28px Plex;color:#A1A1AA">It's not in the database.</div>
+ </div>
+ <div style="position:absolute;top:1000px;left:640px;transform:rotate(6deg);background:#30A46C;color:#fff;font:600 30px Mono;padding:14px 26px;border-radius:40px">UI: PERFECT</div>
+ <div style="position:absolute;top:1080px;left:210px;transform:rotate(-5deg);background:#E5484D;color:#fff;font:600 30px Mono;padding:14px 26px;border-radius:40px">UX: POOR</div>
+ <div class="h" style="position:absolute;top:1200px;left:76px;font-size:110px">PERFECT UI,<br>POOR UX.</div>
+ <div class="ar" style="position:absolute;top:1450px;right:80px;font-size:54px">واجهة ممتازة وتجربة ضعيفة.</div>
+</div>
+
+<!-- 5 CTA (link sticker goes on the white bar) -->
+<div class="s blue" id="s5">
+ <div class="top" style="color:#D6ECFF"><span>LEARN UI/UX</span><span>AG STUDIO</span></div>
+ <div class="h" style="position:absolute;top:520px;left:76px;font-size:124px">THE FULL<br>VIDEO IS<br>ON THE<br>CHANNEL.</div>
+ <div class="ar" style="position:absolute;top:1080px;right:80px;font-size:60px;color:#fff">الفيديو كاملًا على القناة.</div>
+ <div style="position:absolute;top:1220px;left:80px;right:80px;height:170px;border:3px dashed rgba(255,255,255,.6);border-radius:28px;display:flex;align-items:center;justify-content:center;font:600 30px Mono;color:#fff">UI AND UX ARE NOT THE SAME ↗</div>
+ <div style="position:absolute;top:1460px;left:80px;font:700 40px Plex;color:#fff">Follow for more UI/UX tutorials</div>
+ <div class="ar" style="position:absolute;top:1520px;right:80px;font-size:40px;color:#fff">تابعني لمزيد من دروس UI/UX</div>
+</div>
+</body></html>

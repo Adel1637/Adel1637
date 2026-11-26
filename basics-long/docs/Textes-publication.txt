@@ -1,0 +1,82 @@
+UI/UX basics for websites and apps — AG Studio
+Série : Learn UI/UX · Durée : 2:07 · Texte à l'écran + effets sonores, sans musique
+Accroche : « Websites and apps follow different rules. » / « المواقع والتطبيقات لا تتبع نفس القواعد. »
+
+==================================================
+YOUTUBE (vidéo longue)
+==================================================
+
+TITRE
+UI/UX Basics for Websites and Apps (10 Rules for Beginners) | أساسيات UI/UX للمواقع والتطبيقات
+
+DESCRIPTION (EN)
+Websites and apps follow different rules: visitors scan a website, users tap an app with one thumb.
+10 UI/UX basics, shown on a fictional website and a fictional app, before and after.
+
+CHAPTERS
+0:00 Websites · One clear headline
+0:16 One main button
+0:27 Visual hierarchy
+0:37 Consistent spacing
+0:47 Readable text
+0:58 Apps · Thumb zone
+1:11 Big enough to tap
+1:21 3 to 5 tabs
+1:31 Feedback on every tap
+1:42 One task per screen
+1:52 Recap
+
+WEBSITES
+1. One clear headline: say what you do, not how great you are.
+2. One main button: secondary actions become links.
+3. Visual hierarchy: size, weight and contrast guide the eye.
+4. Consistent spacing: one scale (8, 16, 24, 32).
+5. Readable text: about 50 to 75 characters per line, strong contrast.
+
+APPS
+6. Thumb zone: put the main action where the thumb rests.
+7. Big enough to tap: at least 44 pt (Apple) or 48 dp (Google).
+8. 3 to 5 tabs.
+9. Feedback on every tap: pressed, loading, done.
+10. One task per screen: split long forms into steps.
+
+The interfaces in this video are fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+المواقع والتطبيقات لا تتبع نفس القواعد: زائر الموقع يتصفّح بعينه، ومستخدم التطبيق يلمس بإبهام واحد.
+١٠ أساسيات UI/UX على موقع وتطبيق خياليين، قبل التحسين وبعده.
+
+المواقع
+١. عنوان واحد واضح: قل ماذا تقدّم، لا كم أنت رائع.
+٢. زر رئيسي واحد: الإجراءات الثانوية تصبح روابط.
+٣. التسلسل البصري: الحجم والسُّمك والتباين توجّه العين.
+٤. مسافات متّسقة: مقياس واحد (8، 16، 24، 32).
+٥. نص سهل القراءة: ما بين 50 و75 حرفًا تقريبًا في السطر، وتباين قوي.
+
+التطبيقات
+٦. منطقة الإبهام: ضع الإجراء الرئيسي حيث يستقر الإبهام.
+٧. أهداف لمس كافية: على الأقل 44 نقطة في Apple و48 dp في Google.
+٨. من 3 إلى 5 تبويبات.
+٩. استجابة لكل لمسة: ضغط، تحميل، تم.
+١٠. مهمة واحدة لكل شاشة: قسّم النماذج الطويلة إلى خطوات.
+
+الواجهات في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #webdesign #appdesign #uidesign #uxdesign #learnuiux #تصميم_واجهات #تجربة_المستخدم
+
+TAGS (champ « Tags » de YouTube)
+ui ux basics, ui ux for beginners, web design basics, app design basics, mobile ux, thumb zone, touch target size, visual hierarchy, spacing system, أساسيات تصميم الواجهات, تصميم المواقع, تصميم التطبيقات
+
+COMMENTAIRE À ÉPINGLER
+Website or app: which one are you designing right now? 👇
+موقع أم تطبيق: ماذا تصمّم الآن؟ 👇
+
+==================================================
+NOTES
+==================================================
+- Relier les deux Shorts (« UI/UX basics for websites » et « UI/UX basics for apps ») à cette vidéo
+  avec la fonction « vidéo associée ».
+- Miniature : Miniature-YouTube.png (1280×720).

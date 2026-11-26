@@ -1,0 +1,46 @@
+VIDÉO LONGUE YOUTUBE — Where should a beginner developer start?
+Format 16:9 · 4:21 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+
+TITRE YOUTUBE
+Where should a beginner developer start? 9 steps in the right order | من أين يبدأ المطوّر المبتدئ؟
+
+DESCRIPTION (EN + AR)
+A roadmap for beginners who want to build web interfaces: 9 steps in the right order, each with a practical tip and the mistake to avoid. Pick one goal, HTML (real tags, not divs everywhere), CSS (Flexbox, Grid, responsive), JavaScript basics before any framework, Git and GitHub from week one, small projects instead of tutorial hell, docs and error messages, AI as a tutor and not a crutch, and a framework later.
+
+خريطة طريق للمبتدئين الذين يريدون بناء واجهات الويب: تسع خطوات بالترتيب الصحيح، مع نصيحة عملية والخطأ الذي يجب تجنّبه في كل خطوة.
+
+Chapters / الفصول
+0:00 Pick one goal · اختر هدفًا واحدًا
+0:30 HTML · لغة HTML
+0:58 CSS · التنسيق بـ CSS
+1:25 JavaScript basics · أساسيات JavaScript
+1:52 Git & GitHub · استخدام Git وGitHub
+2:19 Small projects · مشاريع صغيرة
+2:46 Docs & errors · التوثيق والأخطاء
+3:14 AI as a tutor · الذكاء الاصطناعي كمعلّم
+3:41 A framework, later · إطار العمل لاحقًا
+4:08 Recap · ملخّص
+
+#webdevelopment #learntocode #frontend #html #css #javascript #git #learnuiux
+
+TAGS
+how to start coding, beginner developer roadmap, web development roadmap 2026, learn html css javascript, frontend roadmap, git for beginners, tutorial hell, learn to code with ai, mdn web docs, learn ui ux, تعلم البرمجة, خريطة طريق المطور, تطوير الويب
+
+COMMENTAIRE À ÉPINGLER
+Which step are you at right now? 👇
+في أي خطوة أنت الآن؟ 👇
+
+PLAYLIST
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 26 novembre 2026.
+Ordre HTML/CSS → JavaScript → Git → projets → un framework ensuite : https://biteofcode.com/web-dev-roadmap-2026/ · https://www.souysoeng.com/2026/10/the-web-developer-roadmap-for-beginners.html · https://academy.codeles.codes/blog/web-development-roadmap/ · https://codewithdeb.in/how-to-learn-web-development-in-2026-complete-beginners-roadmap/ · https://www.blog.brightcoding.dev/2026/09/04/full-stack-development-roadmap-for-beginners
+(Les sources ne s'accordent pas sur le moment d'apprendre Git : nous recommandons dès la première semaine.)
+MDN comme référence : recommandée par plusieurs feuilles de route ci-dessus.
+IA et apprentissage (Stack Overflow Developer Survey 2025) : https://stackoverflow.co/company/press/archive/stack-overflow-2025-developer-survey/ · https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/ · https://www.techelevator.com/learning-to-code-in-2025-insights-from-the-stack-overflow-developer-survey/
+La vidéo ne cite aucun pourcentage : seulement les tendances (usage de l'IA pour apprendre en hausse, confiance faible, temps passé à corriger du code « presque juste »).
+Page « Fresh Coffee », code et prénoms : fictifs.

@@ -1,0 +1,18 @@
+Bande-annonce de la chaîne AG Studio
+Durée : 47 s · 1920×1080 · Sans musique
+Accroche : « Learn UI/UX, one fix at a time. » / « تعلّم UI/UX، تصحيحًا بعد تصحيح. »
+
+TITRE
+Learn UI/UX, One Fix at a Time | تعلّم UI/UX، تصحيحًا بعد تصحيح
+
+DESCRIPTION (EN)
+Short UI/UX tutorials, in English and Arabic. Every video fixes a real design problem on a fictional interface, step by step: color and type, spacing and layout, websites, apps, dark mode and accessibility.
+New tutorials every week. Subscribe so you don't miss the next fix.
+
+DESCRIPTION (AR)
+دروس قصيرة في UI/UX بالإنجليزية والعربية. كل فيديو يصحّح مشكلة تصميم حقيقية على واجهة خيالية، خطوة بخطوة: الألوان والخطوط، المسافات والتخطيط، المواقع، التطبيقات، الوضع الداكن وإمكانية الوصول.
+دروس جديدة كل أسبوع. اشترك حتى لا يفوتك التصحيح القادم.
+
+OÙ LA PLACER
+YouTube Studio → Personnalisation → Mise en page → « Bande-annonce de la chaîne pour les visiteurs non abonnés ».
+La publier d'abord comme vidéo normale (publique), puis la choisir comme bande-annonce.

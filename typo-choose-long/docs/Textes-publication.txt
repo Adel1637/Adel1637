@@ -1,0 +1,60 @@
+VIDÉO LONGUE YOUTUBE — How to choose a font
+Format 16:9 · 4:06 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+Contenu vérifié en ligne le 24 novembre 2026 (sources en bas, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+How to choose a font for your app: 7 checks | كيف تختار الخط المناسب لواجهتك؟
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+Six real open-source fonts go through seven tests until one is left. What the font is for, and why small text tells the truth. Legibility: the Il1 O0 test, the x-height, small sizes. Enough weights, or one variable font. Arabic support, one family for two scripts, and more line height for Arabic. A real screen and numbers that align. The license: what the SIL Open Font License allows. And why one family is often enough. Each test comes with a practical tip.
+
+ستة خطوط حقيقية مفتوحة المصدر تمر بسبعة اختبارات حتى يبقى خط واحد. الغرض من الخط، ولماذا يكشف النص الصغير الحقيقة. سهولة القراءة: اختبار الحروف المتشابهة Il1 O0، وارتفاع الحروف الصغيرة، والأحجام الصغيرة. أوزان كافية أو خط متغيّر واحد. دعم العربية، وعائلة واحدة لنظامَي كتابة، وتباعد أسطر أكبر للعربية. التجربة في شاشة حقيقية، وأرقام تصطف بشكل صحيح. الترخيص وما يسمح به ترخيص OFL. ولماذا تكفي عائلة واحدة غالبًا. مع نصيحة عملية لكل اختبار.
+
+Chapters / الفصول
+0:00 Use: what is it for? · الاستخدام
+0:32 Legibility · سهولة القراءة
+1:15 Weights · الأوزان
+1:44 Arabic · العربية
+2:26 Real screen · شاشة حقيقية
+2:55 License · الترخيص
+3:24 One family · عائلة واحدة
+3:53 Recap · ملخّص
+
+All interfaces and data shown are fictional. Fonts shown: Lobster, Playfair Display, Montserrat, Roboto, Atkinson Hyperlegible, IBM Plex Sans and IBM Plex Sans Arabic, Inter, Noto Sans and Noto Sans Arabic, Readex Pro.
+جميع الواجهات والبيانات المعروضة خيالية.
+
+#uidesign #typography #fonts #uxdesign #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+how to choose a font, font for app, ui typography, typography for ui design, font pairing, variable fonts, arabic fonts, ibm plex sans arabic, open font license, tabular numbers, x-height, learn ui ux, اختيار الخط, الخطوط العربية, تصميم الواجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which font do you use in your apps? 👇
+ما الخط الذي تستخدمه في تطبيقاتك؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 24 novembre 2026 + mesures faites sur les vrais fichiers de police (I/l/1, chiffres, hauteur d'x lue dans la table OS/2 d'IBM Plex Sans : 516/698 = 74 %).
+RGD AccessAbility, choix du caractère (hauteur d'x 2/3 à 3/4) : https://accessability.rgd.ca/legibility-and-readability/typeface-selection/
+Adobe Design, polices pour interfaces (test « aeogh 1lIi O0 ») : https://adobe.design/stories/leading-design/how-to-choose-fonts-for-responsive-web-interfaces
+Design Hubs, polices variables : https://designhubs.dev/typography/t04-typeface-selection/
+Atkinson Hyperlegible Next (7 graisses, février 2025) : https://www.prnewswire.com/news-releases/braille-institute-launches-enhanced-atkinson-hyperlegible-font-to-make-reading-easier-302371657.html
+Polices arabes + latines : https://www.mohamedmetwally.art/en/blog/free-arabic-fonts · https://kitab.noorui.com/en/blog/choosing-arabic-fonts · https://voxire.com/blog/arabic-rtl-typography-web-design-2026/
+SIL Open Font License : https://openfontlicense.org/
+Polices montrées (toutes libres, vrais fichiers) : Lobster, Playfair Display, Montserrat, Roboto, Atkinson Hyperlegible, IBM Plex Sans (+ Arabic), Inter, Noto Sans (+ Arabic), Readex Pro.
+Interfaces et données (commandes, prix, prénoms) entièrement fictives.

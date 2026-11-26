@@ -1,0 +1,45 @@
+SHORT / TIKTOK — How to choose a font
+Format 9:16 · 61 s (≥ 1 min pour TikTok) · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
+Contenu vérifié en ligne le 24 novembre 2026 (sources en bas, à ne pas publier).
+
+==================================================================
+TITRE YOUTUBE SHORTS
+==================================================================
+7 checks before you pick a font | كيف تختار الخط المناسب؟ #shorts
+
+==================================================================
+DESCRIPTION YOUTUBE (EN + AR)
+==================================================================
+6 real fonts, 7 tests, 1 winner: what it is for, the Il1 O0 legibility test, enough weights, Arabic support, a real screen, the license, and one family for everything.
+
+ستة خطوط حقيقية وسبعة اختبارات وخط واحد يفوز: الغرض من الخط، واختبار الحروف المتشابهة Il1 O0، وعدد الأوزان، ودعم العربية، والتجربة في شاشة حقيقية، والترخيص، وعائلة واحدة لكل شيء.
+
+#uidesign #typography #fonts #uxdesign #learnuiux
+
+==================================================================
+LÉGENDE TIKTOK
+==================================================================
+7 checks before you pick a font 🔤
+سبعة اختبارات قبل أن تختار خطًّا لواجهتك.
+
+#uidesign #typography #fonts #uxdesign #learnuiux #تصميم_واجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which font do you use in your apps? 👇
+ما الخط الذي تستخدمه في تطبيقاتك؟ 👇
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 24 novembre 2026 + mesures faites sur les vrais fichiers de police (I/l/1, chiffres, hauteur d'x lue dans la table OS/2 d'IBM Plex Sans : 516/698 = 74 %).
+RGD AccessAbility, choix du caractère (hauteur d'x 2/3 à 3/4) : https://accessability.rgd.ca/legibility-and-readability/typeface-selection/
+Adobe Design, polices pour interfaces (test « aeogh 1lIi O0 ») : https://adobe.design/stories/leading-design/how-to-choose-fonts-for-responsive-web-interfaces
+Design Hubs, polices variables : https://designhubs.dev/typography/t04-typeface-selection/
+Atkinson Hyperlegible Next (7 graisses, février 2025) : https://www.prnewswire.com/news-releases/braille-institute-launches-enhanced-atkinson-hyperlegible-font-to-make-reading-easier-302371657.html
+Polices arabes + latines : https://www.mohamedmetwally.art/en/blog/free-arabic-fonts · https://kitab.noorui.com/en/blog/choosing-arabic-fonts · https://voxire.com/blog/arabic-rtl-typography-web-design-2026/
+SIL Open Font License : https://openfontlicense.org/
+Polices montrées (toutes libres, vrais fichiers) : Lobster, Playfair Display, Montserrat, Roboto, Atkinson Hyperlegible, IBM Plex Sans (+ Arabic), Inter, Noto Sans (+ Arabic), Readex Pro.
+Interfaces et données (commandes, prix, prénoms) entièrement fictives.

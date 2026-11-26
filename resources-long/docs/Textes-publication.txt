@@ -1,0 +1,44 @@
+VIDÉO LONGUE YOUTUBE — Free resources for designers
+Format 16:9 · 4:07 · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique, vraies captures des sites
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+
+TITRE YOUTUBE
+18 free resources for designers (licenses checked) | مصادر مجانية للمصممين
+
+DESCRIPTION (EN + AR)
+18 free sites for UI/UX designers, sorted by need, with what each one is for, its license and a practical tip. UI kits and design systems (Untitled UI, Material Design 3, Figma Community), inspiration (Mobbin, Collect UI), icons (Lucide, Phosphor, Heroicons, Tabler), illustrations and photos (unDraw, Unsplash, Pexels), fonts (Google Fonts, Fontshare), free tools (Penpot, Lunacy) and learning (NN/g articles, Figma for beginners).
+
+ثمانية عشر موقعًا مجانيًا لمصممي الواجهات وتجربة المستخدم، مرتّبة حسب الحاجة، مع استخدام كل موقع وترخيصه ونصيحة عملية: مجموعات وأنظمة التصميم، والإلهام، والأيقونات، والرسومات والصور، والخطوط، والأدوات المجانية، والتعلّم.
+
+Chapters / الفصول
+0:00 UI kits & systems · مجموعات وأنظمة تصميم
+0:41 Inspiration · الإلهام
+1:07 Icons · الأيقونات
+1:57 Illustrations & photos · الرسومات والصور
+2:35 Fonts · الخطوط
+3:01 Free tools · أدوات مجانية
+3:28 Learn · التعلّم
+3:54 Recap · ملخّص
+
+Prices and licenses can change: check each site before you use it. Site names are shown as text; screenshots of public home pages, captured on 26 November 2026.
+قد تتغير الأسعار والتراخيص، فتحقّق من كل موقع قبل استخدامه.
+
+#uidesign #uxdesign #designresources #freeresources #learnuiux
+
+TAGS
+free design resources, ui design resources, free icons, free fonts, free illustrations, free ui kit, figma resources, design inspiration, mobbin, lucide icons, google fonts, penpot, learn ui ux, مصادر تصميم مجانية, تصميم الواجهات
+
+COMMENTAIRE À ÉPINGLER
+Which site would you add to this list? 👇
+ما الموقع الذي تضيفه إلى هذه القائمة؟ 👇
+
+PLAYLIST
+Learn UI/UX
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 26 novembre 2026. Captures des pages d'accueil publiques faites le 26 novembre 2026 (Unsplash et Pexels bloquent les navigateurs automatiques : fiche texte à la place).
+Listes 2026 : https://mantlr.com/blog/free-design-resources-web-designers-2026 · https://digitalzoomstudio.net/2026/11/54-websites-for-designers-sorted-by-task-with-every-link-and-what-each-one-costs/ · https://toolradar.com/guides/best-free-ui-ux-design-tools · https://peas-ner.com/25-free-resources-for-designers/
+Licences : https://www.pixguard.io/blog/unsplash-pexels-pixabay-license-guide · https://www.licenseorg.com/blog/free-stock-photos-licensing-traps · https://pixels.market/blog/undraw-license · Lucide (ISC), Phosphor (MIT), Heroicons (MIT, indiqué sur heroicons.com), Tabler (MIT).
+Les prix et les licences changent : vérifier chaque site avant publication si un doute existe. Noms écrits en texte, aucun logo redessiné.

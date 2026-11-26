@@ -1,0 +1,35 @@
+SHORT / TIKTOK — Where should a beginner developer start?
+Format 9:16 · 62 s (≥ 1 min pour TikTok) · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
+Astuce : reliez ce Short à la vidéo longue avec le champ « Vidéo associée ».
+
+TITRE YOUTUBE SHORTS
+Where should a beginner developer start? | من أين يبدأ المطوّر المبتدئ؟ #shorts
+
+DESCRIPTION YOUTUBE (EN + AR)
+The 8 steps for a beginner who wants to build web interfaces, in the right order: pick one goal, HTML, CSS, JavaScript basics, Git and GitHub from week one, small projects, docs and error messages, and AI as a tutor, not a crutch.
+
+ثماني خطوات للمبتدئ الذي يريد بناء واجهات الويب، بالترتيب الصحيح: اختر هدفًا واحدًا، ثم HTML، ثم CSS، ثم أساسيات JavaScript، واستخدم Git وGitHub منذ الأسبوع الأول، وابنِ مشاريع صغيرة، واقرأ التوثيق ورسائل الخطأ، واستخدم الذكاء الاصطناعي كمعلّم لا كعكّاز.
+
+#webdevelopment #learntocode #frontend #html #css #javascript #learnuiux
+
+LÉGENDE TIKTOK
+Where should a beginner developer start? 💻
+من أين يبدأ المطوّر المبتدئ؟ ثماني خطوات بالترتيب الصحيح.
+
+#webdevelopment #learntocode #frontend #coding #learnuiux #برمجة
+
+COMMENTAIRE À ÉPINGLER
+Which step are you at right now? 👇
+في أي خطوة أنت الآن؟ 👇
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 26 novembre 2026.
+Ordre HTML/CSS → JavaScript → Git → projets → un framework ensuite : https://biteofcode.com/web-dev-roadmap-2026/ · https://www.souysoeng.com/2026/10/the-web-developer-roadmap-for-beginners.html · https://academy.codeles.codes/blog/web-development-roadmap/ · https://codewithdeb.in/how-to-learn-web-development-in-2026-complete-beginners-roadmap/ · https://www.blog.brightcoding.dev/2026/09/04/full-stack-development-roadmap-for-beginners
+(Les sources ne s'accordent pas sur le moment d'apprendre Git : nous recommandons dès la première semaine.)
+MDN comme référence : recommandée par plusieurs feuilles de route ci-dessus.
+IA et apprentissage (Stack Overflow Developer Survey 2025) : https://stackoverflow.co/company/press/archive/stack-overflow-2025-developer-survey/ · https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/ · https://www.techelevator.com/learning-to-code-in-2025-insights-from-the-stack-overflow-developer-survey/
+La vidéo ne cite aucun pourcentage : seulement les tendances (usage de l'IA pour apprendre en hausse, confiance faible, temps passé à corriger du code « presque juste »).
+Page « Fresh Coffee », code et prénoms : fictifs.

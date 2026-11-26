@@ -1,0 +1,43 @@
+VIDÉO LONGUE YOUTUBE — HTML, CSS and JavaScript explained: who does what?
+Format 16:9 · 0:57 · sans musique (effets sonores seulement) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+HTML, CSS and JavaScript explained: who does what? | من يفعل ماذا: HTML أم CSS أم JavaScript؟
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+One signup card built layer by layer: HTML gives the structure, CSS the style, JavaScript the behavior. Then the three layers together, with a tip for each.
+
+بطاقة تسجيل واحدة تُبنى طبقة بعد طبقة: HTML يعطي الهيكل، وCSS الشكل، وJavaScript السلوك. ثم الطبقات الثلاث معًا، مع نصيحة لكل طبقة.
+
+Chapters / الفصول
+0:00 HTML: the structure · الهيكل
+0:14 CSS: the style · الشكل
+0:24 JavaScript: the behavior · السلوك
+0:34 Together: 3 layers · الطبقات الثلاث
+0:45 Recap · ملخّص
+
+All interfaces in this video are fictional examples.
+جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+
+#uidesign #uxdesign #learntocode #webdesign #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+html css javascript, html vs css vs javascript, html css js explained, web development basics, coding for designers, ui ux, learn ui ux, شرح html css javascript, تعلم البرمجة
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which layer do you find the hardest? 👇
+أيّ طبقة تجدها الأصعب؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX

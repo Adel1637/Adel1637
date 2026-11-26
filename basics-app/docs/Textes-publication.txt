@@ -1,0 +1,52 @@
+UI/UX basics for apps — AG Studio
+Série : Learn UI/UX · Durée : 50 s · Sans musique
+Accroche : « Can you reach this button? » / « هل تصل إلى هذا الزر؟ »
+
+==================================================
+YOUTUBE SHORTS
+==================================================
+
+TITRE
+UI/UX Basics for Apps | أساسيات UI/UX لتصميم التطبيقات
+
+DESCRIPTION (EN)
+Can you reach this button? 5 UI/UX basics every app needs:
+1. Thumb zone: main action where the thumb rests.
+2. Big enough to tap: at least 44 pt (Apple) or 48 dp (Google).
+3. 3 to 5 tabs.
+4. Feedback on every tap: pressed, loading, done.
+5. One task per screen.
+The interface in this video is fictional.
+Follow for more UI/UX tutorials.
+
+DESCRIPTION (AR)
+هل تصل إلى هذا الزر؟ ٥ أساسيات UI/UX يحتاجها كل تطبيق:
+١. منطقة الإبهام: الإجراء الرئيسي حيث يستقر الإبهام.
+٢. أهداف لمس كافية: على الأقل 44 نقطة في Apple و48 dp في Google.
+٣. من 3 إلى 5 تبويبات.
+٤. استجابة لكل لمسة: ضغط، تحميل، تم.
+٥. مهمة واحدة لكل شاشة.
+الواجهة في الفيديو خيالية.
+تابعني لمزيد من دروس UI/UX.
+
+HASHTAGS
+#uiux #appdesign #mobiledesign #uidesign #uxdesign #تصميم_التطبيقات #تصميم_واجهات #تجربة_المستخدم
+
+==================================================
+TIKTOK
+==================================================
+
+LÉGENDE (EN)
+Can you reach this button? 5 basics every app needs 📌
+More UI/UX fixes on my profile.
+
+LÉGENDE (AR)
+هل تصل إلى هذا الزر؟ ٥ أساسيات يحتاجها كل تطبيق 📌
+المزيد من دروس UI/UX على حسابي.
+
+HASHTAGS
+#uiux #appdesign #mobiledesign #designtok #learnuiux #تصميم_التطبيقات #تصميم_واجهات #تعلم_التصميم
+
+COMMENTAIRE À ÉPINGLER
+Which one does your app miss? 👇
+ما الذي ينقص تطبيقك؟ 👇

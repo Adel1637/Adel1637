@@ -1,0 +1,53 @@
+VIDÉO LONGUE YOUTUBE — The UI/UX toolkit: 14 tools from design to code
+Format 16:9 · 2:49 · sans musique (effets sonores seulement) · -14 LUFS
+Fichiers : video.mp4 · Miniature-YouTube.png (1280×720)
+
+==================================================================
+TITRE YOUTUBE
+==================================================================
+The UI/UX toolkit: 14 tools from design to code | أدوات مصمم UI/UX الأساسية
+
+==================================================================
+DESCRIPTION (EN + AR)
+==================================================================
+The tools a UI/UX designer actually uses, from the first sketch to the code: design, design-to-code and dev. Each tool comes with what it is for and one practical tip.
+
+الأدوات التي يستخدمها مصمم UI/UX فعلًا، من الفكرة الأولى إلى الكود: التصميم، ثم الانتقال من التصميم إلى الكود، ثم التطوير. مع كل أداة: ما فائدتها ونصيحة عملية.
+
+Chapters / الفصول
+0:00 Figma · فيجما
+0:16 FigJam · فيج جام
+0:27 Google Fonts · خطوط جوجل
+0:37 Lucide (icons) · أيقونات Lucide
+0:47 WebAIM Contrast Checker · فحص التباين
+0:58 Maze (user testing) · اختبار المستخدمين
+1:08 Figma Dev Mode · وضع المطوّر في فيجما
+1:21 Framer · Webflow
+1:31 VS Code
+1:45 Chrome DevTools · أدوات المطوّر في كروم
+1:55 GitHub
+2:05 Tailwind CSS
+2:15 Storybook
+2:26 Claude Code
+2:36 Recap · ملخّص
+
+All interfaces in this video are fictional examples.
+جميع الواجهات في هذا الفيديو أمثلة توضيحية.
+
+#uidesign #uxdesign #figma #webdesign #learnuiux
+
+==================================================================
+TAGS (YouTube Studio > Détails > Afficher plus > Tags)
+==================================================================
+ui ux tools, ui design tools, ux design tools, tools for ui ux designers, figma, figjam, figma dev mode, google fonts, lucide icons, webaim contrast checker, maze user testing, framer, webflow, vs code, chrome devtools, github, tailwind css, storybook, claude code, ui ux for beginners, learn ui ux, أدوات تصميم الواجهات, تصميم UI UX, تعلم تصميم الواجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which tool from this list do you use the most? 👇
+أيّ أداة من هذه القائمة تستخدمها أكثر؟ 👇
+
+==================================================================
+PLAYLIST
+==================================================================
+Learn UI/UX

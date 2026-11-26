@@ -1,0 +1,48 @@
+SHORT / TIKTOK — UI elements and their names
+Format 9:16 · 62 s (≥ 1 min pour TikTok) · sans musique (palette sonore AG Studio) · -14 LUFS · style motion cinétique
+Fichiers : video.mp4 · Couverture-TikTok.png · Couverture-YouTube-Shorts.png
+Contenu vérifié en ligne le 25 novembre 2026 (sources en bas, à ne pas publier).
+Astuce : reliez ce Short à la vidéo longue « UI & UX terms » avec le champ « Vidéo associée » de YouTube.
+
+==================================================================
+TITRE YOUTUBE SHORTS
+==================================================================
+UI elements and their names | عناصر الواجهة وأسماؤها #shorts
+
+==================================================================
+DESCRIPTION YOUTUBE (EN + AR)
+==================================================================
+14 UI elements every designer and developer uses: navbar, sidebar, breadcrumb, search bar, tabs, card, primary and secondary buttons, badge, avatar, dropdown, toggle, tooltip, modal and toast.
+
+أربعة عشر عنصرًا يستخدمها كل مصمم ومطوّر: شريط التنقل، والشريط الجانبي، ومسار التنقل، وشريط البحث، وعلامات التبويب، والبطاقة، والزر الأساسي والثانوي، والشارة، والصورة الرمزية، والقائمة المنسدلة، ومفتاح التبديل، وتلميح الأداة، والنافذة المنبثقة، والإشعار المؤقت.
+
+#uidesign #uxdesign #uielements #webdesign #learnuiux
+
+==================================================================
+LÉGENDE TIKTOK
+==================================================================
+UI elements and their names 🧩
+عناصر الواجهة وأسماؤها، في دقيقة واحدة.
+
+#uidesign #uxdesign #uielements #webdesign #learnuiux #تصميم_واجهات
+
+==================================================================
+COMMENTAIRE À ÉPINGLER
+==================================================================
+Which UI element name did you not know? 👇
+أيّ اسم لم تكن تعرفه؟ 👇
+
+==================================================================
+SOURCES (vérification, ne pas publier)
+==================================================================
+Recherche du 25 novembre 2026.
+NN/g, User journeys vs user flows : https://www.nngroup.com/articles/user-journeys-vs-user-flows/
+UX Design Institute, glossaire UI (100 termes) : https://www.uxdesigninstitute.com/blog/ui-glossary/
+UX Design Institute, glossaire UX (101 termes) : https://www.uxdesigninstitute.com/blog/glossary-ux-terms/
+UI Systems, répertoire de composants (modal = dialog, toast = snackbar, popover au clic) : https://userinterface.systems/components
+UI Component Glossary (drawer = slide-over) : https://ui-glossary.joshvh.com/
+Speak Tech English, noms des éléments d'interface : https://speaktechenglish.com/ui-elements-names/
+Koru UX, glossaire UI/UX : https://www.koruux.com/blog/ui-ux-glossary-for-designers/
+Laws of UX (Fitts, Hick, Jakob) : https://lawsofux.com/index.md
+UK Department for Education, Laws of UX : https://accessibility.education.gov.uk/profession-guidance/interaction-design/laws-of-ux
+Interfaces entièrement fictives (« Workspace », prénoms, tâches, persona) dessinées pour la vidéo.

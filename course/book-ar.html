@@ -1,0 +1,136 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Fraunces;src:url(file:///home/user/Adel1637/node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2);font-weight:100 900}
+@font-face{font-family:Serif4;src:url(file:///home/user/Adel1637/node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2);font-weight:200 900}
+@font-face{font-family:Serif4;src:url(file:///home/user/Adel1637/node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-italic.woff2);font-weight:200 900;font-style:italic}
+@font-face{font-family:Naskh;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-400-normal.woff2);font-weight:400;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}@font-face{font-family:Naskh;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-600-normal.woff2);font-weight:600;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}@font-face{font-family:Naskh;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-naskh-arabic/files/noto-naskh-arabic-arabic-700-normal.woff2);font-weight:700;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:Kufi;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-kufi-arabic/files/noto-kufi-arabic-arabic-700-normal.woff2);font-weight:700;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}@font-face{font-family:Kufi;src:url(file:///home/user/Adel1637/node_modules/@fontsource/noto-kufi-arabic/files/noto-kufi-arabic-arabic-800-normal.woff2);font-weight:800;unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}
+@page{size:148mm 210mm;margin:18mm 16mm 20mm;@bottom-center{content:counter(page);font:9pt Serif4,serif;color:#8A857E}}
+@page :first{margin:0;@bottom-center{content:none}}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1F1D1A;--mute:#6B6660;--rule:#E4DFD8;--tint:#F6F1EA;--acc:#B4532A}
+body{font-family:Naskh,Serif4,serif;font-size:11.2pt;line-height:1.78;color:var(--ink)}
+h1,h2,h3,.kicker,.num{font-family:Kufi,Fraunces,serif}
+p{margin-bottom:3mm}
+.cover{width:148mm;height:210mm;background:#1C1B19;color:#F4EFE7;padding:22mm 16mm;display:flex;flex-direction:column;break-after:page}
+.cover .tag{font-family:Serif4,serif;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:#C9A98F}
+.cover h1{font-size:34pt;font-weight:800;line-height:1.5;margin-top:38mm;letter-spacing:0}
+.cover .bar{width:22mm;height:1.2mm;background:var(--acc);margin:9mm 0}
+.cover .sub{font-size:16pt;color:#D9D2C7}
+.cover .by{margin-top:auto;font-family:Serif4,serif;font-size:10pt;color:#C9C2B7;direction:ltr;text-align:right}
+.cover .sample{font-size:11pt;color:#C9A98F;margin-top:3mm}
+.page{break-after:page}
+h1.sec{font-size:22pt;font-weight:800;margin-bottom:8mm;letter-spacing:0}
+.toc li{list-style:none;display:flex;gap:4mm;align-items:baseline;padding:2.6mm 0;border-bottom:.25mm solid var(--rule)}
+.toc .n{font-family:Fraunces,serif;color:var(--acc);font-weight:600;min-width:7mm}
+.toc .soon{margin-inline-start:auto;font-size:.8em;color:var(--mute)}
+.toc .sub{display:block;font-size:.86em;color:var(--mute)}
+.steps{margin:4mm 0 5mm;padding-inline-start:6mm}.steps li{margin-bottom:1.6mm}
+.note{font-size:.9em;color:var(--mute);border-top:.25mm solid var(--rule);padding-top:4mm;margin-top:8mm}
+.opener{display:flex;flex-direction:column;justify-content:center;min-height:165mm;break-after:page}
+.opener .num{font-size:92pt;line-height:1;color:var(--acc);font-weight:800;font-family:Fraunces,serif}
+.opener .ch{font-size:11pt;letter-spacing:0;text-transform:uppercase;color:var(--mute);margin-top:6mm}
+.opener h1{font-size:28pt;font-weight:800;margin:2mm 0 8mm;letter-spacing:0}
+.opener p{font-size:1.12em;max-width:108mm}
+.lesson{break-before:page}
+.kicker{font-size:10pt;letter-spacing:0;text-transform:uppercase;color:var(--acc);font-weight:700;margin-bottom:1mm}
+h2{font-size:19pt;font-weight:800;line-height:1.25;margin-bottom:4mm;letter-spacing:0}
+.idea{font-size:1.14em;border-inline-start:1mm solid var(--acc);padding-inline-start:4mm;margin:0 0 6mm;color:#3A3631}
+h3{font-size:11.5pt;font-weight:700;margin:5mm 0 2mm;break-after:avoid;}
+ol,ul.x{padding-inline-start:5.5mm;margin-bottom:2mm;break-before:avoid}li{break-inside:avoid}ol li,ul.x li{margin-bottom:1.3mm}
+ul.x{list-style:none;padding-inline-start:0}ul.x li{padding-inline-start:5.5mm;position:relative}
+ul.x li::before{content:'×';position:absolute;inset-inline-start:0;color:var(--acc);font-family:Fraunces,serif;font-weight:600}
+figure{break-inside:avoid;margin:5mm 0 6mm}
+figure img{width:100%;display:block;border:.3mm solid var(--rule);border-radius:1.2mm}
+figure.stack div{margin:0 auto 2mm;position:relative;width:60%}
+figure.side{display:grid;grid-template-columns:1fr 1fr;gap:3mm;width:84%;margin-inline:auto}figure.side div{position:relative}figure.side figcaption{grid-column:1/-1}
+.cap{position:absolute;top:1.6mm;inset-inline-start:1.6mm;font-family:Kufi,serif;font-size:7.4pt;font-weight:700;color:#fff;padding:.5mm 2.2mm;border-radius:1mm;line-height:1.5}
+.cap.b{background:#A8321F}.cap.a{background:#1F6F52}
+figcaption{font-size:.82em;color:var(--mute);margin-top:1mm}
+aside{break-inside:avoid;background:var(--tint);border-radius:2mm;padding:4.5mm 5mm;margin-top:5mm}
+aside b{font-family:Kufi,serif;color:var(--acc);font-weight:700;display:block;margin-bottom:1mm}
+aside p{margin:0}
+.sum li{margin-bottom:2mm}
+.next{margin-top:10mm;border-top:.25mm solid var(--rule);padding-top:5mm;color:var(--mute);font-size:.92em}
+.ltr{direction:ltr;unicode-bidi:isolate}
+</style></head><body>
+<div class="cover"><span class="tag">AG Studio</span><h1>أساسيات تصميم الواجهات</h1><div class="bar"></div><div class="sub">دورة عملية للمبتدئين</div><div class="sample">نسخة تجريبية · الفصل 1</div><div class="by">Adel Goucem · AG Studio</div></div>
+<div class="page"><h1 class="sec">المحتويات</h1><ul class="toc">
+<li><span class="n">1</span><span>الألوان والخطوط<span class="sub">لون تمييز واحد · ألوان محايدة للباقي · خطّان كحدّ أقصى · مقياس أحجام للخطوط · تباين كافٍ</span></span></li><li><span class="n">2</span><span>المسافات والتخطيط</span><span class="soon">في النسخة الكاملة</span></li><li><span class="n">3</span><span>الوضع الداكن وإمكانية الوصول</span><span class="soon">في النسخة الكاملة</span></li><li><span class="n">4</span><span>العمق والأشكال</span><span class="soon">في النسخة الكاملة</span></li><li><span class="n">5</span><span>الأيقونات والصور</span><span class="soon">في النسخة الكاملة</span></li><li><span class="n">6</span><span>الحركة</span><span class="soon">في النسخة الكاملة</span></li>
+</ul></div>
+<div class="page"><h1 class="sec">كيف تعمل هذه الدورة</h1><p>تعلّمك هذه الدورة تصميم الواجهات عبر قواعد يمكنك تطبيقها في اليوم نفسه. كل درس يتناول قاعدة واحدة، وكل قاعدة معروضة على الصفحة الخيالية نفسها، قبل التطبيق وبعده، لترى بدقة ما الذي يتغيّر.</p><p>لا تحتاج إلى إتقان الرسم ولا إلى البرمجة. تحتاج إلى أداة تصميم (الخطة المجانية من Figma تكفي)، وإلى شاشة تريد تحسينها، وإلى نحو خمس عشرة دقيقة لكل درس.</p><ol class="steps"><li>اقرأ القاعدة والسبب الذي يقف وراءها.</li><li>تأمّل شكل «قبل وبعد».</li><li>نفّذ فقرة «جرّب الآن» القصيرة على شاشتك.</li><li>في نهاية الفصل، أنجز التمرين.</li></ol><p class="note">كل الواجهات المعروضة في هذه الدورة خيالية وصُمّمت لغرض التعليم.</p></div>
+<div class="opener"><div class="num">1</div><div class="ch">الفصل 1</div><h1>الألوان والخطوط</h1><p>قبل أن يقرأ الزائر كلمة واحدة، يكون قد حكم على واجهتك من ألوانها وحروفها. يقدّم لك هذا الفصل خمس قواعد تجعل ذلك الانطباع الأول هادئًا وواضحًا.</p></div>
+
+<section class="lesson">
+  <p class="kicker">الدرس 1.1</p>
+  <h2>لون تمييز واحد</h2>
+  <p class="idea">اختر لونًا واحدًا للإجراءات، ولا تستخدمه في أي مكان آخر.</p>
+  <h3>لماذا هي مهمة</h3><p>اللون إشارة. حين يحمل الزر والرابط والأيقونة والعنوان ألوانًا زاهية مختلفة، لا يبرز شيء، ولا تعرف العين أين تنقر.</p><p>لون التمييز الواحد يعلّم المستخدم أمرًا بسيطًا: هذا اللون يعني «يمكنك التصرّف هنا». فتصبح الواجهة أسهل في التصفّح، ويصير الإجراء الرئيسي واضحًا.</p>
+  <figure class="stack">
+    <div><img src="file:///home/user/Adel1637/course/fig/1b.png"><span class="cap b">قبل</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/1a.png"><span class="cap a">بعد</span></div>
+    <figcaption>الشكل 1.1 — لون تمييز واحد</figcaption>
+  </figure>
+  <h3>كيف تطبّقها</h3><ol><li>اختر لون تمييز واحدًا يناسب هوية العلامة.</li><li>استخدمه للأزرار الرئيسية والروابط والحالة النشطة لعناصر التحكّم.</li><li>احتفظ بالأحمر والأخضر للأخطاء والنجاح فقط.</li><li>أزل اللون عن كل ما ليس إجراءً.</li></ol>
+  <h3>أخطاء تجنّبها</h3><ul class="x"><li>لون مختلف لكل زر.</li><li>استخدام لون التمييز للزينة، في الخلفيات الكبيرة أو العناوين.</li><li>لون تمييز فاتح إلى درجة تصعب معها قراءة النص الأبيض فوقه.</li></ul>
+  <aside><b>جرّب الآن</b><p>عُدّ الألوان الزاهية في إحدى شاشاتك. إن وجدت أكثر من لون، فحدّد أيّها يعني «إجراء» وحوّل البقية إلى ألوان محايدة.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">الدرس 1.2</p>
+  <h2>ألوان محايدة للباقي</h2>
+  <p class="idea">الخلفيات والنصوص والحدود مكانها الأبيض ودرجات الرمادي.</p>
+  <h3>لماذا هي مهمة</h3><p>الأسطح المحايدة تمنح المحتوى ولون التمييز مساحة للتنفّس. أما الأقسام بألوان الباستيل فتزاحم المحتوى وتجعل الصفحة تبدو مرقّعة.</p><p>من الإرشادات الشائعة قاعدة <span class="ltr">60–30–10</span>: نحو 60% من الشاشة لخلفية محايدة، و30% لألوان محايدة ثانوية كالبطاقات والنصوص، و10% للون التمييز.</p>
+  <figure class="stack">
+    <div><img src="file:///home/user/Adel1637/course/fig/2b.png"><span class="cap b">قبل</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/2a.png"><span class="cap a">بعد</span></div>
+    <figcaption>الشكل 1.2 — ألوان محايدة للباقي</figcaption>
+  </figure>
+  <h3>كيف تطبّقها</h3><ol><li>ابنِ سلّمًا للرمادي من خمس إلى تسع درجات، من شبه الأبيض إلى شبه الأسود.</li><li>استخدم أفتح درجة لخلفية الصفحة، والأبيض أو الدرجة التالية للبطاقات.</li><li>استخدم أغمق الدرجات للعناوين ونص المحتوى.</li><li>استخدم درجة فاتحة للحدود والفواصل.</li></ol>
+  <h3>أخطاء تجنّبها</h3><ul class="x"><li>لون خلفية مختلف لكل قسم.</li><li>درجات رمادية كثيرة تكاد تتطابق.</li><li>خلفيات ملوّنة خلف نصوص طويلة.</li></ul>
+  <aside><b>جرّب الآن</b><p>خذ قسمًا ملوّنًا من صفحتك وأعد بناءه بالأبيض ودرجتين من الرمادي ولون التمييز فقط.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">الدرس 1.3</p>
+  <h2>خطّان كحدّ أقصى</h2>
+  <p class="idea">عائلة خطوط واحدة تكفي غالبًا، ولا تتجاوز عائلتين أبدًا.</p>
+  <h3>لماذا هي مهمة</h3><p>لكل خط صوته. ثلاثة أصوات في شاشة واحدة ضجيج، وتبدو معه الواجهة غير مكتملة.</p><p>التسلسل البصري يأتي من الحجم والسُّمك، لا من خط جديد. عائلة واحدة بعدّة أوزان تمنحك كل ما تحتاج إليه.</p>
+  <figure class="stack">
+    <div><img src="file:///home/user/Adel1637/course/fig/3b.png"><span class="cap b">قبل</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/3a.png"><span class="cap a">بعد</span></div>
+    <figcaption>الشكل 1.3 — خطّان كحدّ أقصى</figcaption>
+  </figure>
+  <h3>كيف تطبّقها</h3><ol><li>اختر عائلة خطوط واحدة بلا زوائد فيها ثلاثة أوزان على الأقل.</li><li>استخدم الأوزان (عادي، شبه عريض، عريض) لبناء التسلسل.</li><li>أضف عائلة ثانية لسبب واضح فقط، مثل عرض الكود بخط ثابت العرض.</li><li>عند الجمع بين العربية واللاتينية، اختر عائلتين متقاربتين في السُّمك والحجم البصري.</li></ol>
+  <h3>أخطاء تجنّبها</h3><ul class="x"><li>خط زخرفي لنص المحتوى.</li><li>خط مختلف للأزرار.</li><li>خط عريض يصطنعه البرنامج بدل الوزن العريض الحقيقي.</li></ul>
+  <aside><b>جرّب الآن</b><p>اكتب قائمة بالخطوط المستخدمة في شاشتك. استبدل بها كلها عائلة واحدة، وأعد بناء التسلسل بالوزن فقط.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">الدرس 1.4</p>
+  <h2>مقياس أحجام للخطوط</h2>
+  <p class="idea">استخدم أحجامًا قليلة للنص، بفوارق واضحة بينها.</p>
+  <h3>لماذا هي مهمة</h3><p>الأحجام العشوائية مثل 15 و17 و19 و24 تكاد تتشابه، فلا يميّز المستخدم ما هو مهم.</p><p>المقياس يمنح الصفحة إيقاعًا. حين يكون كل حجم أكبر بوضوح من سابقه، تُعرف العناوين والعناوين الفرعية والنصوص من النظرة الأولى.</p>
+  <figure class="side">
+    <div><img src="file:///home/user/Adel1637/course/fig/4b.png"><span class="cap b">قبل</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/4a.png"><span class="cap a">بعد</span></div>
+    <figcaption>الشكل 1.4 — مقياس أحجام للخطوط</figcaption>
+  </figure>
+  <h3>كيف تطبّقها</h3><ol><li>انطلق من حجم 16 بكسل لنص المحتوى.</li><li>اختر مقياسًا بسيطًا، مثل 16 و24 و32 و48.</li><li>اكتفِ بأربعة إلى ستة أحجام، وأعطِ كل حجم دورًا: عنوان عرض، عنوان، عنوان فرعي، نص، تعليق.</li><li>اجعل ارتفاع السطر نحو 1.5 لنص المحتوى ونحو 1.2 للعناوين الكبيرة.</li></ol>
+  <h3>أخطاء تجنّبها</h3><ul class="x"><li>عنوان أكبر من النص ببكسلين فقط.</li><li>حجم جديد يُخترع لكل شاشة.</li><li>نص محتوى أصغر من عنوان البطاقة المجاور له.</li></ul>
+  <aside><b>جرّب الآن</b><p>دوّن كل أحجام النص في شاشتك. اختصر القائمة إلى خمسة أحجام وطبّقها.</p></aside>
+</section>
+<section class="lesson">
+  <p class="kicker">الدرس 1.5</p>
+  <h2>تباين كافٍ</h2>
+  <p class="idea">يجب أن يكون النص مقروءًا للجميع، وعلى كل شاشة.</p>
+  <h3>لماذا هي مهمة</h3><p>النص الرمادي الفاتح يبدو أنيقًا على شاشة كبيرة، لكنه يختفي على الهاتف في ضوء النهار، وكثير من ضعاف البصر لا يستطيعون قراءته إطلاقًا.</p><p>معيار WCAG AA يحدّد هدفًا واضحًا: نسبة تباين لا تقل عن <span class="ltr">4.5:1</span> للنص العادي، و<span class="ltr">3:1</span> للنص الكبير وعناصر الواجهة.</p>
+  <figure class="side">
+    <div><img src="file:///home/user/Adel1637/course/fig/5b.png"><span class="cap b">قبل</span></div>
+    <div><img src="file:///home/user/Adel1637/course/fig/5a.png"><span class="cap a">بعد</span></div>
+    <figcaption>الشكل 1.5 — تباين كافٍ</figcaption>
+  </figure>
+  <h3>كيف تطبّقها</h3><ol><li>افحص كل زوج من نص وخلفية بأداة لفحص التباين.</li><li>استخدم رماديًا داكنًا على الأبيض لنص المحتوى. في الشكل، يبلغ الرمادي الباهت <span class="ltr">1.7:1</span> فقط، ويبلغ الرمادي الداكن <span class="ltr">10.3:1</span>.</li><li>افحص أيضًا النص الأبيض فوق لون التمييز.</li><li>تأكّد أن النص التوضيحي داخل الحقول ما زال مقروءًا.</li></ol>
+  <h3>أخطاء تجنّبها</h3><ul class="x"><li>نص رمادي على خلفية رمادية.</li><li>نص فوق صورة دون طبقة داكنة خلفه.</li><li>معلومة تُنقل باللون وحده.</li></ul>
+  <aside><b>جرّب الآن</b><p>اختبر أفتح ثلاثة نصوص في شاشتك بأداة فحص التباين، وغمّق كل نص تقل نسبته عن <span class="ltr">4.5:1</span>.</p></aside>
+</section>
+<section class="lesson"><p class="kicker">الفصل 1</p><h2>ملخّص الفصل</h2><ol class="sum"><li>لون تمييز واحد، للإجراءات فقط.</li><li>الأبيض ودرجات الرمادي لكل ما عداها.</li><li>عائلة خطوط واحدة، واثنتان كحدّ أقصى.</li><li>من أربعة إلى ستة أحجام للنص بفوارق واضحة.</li><li>نسبة تباين لا تقل عن <span class="ltr">4.5:1</span> للنص.</li></ol>
+<aside><b>تمرين: أعد تصميم شاشة واحدة</b><ol><li>اختر شاشة من أحد مشاريعك، أو أعد رسم صفحة رئيسية بسيطة.</li><li>طبّق القواعد الخمس بالترتيب، قاعدة تلو الأخرى.</li><li>احتفظ بنسخة من الشاشة بعد كل قاعدة، لتحصل في النهاية على ست نسخ.</li><li>ضع النسخة الأولى والأخيرة جنبًا إلى جنب ودوّن ما تغيّر.</li></ol></aside>
+<p class="next">الفصل 2 — المسافات والتخطيط · <span class="ltr">youtube.com/@AGStudioDev</span></p></section>
+</body></html>
