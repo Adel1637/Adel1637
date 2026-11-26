@@ -1,6 +1,7 @@
 // Generic Short (9:16) and long (16:9) films in the kinetic dark-software style.
 // cfg = {
 //   hook: { lines: [..], ar, en, tags: ['HTML', 'CSS', ...] },      // frame 0 full, tags move, then gather + ring wipe
+//      or hook: { style: 'cover', lines, accent: 'START?', ar, en?, art(ctx, v, t, long), hits } // the cover visual as frame 0, then a push
 //   items: [{ title: [..], ar, en, vig: { draw(ctx, v), hits }, len?, tip?, tipAr?, tipAt?, part? }],
 //   parts?: [{ en, ar, count }],                                      // long only: part cards before the items of each part
 //   label: (i, n) => 'STEP 01 / 05',
@@ -36,9 +37,10 @@ export function kineticFilm(M, K, cfg) {
   const HITS = [];
   const hit = (bb, l, s, o) => HITS.push(o ? [bb, l, s, o] : [bb, l, s]);
   hit(0, 'hook slam', 'thud', { pitch: 'A1' }); hit(0, 'hook whoosh', 'whoosh', { len: 0.35 });
-  const G0 = HOOK - 1.8;
-  [1, 1.8].forEach((x) => hit(x * HOOK / 4, 'tags', 'tick')); hit(G0, 'tags gather', 'whoosh', { len: 0.4 });
-  hit(HOOK, 'riser into wipe', 'riser', { len: 1.1 }); hit(HOOK, 'ring wipe', 'impact');
+  const G0 = HOOK - 1.8, CH = cfg.hook.style === 'cover';
+  if (CH) { (cfg.hook.hits || []).forEach(([o, l, sfx, opt]) => hit(o, l, sfx, opt)); hit(HOOK - 0.9, 'hook push', 'whoosh', { len: 0.45 }); hit(HOOK, 'hook land', 'sub'); }
+  else { [1, 1.8].forEach((x) => hit(x * HOOK / 4, 'tags', 'tick')); hit(G0, 'tags gather', 'whoosh', { len: 0.4 });
+    hit(HOOK, 'riser into wipe', 'riser', { len: 1.1 }); hit(HOOK, 'ring wipe', 'impact'); }
   SCENES.forEach((s) => {
     if (s.kind === 'part') { if (s.b0 > HOOK) hit(s.b0, 'push', 'whoosh', { len: 0.45 }); hit(s.b0 + 0.1, 'part', 'sub'); hit(s.b0 + 0.6, 'part title', 'whoosh', { len: 0.3 }); }
     if (s.kind === 'item') {
@@ -97,7 +99,33 @@ export function kineticFilm(M, K, cfg) {
     const q = ez(v, G0 + 0.5, HOOK, E.inExpo);
     if (q > 0) { const r = 30 + q * 2600; ctx.fillStyle = C.sel; ctx.beginPath(); ctx.arc(cx, cy, r, 0, TAU); ctx.fill(); ctx.fillStyle = firstBg; ctx.beginPath(); ctx.arc(cx, cy, Math.max(0, r - 100), 0, TAU); ctx.fill(); }
   }
+  // hook in the "cover" style: the cover visual is the first frame (big question, accent word in blue, topic art)
+  function lineAccent(ctx, s, x, y, size, accent) {
+    const i = accent ? s.indexOf(accent) : -1;
+    if (i < 0) { txt(ctx, s, x, y, size, { color: '#FFFFFF' }); return; }
+    ctx.font = `700 ${size}px ${F.title}`; const pre = s.slice(0, i), w0 = ctx.measureText(pre).width;
+    txt(ctx, pre, x, y, size, { color: '#FFFFFF' }); txt(ctx, accent, x + w0, y, size, { color: C.sel }); txt(ctx, s.slice(i + accent.length), x + w0 + ctx.measureText(accent).width, y, size, { color: '#FFFFFF' });
+  }
+  function coverHook(ctx, v, t) {
+    ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
+    topline(ctx);
+    const L = cfg.hook.lines, k = 1 + 0.025 * (1 - ez(v, 0, 1.2, E.outCubic));
+    if (cfg.hook.art) cfg.hook.art(ctx, v, t, LONG);
+    if (!LONG) {
+      const size = Math.min(...L.map((l) => fit(ctx, l, 132, CW / 1.02)));
+      ctx.save(); ctx.translate(X0, 380); ctx.scale(k, k); L.forEach((l, i) => lineAccent(ctx, l, -4, size * 0.86 + i * size * 0.96, size, cfg.hook.accent)); ctx.restore();
+      txt(ctx, cfg.hook.ar, XC, 380 + size * 0.96 * L.length + 70, fit(ctx, cfg.hook.ar, 60, CW, 700, F.ar), { family: F.ar, align: 'right', rtl: true });
+      if (cfg.hook.en) txt(ctx, cfg.hook.en, X0, 1610, fit(ctx, cfg.hook.en, 32, CW, 600, F.mono), { w: 600, family: F.mono, color: C.sub });
+    } else {
+      const size = Math.min(...L.map((l) => fit(ctx, l, 118, 820)));
+      ctx.save(); ctx.translate(X0, 200); ctx.scale(k, k); L.forEach((l, i) => lineAccent(ctx, l, -4, size * 0.86 + i * size * 0.96, size, cfg.hook.accent)); ctx.restore();
+      const ya = 200 + size * 0.96 * L.length + 80;
+      txt(ctx, cfg.hook.ar, X0 + 820, ya, fit(ctx, cfg.hook.ar, 54, 820, 700, F.ar), { family: F.ar, align: 'right', rtl: true });
+      if (cfg.hook.en) txt(ctx, cfg.hook.en, X0, ya + 80, fit(ctx, cfg.hook.en, 30, 820, 600, F.mono), { w: 600, family: F.mono, color: C.sub });
+    }
+  }
   function hook(ctx, v, t) {
+    if (cfg.hook.style === 'cover') { coverHook(ctx, v, t); return; }
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
     topline(ctx);
     const L = cfg.hook.lines;
@@ -221,7 +249,7 @@ export function kineticFilm(M, K, cfg) {
       ctx.save();
       if (COVER) { cover(ctx, COVER); ctx.restore(); return; }
       let s = SCENES[0]; SCENES.forEach((x) => { if (u >= x.b0) s = x; });
-      const v = u - s.b0, push = s.next && (s.kind === 'item' || s.kind === 'part');
+      const v = u - s.b0, push = s.next && (s.kind === 'item' || s.kind === 'part' || (s.kind === 'hook' && cfg.hook.style === 'cover'));
       const pe = push ? ez(v, s.len - 0.9, s.len, E.inOutCubic) : 0;
       if (pe > 0) {
         const dx = s.dir === 'left' ? -W : 0, dy = s.dir === 'up' ? -H : 0;

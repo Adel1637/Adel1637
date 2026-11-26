@@ -100,7 +100,26 @@ export function makeDev(M, K) {
   V.frameworkMistake = { draw(ctx, v) { rail(ctx, 8); [['React', 0.4], ['Vue', 0.7], ['Svelte', 1.0], ['Angular', 1.3]].forEach(([s, at], i) => { const p = sp(v, at); if (p <= 0) return; const x = 200 + i * 225; ctx.save(); ctx.translate(x, 560); ctx.scale(p, p); rr(ctx, -95, -60, 190, 120, 18, i === 0 ? 'rgba(13,153,255,0.12)' : DBG, i === 0 ? C.sel : LINE, 2); T(ctx, s, 0, 10, 30, 700, '#FFFFFF', 'center'); ctx.restore(); }); const pick = ez(v, 2.2, 2.8); if (pick > 0) { [1, 2, 3].forEach((i) => { ctx.save(); ctx.globalAlpha = pick * 0.7; ctx.fillStyle = '#1B1B1B'; rr(ctx, 200 + i * 225 - 100, 495, 200, 130, 18, 'rgba(27,27,27,0.75)'); ctx.restore(); }); } tag(ctx, 'Pick ONE and build with it', 540, 780, GRN, ez(v, 2.8, 3.4), 26, 'center'); T(ctx, 'The concepts transfer to the others.', 540, 880, 28, 600, DIM, 'center'); }, hits: [[0.4, 'f', 'tick'], [0.7, 'f', 'tick'], [1, 'f', 'tick'], [1.3, 'f', 'tick'], [2.2, 'pick', 'whoosh', { len: 0.4 }], [2.8, 'one', 'pop', { pitch: 'A5' }]] };
   // recap: the full rail + the finished page
   const recapVig = { draw(ctx, v) { rail(ctx, STEPS.length - 1, ez(v, 0.2, 2.2, (t) => t)); const p = ez(v, 0.6, 1.4, E.outCubic); ctx.save(); ctx.globalAlpha = p; browser(ctx, 80, 420, 920, 600, 'my-first-page', (x, y, w, h) => page(ctx, x, y, w, h, { styled: 1, count: 3 })); ctx.restore(); }, hits: [[0.2, 'rail', 'riser', { len: 1 }], [2.2, 'done', 'bell', { pitch: 'F#6' }]] };
-  return { V, recapVig, page, browser, rail, setSteps };
+  // hook art (cover style): three tilted code editors, numbered 1-2-3, springing in
+  const ART = {
+    html: [[['<h1>', 'tag'], ['Fresh Coffee', 'txt'], ['</h1>', 'tag']], [['<p>', 'tag'], ['Roasted every morning.', 'txt'], ['</p>', 'tag']], [['<button>', 'tag'], ['Add to cart', 'txt'], ['</button>', 'tag']]],
+    css: [[['.menu', 'fn'], [' {', 'txt']], [['  display', 'attr'], [': ', 'txt'], ['grid', 'str'], [';', 'txt']], [['  gap', 'attr'], [': ', 'txt'], ['16px', 'str'], [';', 'txt']], [['}', 'txt']]],
+    js: [[['let ', 'kw'], ['count', 'txt'], [' = ', 'txt'], ['0', 'str'], [';', 'txt']], [['button', 'txt'], ['.addEventListener', 'fn'], ['(', 'txt'], ["'click'", 'str'], [', () => {', 'txt']], [['  count', 'txt'], ['++', 'kw'], [';', 'txt']], [['});', 'txt']]],
+  };
+  function hookArt(ctx, v, t, long) {
+    const W3 = long ? [['html', 'index.html', 1010, 170, 700, -6, 0], ['css', 'style.css', 1110, 400, 640, 5, 1.2], ['js', 'app.js', 1030, 610, 760, -2, 3.4]]
+      : [['html', 'index.html', 90, 930, 740, -6, 0], ['css', 'style.css', 250, 1100, 700, 4, 0.4], ['js', 'app.js', 120, 1290, 820, -2, 0.8]];
+    W3.forEach(([k, file, x, y, w, rot, at], i) => {
+      const p = at === 0 ? 1 : Math.min(1, spr(v, at, { stiffness: 240, damping: 15 })); if (p <= 0) return;
+      const n = ART[k].length, h = 96 + n * 38, bob = Math.sin(t * 1.4 + i) * 4;
+      ctx.save(); ctx.globalAlpha = Math.min(1, p); ctx.translate(x + w / 2, y + h / 2 + (1 - p) * 80 + bob); ctx.rotate((rot * Math.PI) / 180); ctx.translate(-(x + w / 2), -(y + h / 2));
+      ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 50; ctx.shadowOffsetY = 24; rr(ctx, x, y, w, h, 20, DBG); ctx.shadowColor = 'transparent';
+      editor(ctx, x, y, w, h, '      ' + file, ART[k], 1, 24);
+      ctx.fillStyle = C.sel; ctx.beginPath(); ctx.arc(x + 36, y + 29, 15, 0, TAU); ctx.fill(); T(ctx, String(i + 1), x + 36, y + 35, 17, 700, '#FFFFFF', 'center');
+      ctx.restore();
+    });
+  }
+  return { V, recapVig, page, browser, rail, setSteps, hookArt };
 }
 
 export function devTopic(K, D, long) {
@@ -137,8 +156,8 @@ export function devTopic(K, D, long) {
   D.setSteps(n);
   return {
     fonts: ['400 20px Plex', '500 20px Plex', '600 20px Plex'],
-    span: long ? 26 : 13,
-    hook: { lines: ['WHERE SHOULD A', 'BEGINNER DEVELOPER', 'START?'], ar: 'من أين يبدأ المطوّر المبتدئ؟', en: `THE ${n} STEPS, IN THE RIGHT ORDER.`, tags: ['HTML', 'CSS', 'JS', 'Git', 'Docs', 'AI'] },
+    span: long ? 26 : 13, hookLen: long ? 8 : 6,
+    hook: { style: 'cover', lines: ['WHERE SHOULD', 'A BEGINNER', 'DEV START?'], accent: 'START?', ar: 'من أين يبدأ المطوّر المبتدئ؟', en: `THE ${n} STEPS, IN THE RIGHT ORDER.`, art: D.hookArt, hits: long ? [[1.2, 'css window', 'pop', { pitch: 'E5' }], [3.4, 'js window', 'pop', { pitch: 'A5' }]] : [[0.4, 'css window', 'pop', { pitch: 'E5' }], [0.8, 'js window', 'pop', { pitch: 'A5' }]], tags: ['HTML', 'CSS', 'JS', 'Git', 'Docs', 'AI'] },
     items, parts: long ? parts : undefined,
     label: (i) => `STEP 0${items[i].part + 1 || i + 1} / 0${n}`,
     recap: { title: ['ONE STEP', 'AT A TIME.'], ar: 'خطوة بعد خطوة.', en: 'GOAL · HTML · CSS · JS · GIT · PROJECTS · DOCS · AI' + (long ? ' · FRAMEWORK' : ''), vig: D.recapVig, len: long ? 16 : 14 },

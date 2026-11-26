@@ -13,7 +13,7 @@ Dialogue en **français**. Vidéos : titre en anglais + sous-titre arabe (traduc
 - Logos : seulement les fichiers fournis, jamais redessinés (sinon le nom en texte).
 
 ## Forme
-- Sans musique, effets sonores seulement, -14 LUFS. **Palette sonore AG Studio** (`shared/sfx-ag.mjs`, validée par Adel) : sons modélisés (bois, clavier mécanique, corde, verre, feutre, souffle, bande), une seule gamme (ré pentatonique), signature de 3 notes au début et à la fin. Ne plus utiliser les sons génériques de motion-reel. Accroche obligatoire (`shared/accroche.md`, vérifiée par `shared/finish.sh`).
+- Sans musique, effets sonores seulement, -14 LUFS. **Palette sonore AG Studio** (`shared/sfx-ag.mjs`, validée par Adel) : sons modélisés (bois, clavier mécanique, corde, verre, feutre, souffle, bande), une seule gamme (ré pentatonique), signature de 3 notes au début et à la fin. Ne plus utiliser les sons génériques de motion-reel. Accroche obligatoire (`shared/accroche.md`, vérifiée par `shared/finish.sh`). **Depuis le 26 nov. 2026 : la première image de chaque vidéo reprend le visuel de la couverture** (grande question, mot clé en bleu, visuel du sujet), via `hook: { style: 'cover', … }` dans `shared/kinetic-film.js`.
 - Style actuel : **motion cinétique « logiciel sombre »** (gris de logiciel, IBM Plex, ressorts, masques, flou de mouvement), sans orange, pas de beige, pas de violet décoratif, pas de grille à points. Modules : `shared/kinetic.js`, `shared/kinetic-film.js`.
 - Téléphones avec de vraies proportions (environ 1:2,1).
 - Cohérence avec nos propres leçons : une interface sombre montrée en exemple est en **gris foncé, jamais noir pur** ; éviter le look « généré par IA » (barre latérale + 4 cartes arrondies à ombre + accent violet/bleu).
