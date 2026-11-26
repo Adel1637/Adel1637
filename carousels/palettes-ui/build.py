@@ -1,4 +1,5 @@
-import json
+import json, os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 def lum(h):
     h=h.lstrip('#'); r,g,b=[int(h[i:i+2],16)/255 for i in (0,2,4)]
     f=lambda c: c/12.92 if c<=0.03928 else ((c+0.055)/1.055)**2.4
